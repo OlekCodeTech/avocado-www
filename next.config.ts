@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  basePath: base,
+  trailingSlash: true,
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
