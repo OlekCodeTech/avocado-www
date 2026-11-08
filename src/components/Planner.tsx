@@ -6,39 +6,60 @@ import { CONTACT, EVENT_TYPES, PLAN_EVENT } from "@/lib/asset";
 
 const YEARS = [2026, 2027, 2028, 2029, 2030];
 const MONTHS = ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"];
+const MONTHS_FULL = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
 const GUESTS = ["do 30", "30–60", "60–100", "100–150", "150+"];
 const STEPS = ["Okazja", "Termin", "Kontakt"];
+const SUB: Partial<Record<string, string[]>> = {
+  Wesele: ["Jednodniowe", "Z poprawinami"],
+  "Urodziny / 18-stka": ["18-stka", "40. urodziny", "Inne urodziny"],
+};
 
 type Data = {
   type: string; variant: string; year: number | null; month: number | null;
-  guests: string; stay: boolean; name: string; phone: string; email: string; msg: string;
+  guests: string; stay: boolean; name: string; phone: string; email: string;
+  company: string; role: string; msg: string;
+};
+const EMPTY: Data = {
+  type: "", variant: "", year: null, month: null, guests: "", stay: false,
+  name: "", phone: "", email: "", company: "", role: "", msg: "",
 };
 
-export default function Planner() {
+/** Trzykrokowy formularz zapytania (odpowiednik formularza z obecnej strony). */
+export default function Planner({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(0);
   const [sent, setSent] = useState(false);
-  const [d, setD] = useState<Data>({
-    type: "", variant: "", year: null, month: null, guests: "", stay: false, name: "", phone: "", email: "", msg: "",
-  });
+  const [d, setD] = useState<Data>(EMPTY);
   const set = (p: Partial<Data>) => setD((v) => ({ ...v, ...p }));
 
-  // wybór okazji z hero / kafelków
+  const pick = (type: string, info?: string) => {
+    set({ type, variant: info || "" });
+    setStep(SUB[type] && !info ? 0 : 1);
+  };
+
   useEffect(() => {
-    // przy weselu zostajemy na kroku 1, żeby wybrać wariant (jednodniowe / z poprawinami)
-    const on = (e: Event) => {
-      const type = (e as CustomEvent<string>).detail;
-      set({ type, variant: "" });
-      setStep(type === "Wesele" ? 0 : 1);
-    };
+    // okazja z hero / kafelków na tej samej stronie
+    const on = (e: Event) => pick((e as CustomEvent<string>).detail);
     window.addEventListener(PLAN_EVENT, on);
-    return () => window.removeEventListener(PLAN_EVENT, on);
+    // okazja z linku (?okazja=…&info=…&nocleg=1)
+    const t = setTimeout(() => {
+      const q = new URLSearchParams(window.location.search);
+      const okazja = q.get("okazja");
+      if (okazja) pick(okazja, q.get("info") || undefined);
+      if (q.get("nocleg")) set({ stay: true });
+    }, 0);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener(PLAN_EVENT, on);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const ok = [!!d.type, !!d.year, !!(d.name && d.phone)][step];
   const now = new Date();
+  const firma = d.type === "Impreza firmowa";
 
   return (
-    <section className="cta" id="planer">
+    <section className={`cta${compact ? " cta--compact" : ""}`} id="planer">
       <div className="wrap cta__grid">
         <div className="cta__intro">
           <p className="eyebrow eyebrow--light">Terminy 2026–2030</p>
@@ -56,7 +77,7 @@ export default function Planner() {
             <motion.div className="planner__done" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
               <span className="planner__check">✓</span>
               <h3>Dziękujemy, {d.name.split(" ")[0]}!</h3>
-              <p>Patryk odezwie się z dostępnymi terminami{d.year ? ` na ${d.month !== null ? MONTHS[d.month].toLowerCase() + " " : ""}${d.year}` : ""}.</p>
+              <p>Patryk odezwie się z dostępnymi terminami{d.year ? ` na ${d.month !== null ? MONTHS_FULL[d.month] + " " : ""}${d.year}` : ""}.</p>
               <p className="planner__note">To makieta – wysyłka zostanie podpięta w wersji docelowej.</p>
             </motion.div>
           ) : (
@@ -81,15 +102,15 @@ export default function Planner() {
                           <button key={t} type="button" className={`opt${d.type === t ? " on" : ""}`} onClick={() => set({ type: t, variant: "" })}>{t}</button>
                         ))}
                       </div>
-                      {d.type === "Wesele" && (
+                      {SUB[d.type] && (
                         <div className="opts opts--sub">
-                          {["Jednodniowe", "Z poprawinami"].map((v) => (
+                          {SUB[d.type]!.map((v) => (
                             <button key={v} type="button" className={`opt opt--sm${d.variant === v ? " on" : ""}`} onClick={() => set({ variant: v })}>{v}</button>
                           ))}
                         </div>
                       )}
                       {d.type === "Inne" && (
-                        <input className="inp" placeholder="np. komunia, rocznica, spotkanie firmowe" value={d.variant} onChange={(e) => set({ variant: e.target.value })} />
+                        <input className="inp" placeholder="np. roczek, rocznica, spotkanie klasowe" value={d.variant} onChange={(e) => set({ variant: e.target.value })} />
                       )}
                     </fieldset>
                   )}
@@ -134,9 +155,15 @@ export default function Planner() {
                         <label>Telefon<input className="inp" type="tel" autoComplete="tel" value={d.phone} onChange={(e) => set({ phone: e.target.value })} /></label>
                         <label>E-mail<input className="inp" type="email" autoComplete="email" value={d.email} onChange={(e) => set({ email: e.target.value })} /></label>
                       </div>
-                      <label>Coś jeszcze? <i>(opcjonalnie)</i><textarea className="inp" rows={2} value={d.msg} onChange={(e) => set({ msg: e.target.value })} /></label>
+                      {firma && (
+                        <div className="fields__2">
+                          <label>Nazwa firmy<input className="inp" autoComplete="organization" value={d.company} onChange={(e) => set({ company: e.target.value })} /></label>
+                          <label>Stanowisko<input className="inp" autoComplete="organization-title" value={d.role} onChange={(e) => set({ role: e.target.value })} /></label>
+                        </div>
+                      )}
+                      <label>Wasza wizja wydarzenia <i>(opcjonalnie)</i><textarea className="inp" rows={2} value={d.msg} onChange={(e) => set({ msg: e.target.value })} /></label>
                       <p className="summary">
-                        {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""} · {d.month !== null ? MONTHS[d.month].toLowerCase() + " " : ""}{d.year}
+                        {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""} · {d.month !== null ? MONTHS_FULL[d.month] + " " : ""}{d.year}
                         {d.guests ? ` · ${d.guests} gości` : ""}{d.stay ? " · z noclegiem" : ""}
                       </p>
                     </fieldset>
@@ -146,12 +173,7 @@ export default function Planner() {
 
               <div className="planner__nav">
                 {step > 0 && <button type="button" className="btn btn--ghost" onClick={() => setStep(step - 1)}>Wstecz</button>}
-                <button
-                  type="button"
-                  className="btn btn--light"
-                  disabled={!ok}
-                  onClick={() => (step < 2 ? setStep(step + 1) : setSent(true))}
-                >
+                <button type="button" className="btn btn--light" disabled={!ok} onClick={() => (step < 2 ? setStep(step + 1) : setSent(true))}>
                   {step < 2 ? "Dalej" : "Wyślij zapytanie"}
                 </button>
               </div>

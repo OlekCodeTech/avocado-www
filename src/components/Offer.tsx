@@ -1,14 +1,14 @@
-"use client";
-
+import Link from "next/link";
 import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
-import { plan } from "./Hero";
 
 const TILES = [
-  { t: "Wesela", p: "Jednodniowe lub z poprawinami. W sali albo pod gwiazdami.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", go: "Wesele" },
-  { t: "Przyjęcia rodzinne", p: "Chrzciny, komunie, 18-stki, jubileusze – kameralnie i bez stresu.", img: "/img/przyjecia.webp", alt: "Stół z dekoracją z pomarańczowych kwiatów", go: "Chrzciny" },
-  { t: "Wydarzenia", p: "Sylwester, Kobieciarnia, kolacje degustacyjne. Sprawdź kalendarz.", img: "/img/wydarzenia.webp", alt: "Sala przygotowana na imprezę z kulami disco", go: "" },
-  { t: "Noclegi", p: "Domki na miejscu dla gości weselnych i nie tylko.", img: "", alt: "", go: "" },
+  { t: "Wesela", p: "Jednodniowe lub z poprawinami. Ślub w ogrodzie, w sali albo pod gwiazdami.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
+  { t: "Przyjęcia rodzinne", p: "Chrzciny, komunie, roczki, 18-stki i jubileusze – kameralnie i bez stresu.", img: "/img/chrzciny.webp", alt: "Dekoracja chrzcin w sali plenerowej", href: "/przyjecia/" },
+  { t: "Imprezy firmowe", p: "Od integracji po konferencje – z nagłośnieniem, projektorem i koordynatorem.", img: "/img/firma-stol.webp", alt: "Bar i długi stół w sali bankietowej", href: "/przyjecia/#firmowe" },
+  { t: "Wydarzenia otwarte", p: "Sylwester, Kobieciarnia, kolacje degustacyjne. Sprawdź kalendarz.", img: "/img/sylwester-2.webp", alt: "Sala udekorowana na sylwestra", href: "/wydarzenia/" },
+  { t: "Noclegi", p: "Domki i pokoje na miejscu – goście zostają na noc, a rano poprawiny.", img: "/img/budynek-ogrod.webp", alt: "Budynek Avocado i ogród", href: "/noclegi/" },
+  { t: "Nasze sale", p: "Bankietowa do 180 gości i plenerowa do 130 – dwa charaktery, jeden standard.", img: "/img/sala-szeroka.webp", alt: "Sala bankietowa przygotowana na wesele", href: "/sale/" },
 ];
 
 export default function Offer() {
@@ -22,22 +22,18 @@ export default function Offer() {
           </div>
           <p className="head__aside">Każde przyjęcie prowadzi jeden opiekun – od pierwszej rozmowy po ostatni taniec.</p>
         </Reveal>
-        <div className="tiles">
+        <div className="tiles tiles--3">
           {TILES.map((x, k) => (
-            <Reveal key={x.t} delay={k * 0.08}>
-              <a
-                className={`tile${x.img ? "" : " tile--soon"}`}
-                href={x.go ? "#planer" : x.t === "Noclegi" ? "#noclegi" : "#kontakt"}
-                onClick={(e) => { if (x.go) { e.preventDefault(); plan(x.go); } }}
-              >
+            <Reveal key={x.t} delay={(k % 3) * 0.08}>
+              <Link className="tile" href={x.href}>
                 <div className="tile__media">
-                  {x.img ? <img src={asset(x.img)} alt={x.alt} loading="lazy" /> : <div className="ph"><span>zdjęcia domków<br />w drodze</span></div>}
+                  <img src={asset(x.img)} alt={x.alt} loading="lazy" />
                   <span className="tile__num">0{k + 1}</span>
                 </div>
                 <h3>{x.t}</h3>
                 <p>{x.p}</p>
                 <span className="more">Zobacz <i>→</i></span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

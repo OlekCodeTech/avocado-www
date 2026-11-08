@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
@@ -33,8 +34,8 @@ export default function Kitchen() {
         <Reveal className="kitchen__txt">
           <p className="eyebrow">Kuchnia Avocado</p>
           <h2>Smak, który<br />goście pamiętają</h2>
-          <p>Gotujemy na miejscu, z sezonowych produktów. Menu układamy razem z Wami – od klasyki polskiej kuchni po nowoczesne podanie i stoły tematyczne.</p>
-          <a href="#planer" className="link">Poproś o przykładowe menu →</a>
+          <p>Z pasji do gotowania. Podstawą menu jest sezonowość – warzywa i owoce kupujemy prosto od rolników, a menu układamy razem z Wami: od klasyki polskiej kuchni po nowoczesne podanie i stoły tematyczne.</p>
+          <Link href="/o-nas/#kuchnia" className="link">Poznaj szefa kuchni →</Link>
         </Reveal>
         <Reveal delay={0.1}>
           <img src={asset("/img/kuchnia-zespol.webp")} alt="Zespół kuchni Avocado przy wydawce" className="kitchen__team" loading="lazy" />

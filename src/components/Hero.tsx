@@ -2,18 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { asset, EVENT_TYPES, PLAN_EVENT } from "@/lib/asset";
+import { asset, EVENT_TYPES } from "@/lib/asset";
+import { plan } from "@/lib/plan";
 
 const SLIDES = [
   { src: "/img/hero.webp", alt: "Jasna sala bankietowa Avocado z kwiatami, za oknami zieleń", label: "Sala bankietowa" },
   { src: "/img/hero-2.webp", alt: "Para młoda wieczorem wśród brzóz i girland lampek", label: "Sala plenerowa" },
   { src: "/img/plener-dzien.webp", alt: "Sala plenerowa za dnia na skraju brzozowego lasu", label: "Ogród i las" },
 ];
-
-export function plan(type: string) {
-  window.dispatchEvent(new CustomEvent(PLAN_EVENT, { detail: type }));
-  document.getElementById("planer")?.scrollIntoView({ behavior: "smooth" });
-}
 
 export default function Hero() {
   const [i, setI] = useState(0);

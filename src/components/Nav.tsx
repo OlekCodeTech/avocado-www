@@ -1,22 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CONTACT } from "@/lib/asset";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { CONTACT, NAV } from "@/lib/asset";
 import Logo from "./Logo";
 
-const LINKS = [
-  ["Wesela", "#oferta"],
-  ["Przyjęcia", "#oferta"],
-  ["Sale", "#sale"],
-  ["Noclegi", "#noclegi"],
-  ["Wydarzenia", "#oferta"],
-  ["Kuchnia", "#kuchnia"],
-  ["Dojazd", "#dojazd"],
-] as const;
-
-export default function Nav() {
+export default function Nav({ light = false }: { light?: boolean }) {
   const [solid, setSolid] = useState(false);
   const [open, setOpen] = useState(false);
+  const path = usePathname();
 
   useEffect(() => {
     const on = () => setSolid(window.scrollY > 40);
@@ -33,21 +26,25 @@ export default function Nav() {
     document.documentElement.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  const isActive = (href: string) => path.startsWith(href.replace(/\/$/, ""));
+
   return (
     <>
-      <header className={`nav${solid ? " is-solid" : ""}${open ? " is-open" : ""}`}>
+      <header className={`nav${solid || light ? " is-solid" : ""}${open ? " is-open" : ""}`}>
         <div className="nav__in">
-          <a href="#top" className="logo" aria-label="Avocado – strona główna" onClick={() => setOpen(false)}>
+          <Link href="/" className="logo" aria-label="Avocado – strona główna" onClick={() => setOpen(false)}>
             <Logo className="logo__svg" />
-          </a>
+          </Link>
           <nav className="nav__links" aria-label="Menu główne">
-            {LINKS.map(([l, h]) => (
-              <a key={l} href={h}>{l}</a>
+            {NAV.map((l) => (
+              <Link key={l.href} href={l.href} className={isActive(l.href) ? "is-active" : undefined} aria-current={isActive(l.href) ? "page" : undefined}>
+                {l.label}
+              </Link>
             ))}
           </nav>
           <div className="nav__right">
             <a href={CONTACT.phoneHref} className="nav__tel">{CONTACT.phone}</a>
-            <a href="#planer" className="btn btn--sm">Zapytaj o termin</a>
+            <Link href="/kontakt/#planer" className="btn btn--sm">Zapytaj o termin</Link>
             <button
               className="nav__burger"
               aria-label={open ? "Zamknij menu" : "Otwórz menu"}
@@ -62,10 +59,10 @@ export default function Nav() {
 
       <div className={`drawer${open ? " is-open" : ""}`} aria-hidden={!open}>
         <nav aria-label="Menu mobilne">
-          {LINKS.map(([l, h], i) => (
-            <a key={l} href={h} onClick={() => setOpen(false)} style={{ transitionDelay: `${open ? 0.05 * i + 0.1 : 0}s` }} tabIndex={open ? 0 : -1}>
-              {l}
-            </a>
+          {NAV.map((l, i) => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{ transitionDelay: `${open ? 0.05 * i + 0.1 : 0}s` }} tabIndex={open ? 0 : -1}>
+              {l.label}
+            </Link>
           ))}
         </nav>
         <div className="drawer__foot">
