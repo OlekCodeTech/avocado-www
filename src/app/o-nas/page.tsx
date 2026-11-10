@@ -23,13 +23,13 @@ export default function ONas() {
       />
 
       <section className="sec">
-        <div className="wrap intro__grid">
-          <Reveal>
+        <div className="wrap host">
+          <Reveal><img src={asset("/img/wlasciciele.webp")} alt="Ewelina i Marek Molscy, właściciele Avocado" className="host__img" loading="lazy" /></Reveal>
+          <Reveal delay={0.1} className="host__txt">
             <p className="eyebrow">Właściciele</p>
             <h2>Ewelina i Marek Molscy</h2>
-          </Reveal>
-          <Reveal delay={0.1} className="intro__txt">
-            <p>Żaden z obiektów – choć różnorodnych i naprawdę dobrych – nie był dla nas idealny. Chcieliśmy stworzyć miejsce, w którym każde spotkanie będzie niezapomniane: jasne sale, kuchnia na najwyższym poziomie i natura za oknem.</p>
+            <p className="quote">„Chcieliśmy stworzyć miejsce, o jakim sami marzyliśmy, żeby zorganizować w nim przyjęcie.”</p>
+            <p>Żaden z obiektów – choć różnorodnych i naprawdę dobrych – nie był dla nas idealny. Chcieliśmy miejsca, w którym każde spotkanie będzie niezapomniane: jasne sale, kuchnia na najwyższym poziomie i natura za oknem.</p>
             <p>Tak powstało Avocado w Kuśniach – przy brzozowym lesie, 10 minut od Sieradza. Dziś to dwie sale, ogród, restauracja z cateringiem i domki dla gości. I zespół, który świętuje razem z Wami.</p>
           </Reveal>
         </div>
@@ -37,7 +37,7 @@ export default function ONas() {
 
       <section className="sec sec--sand" id="kuchnia">
         <div className="wrap host">
-          <Reveal><img src={asset("/img/kuchnia-zespol.webp")} alt="Zespół kuchni Avocado" className="host__img host__img--wide" loading="lazy" /></Reveal>
+          <Reveal><img src={asset("/img/robert.webp")} alt="Robert Piąstka, szef kuchni Avocado" className="host__img" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="host__txt">
             <p className="eyebrow">Szef kuchni</p>
             <h2>Robert Piąstka</h2>
