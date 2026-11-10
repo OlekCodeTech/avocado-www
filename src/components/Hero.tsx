@@ -8,7 +8,7 @@ import { plan } from "@/lib/plan";
 const SLIDES = [
   { src: "/img/hero.webp", alt: "Jasna sala bankietowa Avocado z kwiatami, za oknami zieleń", label: "Sala bankietowa" },
   { src: "/img/hero-2.webp", alt: "Para młoda wieczorem wśród brzóz i girland lampek", label: "Sala plenerowa" },
-  { src: "/img/plener-dzien.webp", alt: "Sala plenerowa za dnia na skraju brzozowego lasu", label: "Ogród i las" },
+  { src: "/img/plener-lato.webp", alt: "Sala plenerowa latem na skraju brzozowego lasu", label: "Ogród i las" },
 ];
 
 export default function Hero() {

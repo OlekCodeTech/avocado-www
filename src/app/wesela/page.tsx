@@ -22,13 +22,13 @@ const STEPS = [
 
 const PICS = [
   { src: "/img/sala-wesele-noc.webp", alt: "Sala bankietowa wieczorem w dniu wesela" },
-  { src: "/img/ceremonia.webp", alt: "Ceremonia ślubna w ogrodzie" },
+  { src: "/img/ceremonia-goscie.webp", alt: "Ceremonia ślubna wśród brzóz" },
   { src: "/img/g1.webp", alt: "Wejście pary młodej na salę" },
   { src: "/img/neon.webp", alt: "Ścianka z kwiatów z neonem" },
   { src: "/img/g3.webp", alt: "Pierwszy taniec w dymie" },
   { src: "/img/plener-wieczor.webp", alt: "Tort i zimne ognie wśród brzóz" },
   { src: "/img/para-wejscie.webp", alt: "Para młoda tańczy na sali" },
-  { src: "/img/sala-dlugie-stoly.webp", alt: "Długie stoły w sali bankietowej" },
+  { src: "/img/para-love.webp", alt: "Para młoda przy napisie LOVE" },
 ];
 
 const FAQ_W = [
@@ -56,7 +56,7 @@ export default function Wesela() {
 
       <section className="sec">
         <div className="wrap split">
-          <Reveal className="split__img"><img src={asset("/img/ceremonia.webp")} alt="Ceremonia ślubna w ogrodzie Avocado" loading="lazy" /></Reveal>
+          <Reveal className="split__img"><img src={asset("/img/ceremonia-goscie.webp")} alt="Ceremonia ślubna w ogrodzie Avocado" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Niezapomniany dzień</p>
             <h2>Jedzcie, pijcie i tańczcie – resztą zajmiemy się my</h2>
@@ -101,7 +101,7 @@ export default function Wesela() {
           <div className="halls">
             {[
               { ...HALLS.bankietowa, img: "/img/sala-biala.webp", txt: "Jasne, eleganckie wnętrze z drewnianym sufitem i widokiem na zieleń. Sprawdza się o każdej porze roku." },
-              { ...HALLS.plenerowa, img: "/img/plener-dzien.webp", txt: "Przeszklony pawilon na skraju lasu. Dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy." },
+              { ...HALLS.plenerowa, img: "/img/plener-lato.webp", txt: "Przeszklony pawilon na skraju lasu. Dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy." },
             ].map((h, k) => (
               <Reveal key={h.name} delay={k * 0.1}>
                 <Link href={h.href} className="hall">

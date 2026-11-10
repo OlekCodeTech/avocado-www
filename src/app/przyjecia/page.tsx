@@ -13,18 +13,21 @@ export const metadata: Metadata = {
 
 const KINDS = [
   { t: "Chrzciny i roczki", p: "Kameralnie, w jasnej sali albo w plenerze. Plac zabaw i ogród dla dzieci tuż obok.", img: "/img/chrzciny-2.webp", okazja: "Chrzciny" },
-  { t: "Komunie", p: "Rodzinny obiad w spokojnym miejscu, słodki stół i przestrzeń do zabawy dla najmłodszych.", img: "/img/dzieci-plac.webp", okazja: "Komunia" },
+  { t: "Komunie", p: "Rodzinny obiad w spokojnym miejscu, słodki stół i przestrzeń do zabawy dla najmłodszych.", img: "/img/komunia.webp", okazja: "Komunia" },
   { t: "18-stki i urodziny", p: "Parkiet, bar, dekoracje w Waszym stylu – i zabawa do rana z dala od sąsiadów.", img: "/img/osiemnastka.webp", okazja: "Urodziny / 18-stka" },
   { t: "Jubileusze i rocznice", p: "Elegancka oprawa dla bliskich. Zadbamy o menu, kwiaty i każdy szczegół.", img: "/img/stol-dlugi.webp", okazja: "Jubileusz" },
 ];
 
 const PICS = [
   { src: "/img/chrzciny.webp", alt: "Dekoracja chrzcin w sali plenerowej" },
-  { src: "/img/slodki-stol.webp", alt: "Słodki stół" },
+  { src: "/img/komunia-stoly.webp", alt: "Stoły komunijne w sali bankietowej" },
+  { src: "/img/komunia-desery.webp", alt: "Desery komunijne" },
   { src: "/img/dzieci-brzozy.webp", alt: "Dzieci bawiące się wśród brzóz" },
   { src: "/img/osiemnastka.webp", alt: "Sala udekorowana na 18-stkę" },
   { src: "/img/przyjecia.webp", alt: "Stół z dekoracją z kwiatów" },
+  { src: "/img/komunia-dzieci.webp", alt: "Dzieci na trawniku przy dmuchańcu" },
   { src: "/img/plac-zabaw.webp", alt: "Plac zabaw w ogrodzie Avocado" },
+  { src: "/img/slodki-stol.webp", alt: "Słodki stół" },
 ];
 
 export default function Przyjecia() {

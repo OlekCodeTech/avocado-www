@@ -15,10 +15,10 @@ const PICS = [
   { src: "/img/neon.webp", alt: "Ścianka z kwiatów z neonowym napisem" },
   { src: "/img/g3.webp", alt: "Pierwszy taniec w dymie" },
   { src: "/img/g7.webp", alt: "Długi drewniany stół ze świecami" },
-  { src: "/img/ceremonia.webp", alt: "Ceremonia ślubna w ogrodzie" },
+  { src: "/img/ceremonia-goscie.webp", alt: "Ceremonia ślubna w ogrodzie wśród brzóz" },
   { src: "/img/para-tort.webp", alt: "Para młoda przy torcie" },
   { src: "/img/dzieci-brzozy.webp", alt: "Dzieci bawiące się wśród brzóz" },
-  { src: "/img/g8.webp", alt: "Taras z widokiem na ogród" },
+  { src: "/img/plener-noc.webp", alt: "Sala plenerowa nocą" },
 ];
 
 export default function Home() {
@@ -64,14 +64,15 @@ export default function Home() {
           <Reveal className="stay__txt">
             <p className="eyebrow eyebrow--light">Nowość · noclegi</p>
             <h2>Goście nie muszą<br />wracać po północy</h2>
-            <p>Na terenie Avocado czekają domki dla gości, a przy sali bankietowej – pokoje. Rodzina z daleka śpi kilka kroków od sali, a rano wszyscy spotykają się na poprawinach.</p>
+            <p>Osiem domków Superior wśród brzóz – do 6 osób, z aneksem i tarasem – oraz pokoje przy sali bankietowej. Rodzina z daleka śpi kilka kroków od sali, a rano wszyscy spotykają się na poprawinach. Rezerwacja online.</p>
             <div className="btns">
               <Link href="/noclegi/" className="btn btn--light">Zobacz noclegi</Link>
               <Link href={planHref(undefined, { nocleg: "1" })} className="btn btn--ghost">Zapytaj o ofertę</Link>
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="stay__ph">
-            <span>tu zdjęcia domków<br /><small>czekamy na materiały</small></span>
+          <Reveal delay={0.1} className="stay__img">
+            <img src={asset("/img/domek-taras.webp")} alt="Domki Avocado z tarasem wśród brzóz" loading="lazy" />
+            <img src={asset("/img/domek-wnetrze.webp")} alt="Wnętrze domku" loading="lazy" className="stay__img2" />
           </Reveal>
         </div>
       </section>

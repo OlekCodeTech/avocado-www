@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
 import CtaBand from "@/components/CtaBand";
-import { planHref } from "@/lib/asset";
+import { asset, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Wydarzenia otwarte",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 const EVENTS = [
   { d: "31", m: "gru", y: "2026", t: "Sylwester w Avocado", p: "Bal z zespołem na żywo, menu szefa kuchni i toast o północy pod gwiazdami.", tag: "Zapisy otwarte" },
   { d: "06", m: "mar", y: "2027", t: "Kobieciarnia", p: "Wieczór dla kobiet: warsztaty, strefa relaksu, lampka wina i kolacja w dobrym towarzystwie.", tag: "Zapisy otwarte" },
+  { d: "14", m: "lut", y: "2027", t: "Kolacja walentynkowa", p: "Kilkudaniowe menu szefa kuchni dla dwojga, świece i muzyka na żywo. Jak co roku – miejsca znikają szybko.", tag: "Termin wkrótce" },
   { d: "—", m: "", y: "wkrótce", t: "Kolacja degustacyjna", p: "Kilkudaniowe menu sezonowe w parze z winami, przy jednym długim stole. Termin ogłosimy wkrótce.", tag: "Termin wkrótce" },
 ];
 
@@ -23,6 +24,18 @@ const GAL = {
     { src: "/img/sylwester-2.webp", alt: "Stoły sylwestrowe z pomarańczowymi kwiatami" },
     { src: "/img/sylwester-zespol.webp", alt: "Zespół muzyczny na scenie" },
     { src: "/img/sylwester-stol.webp", alt: "Dekoracja stołu z cytrusami" },
+  ],
+  kobieciarnia: [
+    { src: "/img/kobieciarnia.webp", alt: "Ścianka Kobieciarni i prowadzący" },
+    { src: "/img/kobieciarnia-sala.webp", alt: "Sala udekorowana na Kobieciarnię" },
+    { src: "/img/kobieciarnia-drinki.webp", alt: "Drinki powitalne" },
+    { src: "/img/kobieciarnia-taniec.webp", alt: "Uczestniczki na parkiecie" },
+  ],
+  walentynki: [
+    { src: "/img/walentynki.webp", alt: "Sala przygotowana na kolację walentynkową" },
+    { src: "/img/walentynki-danie.webp", alt: "Danie z kolacji walentynkowej" },
+    { src: "/img/walentynki-kuchnia.webp", alt: "Zespół kuchni przy wydawce" },
+    { src: "/img/walentynki-stol.webp", alt: "Stół z czerwonymi kwiatami" },
   ],
   degustacja: [
     { src: "/img/d2.webp", alt: "Danie główne" },
@@ -36,8 +49,8 @@ export default function Wydarzenia() {
   return (
     <>
       <PageHero
-        img="/img/sylwester.webp"
-        alt="Sala Avocado udekorowana na sylwestra"
+        img="/img/kobieciarnia-sala.webp"
+        alt="Sala Avocado udekorowana na Kobieciarnię"
         eyebrow="Wydarzenia otwarte"
         title="Ekskluzywne spotkania, dostępne dla wszystkich"
         lead="W ciągu roku organizujemy otwarte wydarzenia – szansę, by doświadczyć gościnności, wyjątkowego jedzenia i otulającej atmosfery Avocado bez okazji."
@@ -78,17 +91,23 @@ export default function Wydarzenia() {
 
       <section className="sec">
         <div className="wrap split">
-          <Reveal className="split__img"><div className="ph ph--tall"><span>zdjęcia z Kobieciarni<br /><small>czekamy na materiały</small></span></div></Reveal>
+          <Reveal className="split__img"><img src={asset("/img/kobieciarnia-goscie.webp")} alt="Uczestniczki Kobieciarni 2026" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Kobieciarnia · 06.03.2027</p>
             <h2>Wieczór tylko dla Was</h2>
-            <p>Dzień Kobiet świętujemy razem: warsztaty, strefa piękna i relaksu, lampka wina i kolacja przygotowana przez naszą kuchnię. Przyjdźcie z przyjaciółkami, siostrą, mamą.</p>
+            <p>Dzień Kobiet świętujemy razem – już po raz trzeci. Czerwony dywan, drink powitalny, pokazy i strefa piękna, kolacja przygotowana przez naszą kuchnię i parkiet do rana. Przyjdźcie z przyjaciółkami, siostrą, mamą.</p>
             <Link href={planHref("Inne", { info: "Kobieciarnia 06.03.2027" })} className="link">Zarezerwuj miejsce →</Link>
           </Reveal>
         </div>
+        <Gallery pics={GAL.kobieciarnia} cols={4} wide={[0]} tight />
       </section>
 
       <section className="sec sec--sand sec--tight">
+        <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacja walentynkowa</p><h2>Luty w Avocado pachnie różami</h2></Reveal></div>
+        <Gallery pics={GAL.walentynki} cols={4} wide={[0]} />
+      </section>
+
+      <section className="sec sec--tight">
         <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacje degustacyjne</p><h2>Kilka dań, jedno wino, jeden długi stół</h2></Reveal></div>
         <Gallery pics={GAL.degustacja} cols={4} wide={[0]} />
       </section>

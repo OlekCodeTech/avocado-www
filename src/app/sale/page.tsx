@@ -23,20 +23,20 @@ const BANK = [
   { src: "/img/wejscie.webp", alt: "Wejście do Avocado" },
 ];
 const PLENER = [
-  { src: "/img/plener-dzien.webp", alt: "Sala plenerowa za dnia" },
-  { src: "/img/sala-plenerowa.webp", alt: "Wnętrze sali plenerowej z dekoracjami" },
+  { src: "/img/plener-lato.webp", alt: "Sala plenerowa latem" },
+  { src: "/img/plener-wnetrze.webp", alt: "Jasne wnętrze sali plenerowej" },
+  { src: "/img/ceremonia-las.webp", alt: "Ceremonia w lesie – krzesła wśród brzóz" },
+  { src: "/img/plener-noc.webp", alt: "Sala plenerowa nocą" },
+  { src: "/img/plener-stoly.webp", alt: "Długie stoły w sali plenerowej" },
   { src: "/img/plener-zima.webp", alt: "Sala plenerowa zimą" },
-  { src: "/img/plener-wieczor.webp", alt: "Wieczór wśród brzóz" },
-  { src: "/img/plener-zima-2.webp", alt: "Sala plenerowa i taras zimą" },
-  { src: "/img/g8.webp", alt: "Taras sali plenerowej" },
 ];
 
 export default function Sale() {
   return (
     <>
       <PageHero
-        img="/img/sala-szeroka.webp"
-        alt="Sala bankietowa Avocado"
+        img="/img/plener-dron.webp"
+        alt="Sala plenerowa Avocado z lotu ptaka"
         eyebrow="Nasze obiekty"
         title="Dwie sale, dwa charaktery"
         lead="Do Waszej dyspozycji mamy dwie niezależne przestrzenie – razem do 240 gości – oraz ogród, taras, plac zabaw i noclegi. Wszystko w jednym miejscu, przy brzozowym lesie."
@@ -64,7 +64,7 @@ export default function Sale() {
       <section className="sec sec--sand" id="plenerowa">
         <div className="wrap">
           <div className="split split--rev">
-            <Reveal className="split__img"><img src={asset("/img/plener-zima.webp")} alt="Sala plenerowa na skraju lasu" loading="lazy" /></Reveal>
+            <Reveal className="split__img"><img src={asset("/img/plener-front.webp")} alt="Sala plenerowa na skraju lasu" loading="lazy" /></Reveal>
             <Reveal delay={0.1} className="split__txt">
               <p className="eyebrow">Sala plenerowa · do 130 gości</p>
               <h2>Industrialny sznyt. Wśród brzóz.</h2>
@@ -82,10 +82,10 @@ export default function Sale() {
           <Reveal className="head head--center"><p className="eyebrow">Wokół sal</p><h2>Cały teren jest dla Was</h2></Reveal>
           <div className="tiles tiles--4">
             {[
-              { t: "Ogród i las", p: "Miejsce na ceremonię, sesję zdjęciową i wieczorne ognisko.", img: "/img/ceremonia.webp" },
+              { t: "Ogród i las", p: "Miejsce na ceremonię, sesję zdjęciową i wieczorne ognisko.", img: "/img/ceremonia-las.webp" },
               { t: "Plac zabaw", p: "Dzieci bawią się w zasięgu wzroku rodziców.", img: "/img/plac-zabaw.webp" },
               { t: "Taras", p: "Kawa o poranku i drink wieczorem – z widokiem na zieleń.", img: "/img/g8.webp" },
-              { t: "Noclegi", p: "Domki i pokoje kilka kroków od sali.", img: "/img/budynek-ogrod.webp", href: "/noclegi/" },
+              { t: "Noclegi", p: "8 domków i pokoje kilka kroków od sali.", img: "/img/domek-taras.webp", href: "/noclegi/" },
             ].map((x, k) => (
               <Reveal key={x.t} delay={k * 0.08}>
                 {x.href ? (

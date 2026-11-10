@@ -12,7 +12,16 @@ export const CONTACT = {
   maps: "https://maps.google.com/?q=Ku%C5%9Bnie+32A+Sieradz",
   mapsEmbed:
     "https://www.google.com/maps?q=Restauracja+Avocado,+Ku%C5%9Bnie+32A,+98-200+Sieradz&z=12&output=embed",
-  booking: "#", // TODO: link do obiektu na Booking.com od klienta
+  booking: "https://www.booking.com/hotel/pl/avocado-domki.pl.html",
+  domkiPhone: "501 234 962",
+  domkiPhoneHref: "tel:+48501234962",
+  domkiEmail: "avocado.domki@gmail.com",
+};
+
+/** Silnik rezerwacji IdoBooking (konto klienta: client61565). Docelowo własna subdomena, np. rezerwacje.restauracjaavocado.pl. */
+export const IDO = {
+  engine: "https://client61565.idobooking.com/book-now/",
+  rooms: "https://client61565.idobooking.com/book-now/index.php?module=rooms",
 };
 
 /** Czasy dojazdu – z obecnej strony (zakładka Kontakt). */

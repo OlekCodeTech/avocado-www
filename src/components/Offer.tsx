@@ -4,10 +4,10 @@ import Reveal from "./Reveal";
 
 const TILES = [
   { t: "Wesela", p: "Jednodniowe lub z poprawinami. Ślub w ogrodzie, w sali albo pod gwiazdami.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
-  { t: "Przyjęcia rodzinne", p: "Chrzciny, komunie, roczki, 18-stki i jubileusze – kameralnie i bez stresu.", img: "/img/chrzciny.webp", alt: "Dekoracja chrzcin w sali plenerowej", href: "/przyjecia/" },
+  { t: "Przyjęcia rodzinne", p: "Chrzciny, komunie, roczki, 18-stki i jubileusze – kameralnie i bez stresu.", img: "/img/komunia.webp", alt: "Dekoracja komunijna w sali bankietowej", href: "/przyjecia/" },
   { t: "Imprezy firmowe", p: "Od integracji po konferencje – z nagłośnieniem, projektorem i koordynatorem.", img: "/img/firma-stol.webp", alt: "Bar i długi stół w sali bankietowej", href: "/przyjecia/#firmowe" },
-  { t: "Wydarzenia otwarte", p: "Sylwester, Kobieciarnia, kolacje degustacyjne. Sprawdź kalendarz.", img: "/img/sylwester-2.webp", alt: "Sala udekorowana na sylwestra", href: "/wydarzenia/" },
-  { t: "Noclegi", p: "Domki i pokoje na miejscu – goście zostają na noc, a rano poprawiny.", img: "/img/budynek-ogrod.webp", alt: "Budynek Avocado i ogród", href: "/noclegi/" },
+  { t: "Wydarzenia otwarte", p: "Sylwester, Kobieciarnia, kolacje degustacyjne. Sprawdź kalendarz.", img: "/img/kobieciarnia.webp", alt: "Kobieciarnia w Avocado", href: "/wydarzenia/" },
+  { t: "Noclegi", p: "8 domków Superior wśród brzóz – goście zostają na noc, a rano poprawiny.", img: "/img/domek-8.webp", alt: "Domek Avocado między brzozami", href: "/noclegi/" },
   { t: "Nasze sale", p: "Bankietowa do 180 gości i plenerowa do 130 – dwa charaktery, jeden standard.", img: "/img/sala-szeroka.webp", alt: "Sala bankietowa przygotowana na wesele", href: "/sale/" },
 ];
 
