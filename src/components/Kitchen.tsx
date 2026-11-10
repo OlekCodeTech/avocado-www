@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 
@@ -17,17 +15,6 @@ const DISHES = [
 ];
 
 export default function Kitchen() {
-  const track = useRef<HTMLDivElement>(null);
-  const viewport = useRef<HTMLDivElement>(null);
-  const [limit, setLimit] = useState(0);
-
-  useEffect(() => {
-    const m = () => setLimit(Math.max(0, (track.current?.scrollWidth ?? 0) - (viewport.current?.clientWidth ?? 0)));
-    m();
-    window.addEventListener("resize", m);
-    return () => window.removeEventListener("resize", m);
-  }, []);
-
   return (
     <section className="sec" id="kuchnia">
       <div className="wrap kitchen">
@@ -42,15 +29,13 @@ export default function Kitchen() {
         </Reveal>
       </div>
 
-      <div className="dishes" ref={viewport}>
-        <motion.div className="dishes__track" ref={track} drag="x" dragConstraints={{ left: -limit, right: 0 }} dragElastic={0.08}>
-          {DISHES.map((d) => (
-            <div className="dish" key={d.src}>
-              <img src={asset(d.src)} alt={d.alt} loading="lazy" draggable={false} />
-            </div>
+      {/* automatyczna, zapętlona taśma zdjęć (zatrzymuje się po najechaniu) */}
+      <div className="dishes" aria-hidden="true">
+        <div className="dishes__track">
+          {[...DISHES, ...DISHES].map((d, k) => (
+            <div className="dish" key={k}><img src={asset(d.src)} alt="" loading="lazy" draggable={false} /></div>
           ))}
-        </motion.div>
-        <p className="dishes__hint">← przeciągnij →</p>
+        </div>
       </div>
     </section>
   );

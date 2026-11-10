@@ -15,7 +15,7 @@ const EVENTS = [
   { d: "31", m: "gru", y: "2026", t: "Sylwester w Avocado", p: "Bal z zespołem na żywo, menu szefa kuchni i toast o północy pod gwiazdami.", tag: "Zapisy otwarte" },
   { d: "06", m: "mar", y: "2027", t: "Kobieciarnia", p: "Wieczór dla kobiet: warsztaty, strefa relaksu, lampka wina i kolacja w dobrym towarzystwie.", tag: "Zapisy otwarte" },
   { d: "14", m: "lut", y: "2027", t: "Kolacja walentynkowa", p: "Kilkudaniowe menu szefa kuchni dla dwojga, świece i muzyka na żywo. Jak co roku – miejsca znikają szybko.", tag: "Termin wkrótce" },
-  { d: "—", m: "", y: "wkrótce", t: "Kolacja degustacyjna", p: "Kilkudaniowe menu sezonowe w parze z winami, przy jednym długim stole. Termin ogłosimy wkrótce.", tag: "Termin wkrótce" },
+  { d: "—", m: "", y: "wkrótce", t: "Kolacja degustacyjna", p: "Kilkudaniowe menu sezonowe szefa kuchni, każde danie opowiedziane przy stole, do tego dobrane wina i muzyka na żywo. Termin ogłosimy wkrótce.", tag: "Termin wkrótce" },
 ];
 
 const GAL = {
@@ -38,10 +38,10 @@ const GAL = {
     { src: "/img/walentynki-stol.webp", alt: "Stół z czerwonymi kwiatami" },
   ],
   degustacja: [
-    { src: "/img/d2.webp", alt: "Danie główne" },
-    { src: "/img/d1.webp", alt: "Zupa" },
-    { src: "/img/d7.webp", alt: "Polewanie dania sosem" },
-    { src: "/img/stol-dlugi.webp", alt: "Długi stół ze świecami" },
+    { src: "/img/degust-sala.webp", alt: "Sala przygotowana na kolację degustacyjną" },
+    { src: "/img/degust-sos.webp", alt: "Polewanie dania sosem" },
+    { src: "/img/degust-talerze.webp", alt: "Talerze gotowe do wydania" },
+    { src: "/img/degust-desery.webp", alt: "Desery z malinami" },
   ],
 };
 

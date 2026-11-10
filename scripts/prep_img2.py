@@ -13,6 +13,8 @@ PICK = {
     "kobieciarnia-taniec": ("kobieciarnia2026#37", 1400), "kobieciarnia-goscie": ("kobieciarnia2026#29", 1400),
     "walentynki": ("kolacjawalentynkowa2026#27", 1600), "walentynki-danie": ("kolacjawalentynkowa2026#4", 1000), "walentynki-stol": ("kolacjawalentynkowa2026#41", 1400),
     "walentynki-kuchnia": ("kolacjawalentynkowa2026#17", 1400),
+    "degust-sala": ("degust#3", 1600), "degust-talerze": ("degust#74", 1400), "degust-sos": ("degust#65", 1400),
+    "degust-desery": ("degust#81", 1400), "degust-goscie": ("degust#14", 1400), "degust-stoly": ("degust#83", 1400),
 }
 DOMKI = {"domek-taras": "31", "domek-4": "38", "domek-8": "40", "domek-wnetrze": "34", "domek-sypialnia": "32", "domek-lazienka": "29",
          "domek-sauna": "37", "domek-stol": "36", "domek-drzwi": "41", "domek-antresola": "42", "domek-reczniki": "69", "domek-lampka": "39"}
