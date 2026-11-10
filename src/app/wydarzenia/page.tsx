@@ -26,7 +26,7 @@ const GAL = {
     { src: "/img/sylwester-stol.webp", alt: "Dekoracja stołu z cytrusami" },
   ],
   kobieciarnia: [
-    { src: "/img/kobieciarnia.webp", alt: "Ścianka Kobieciarni i prowadzący" },
+    { src: "/img/kobieciarnia.webp", alt: "Uczestniczki przy ściance Kobieciarni" },
     { src: "/img/kobieciarnia-sala.webp", alt: "Sala udekorowana na Kobieciarnię" },
     { src: "/img/kobieciarnia-drinki.webp", alt: "Drinki powitalne" },
     { src: "/img/kobieciarnia-taniec.webp", alt: "Uczestniczki na parkiecie" },

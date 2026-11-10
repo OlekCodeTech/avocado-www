@@ -9,7 +9,7 @@ PICK = {
     "ceremonia-las": ("SALAPLENEROWA#22", 1600), "ceremonia-goscie": ("SALAPLENEROWA#45", 1600), "las-brzozy": ("SALAPLENEROWA#41", 1400),
     "para-love": ("SALAPLENEROWA#86", 1400), "para-zachod": ("SALAPLENEROWA#14", 1400), "plener-lampki": ("SALAPLENEROWA#60", 1400),
     "komunia": ("KOMUNIA#36", 1600), "komunia-stoly": ("KOMUNIA#33", 1400), "komunia-desery": ("KOMUNIA#20", 1000), "komunia-dzieci": ("KOMUNIA#47", 1400),
-    "kobieciarnia": ("kobieciarnia2026#3", 1600), "kobieciarnia-sala": ("kobieciarnia2026#6", 1400), "kobieciarnia-drinki": ("kobieciarnia2026#12", 1000),
+    "kobieciarnia": ("kobieciarnia2026#9", 1600), "kobieciarnia-sala": ("kobieciarnia2026#6", 1400), "kobieciarnia-drinki": ("kobieciarnia2026#12", 1000),
     "kobieciarnia-taniec": ("kobieciarnia2026#37", 1400), "kobieciarnia-goscie": ("kobieciarnia2026#29", 1400),
     "walentynki": ("kolacjawalentynkowa2026#27", 1600), "walentynki-danie": ("kolacjawalentynkowa2026#4", 1000), "walentynki-stol": ("kolacjawalentynkowa2026#41", 1400),
     "walentynki-kuchnia": ("kolacjawalentynkowa2026#17", 1400),
