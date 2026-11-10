@@ -86,7 +86,7 @@ export default function Wydarzenia() {
         <div className="wrap">
           <Reveal className="head"><p className="eyebrow">Tak było</p><h2>Sylwester 2024/25</h2></Reveal>
         </div>
-        <Gallery pics={GAL.sylwester} cols={4} wide={[0]} />
+        <Gallery pics={GAL.sylwester} cols={4} wide={[]} />
       </section>
 
       <section className="sec">
@@ -99,17 +99,17 @@ export default function Wydarzenia() {
             <Link href={planHref("Inne", { info: "Kobieciarnia 06.03.2027" })} className="link">Zarezerwuj miejsce →</Link>
           </Reveal>
         </div>
-        <Gallery pics={GAL.kobieciarnia} cols={4} wide={[0]} tight />
+        <Gallery pics={GAL.kobieciarnia} cols={4} wide={[]} tight />
       </section>
 
       <section className="sec sec--sand sec--tight">
         <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacja walentynkowa</p><h2>Luty w Avocado pachnie różami</h2></Reveal></div>
-        <Gallery pics={GAL.walentynki} cols={4} wide={[0]} />
+        <Gallery pics={GAL.walentynki} cols={4} wide={[]} />
       </section>
 
       <section className="sec sec--tight">
         <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacje degustacyjne</p><h2>Kilka dań, jedno wino, jeden długi stół</h2></Reveal></div>
-        <Gallery pics={GAL.degustacja} cols={4} wide={[0]} />
+        <Gallery pics={GAL.degustacja} cols={4} wide={[]} />
       </section>
 
       <section className="sec newsletter">

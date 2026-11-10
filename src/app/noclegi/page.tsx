@@ -82,7 +82,7 @@ export default function Noclegi() {
 
       <section className="sec sec--tight sec--sand">
         <div className="wrap"><Reveal className="head"><p className="eyebrow">Galeria</p><h2>Domki z bliska</h2></Reveal></div>
-        <Gallery pics={PICS} cols={4} wide={[0, 5]} />
+        <Gallery pics={PICS} />
       </section>
 
       <section className="sec" id="rezerwacja">

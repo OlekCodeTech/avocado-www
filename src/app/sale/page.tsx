@@ -58,7 +58,7 @@ export default function Sale() {
             </Reveal>
           </div>
         </div>
-        <Gallery pics={BANK} cols={3} wide={[0]} tight />
+        <Gallery pics={BANK} cols={3} wide={[]} tight />
       </section>
 
       <section className="sec sec--sand" id="plenerowa">
@@ -74,7 +74,7 @@ export default function Sale() {
             </Reveal>
           </div>
         </div>
-        <Gallery pics={PLENER} cols={3} wide={[0]} tight />
+        <Gallery pics={PLENER} cols={3} wide={[]} tight />
       </section>
 
       <section className="sec" id="teren">

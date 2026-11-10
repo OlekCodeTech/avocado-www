@@ -10,7 +10,7 @@ export type Pic = { src: string; alt: string };
 export default function Gallery({
   pics,
   cols = 4,
-  wide = [0, 5],
+  wide = [0, 3, 4, 7],
   tight = false,
 }: {
   pics: Pic[];
