@@ -70,12 +70,19 @@ export const planHref = (okazja?: string, extra?: Record<string, string>) => {
 };
 
 export const FAQ = [
-  ["Jak mogę zarezerwować termin?", "Najprościej przez planer na stronie albo telefonicznie – oddzwaniamy z wolnymi terminami i zapraszamy na spotkanie w Avocado. Rezerwację potwierdza umowa i zadatek."],
-  ["Ile osób pomieszczą sale?", "Sala bankietowa do 180 gości, sala plenerowa do 130. Obie są klimatyzowane i mają własne zaplecze gastronomiczne oraz sanitarne."],
-  ["Czy można zorganizować ślub w plenerze?", "Tak. Ceremonię aranżujemy w naszym ogrodzie, wśród brzóz – a w razie niepogody przenosimy ją pod dach bez stresu."],
-  ["Czy goście mogą u Was przenocować?", "Tak. Na terenie Avocado są domki dla gości oraz pokoje przy sali bankietowej. Szczegóły i cennik podajemy przy wycenie przyjęcia."],
-  ["Czy menu można dopasować do nas?", "Zawsze. Menu układamy razem z Wami – od klasyki po kuchnię nowoczesną, z uwzględnieniem diet i alergii. Na spotkaniu pokażemy przykładowe propozycje."],
-  ["Czy jest parking i dojazd dla gości z daleka?", "Mamy własny, bezpłatny parking. Z Łodzi, Kalisza i Wielunia jedzie się do nas około godziny, a Sieradz jest 10 minut drogi."],
-  ["Czy obiekt jest dostępny dla osób z niepełnosprawnością?", "Tak, sale i zaplecze są w pełni dostępne."],
-  ["Czy organizujecie też imprezy firmowe i konferencje?", "Tak – od kameralnych spotkań po konferencje z nagłośnieniem, projektorem i mikrofonami. Każde wydarzenie prowadzi dedykowany koordynator."],
+  ["Jak mogę dokonać rezerwacji?", "Skontaktuj się z nami telefonicznie lub mailowo – omówimy szczegóły i dostępność terminu."],
+  ["Jakie są warunki wynajmu sali?", "Rezerwacja wymaga podpisania umowy i wpłaty zadatku."],
+  ["Czy sala posiada pokoje noclegowe?", "Tak. W sali bankietowej posiadamy podstawową bazę noclegową – 4 pokoje dla 9 osób. Dodatkowo do dyspozycji gości jest 8 domków."],
+  ["Czy można zorganizować wydarzenie na świeżym powietrzu?", "Tak, oferujemy również przestrzeń plenerową."],
+  ["Czy oferujecie usługę koordynatora wesel?", "Tak, każda impreza ma dedykowanego koordynatora."],
+  ["Czy sale są klimatyzowane?", "Tak, zapewniamy komfortową temperaturę o każdej porze roku."],
+  ["Czy sale posiadają oddzielne zaplecze kuchenne?", "Tak, każda sala ma własne zaplecze gastronomiczne."],
+  ["Jakie opcje ustawień stołów oferujecie?", "Oferujemy stoły okrągłe i prostokątne, z możliwością dowolnej aranżacji."],
+  ["Czy sale nadają się na inne eventy niż wesela?", "Oczywiście! Organizujemy również konferencje, bankiety i inne wydarzenia."],
+  ["Czy można wynająć salę na eventy firmowe?", "Tak, oferujemy przestrzeń idealną na spotkania biznesowe."],
+  ["Czy sala może być wynajęta na wydarzenia cykliczne?", "Tak, organizujemy zarówno jednorazowe eventy, jak i regularne spotkania."],
+  ["Czy można organizować imprezy tematyczne?", "Tak, przestrzeń dostosujemy do wybranego motywu."],
+  ["Czy sala nadaje się do sesji foto i video?", "Tak, nasza przestrzeń to idealne tło dla sesji zdjęciowych i nagrań."],
+  ["Czy w umowie zawarte są zasady anulacji rezerwacji?", "Tak, szczegółowe informacje są dostępne w umowie."],
+  ["Czy obiekt jest przystosowany dla osób niepełnosprawnych?", "Tak, nasza przestrzeń jest w pełni dostępna."],
 ] as const;

@@ -19,9 +19,9 @@ export default function Kitchen() {
     <section className="sec" id="kuchnia">
       <div className="wrap kitchen">
         <Reveal className="kitchen__txt">
-          <p className="eyebrow">Kuchnia Avocado</p>
-          <h2>Smak, który<br />goście pamiętają</h2>
-          <p>Z pasji do gotowania. Podstawą menu jest sezonowość – warzywa i owoce kupujemy prosto od rolników, a menu układamy razem z Wami: od klasyki polskiej kuchni po nowoczesne podanie i stoły tematyczne.</p>
+          <p className="eyebrow">Kulinarna kreatywność</p>
+          <h2>W kuchni stawiamy<br />na sezonowość</h2>
+          <p>Dzielimy się potrawami przygotowanymi z produktów od lokalnych gospodarstw. Robert, nasz szef kuchni, pomoże Ci opracować wyjątkowe menu, które zadowoli nawet największych smakoszy. Pomożemy Ci też w doborze win, piw i koktajli, aby oddać wyjątkowy charakter wydarzenia.</p>
           <Link href="/o-nas/#kuchnia" className="link">Poznaj szefa kuchni →</Link>
         </Reveal>
         <Reveal delay={0.1}>

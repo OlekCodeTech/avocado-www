@@ -133,6 +133,22 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
 .ticks li{padding-left:24px;position:relative}
 .ticks li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:1px;background:var(--gold)}
 
+/* REVIEWS */
+.reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
+.review{background:var(--bg);padding:38px 40px;border:1px solid var(--line);height:100%;display:flex;flex-direction:column;gap:22px}
+.review blockquote{font:italic 400 1.22rem/1.5 var(--serif);color:var(--ink)}
+.review blockquote::before{content:"„";display:block;height:30px;font:400 4.2rem/.55 var(--serif);font-style:normal;color:var(--gold);opacity:.6;margin-left:-3px}
+.review figcaption{display:flex;gap:14px;align-items:baseline;font-size:.86rem;color:var(--muted);margin-top:auto}
+.review figcaption b{color:var(--ink);font-weight:500;letter-spacing:.04em}
+/* MOTTO */
+.motto{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid var(--line)}
+.motto__item{padding:36px 32px 36px 0;border-left:1px solid var(--line);padding-left:32px}
+.motto__item:first-child{border-left:0;padding-left:0}
+.motto__n{font:500 .7rem/1 var(--sans);letter-spacing:.2em;color:var(--gold)}
+.motto__item h3{margin:14px 0 12px;font-size:1.45rem}
+.motto__item p{color:var(--muted);font-size:.95rem}
+.head__lead{max-width:60ch;margin:18px auto 0;color:var(--muted)}
+
 /* STAY */
 .stay{background:var(--olive);color:#F4EFE6;padding:120px 0}
 .stay__grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -261,7 +277,10 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
   .facts__grid>div{padding:24px 16px}
   .facts__grid>div:nth-child(3){border-left:0;padding-left:0}
   .facts__grid>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .spaces,.stay__grid,.kitchen,.map,.cta__grid,.host{grid-template-columns:1fr}
+  .spaces,.stay__grid,.kitchen,.map,.cta__grid,.host,.reviews,.motto{grid-template-columns:1fr}
+  .motto__item{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .motto__item:first-child{border-top:0}
+  .review{padding:28px 24px}
   .host__img{max-width:360px}
   .hero__dots{display:none}
   .head--row{flex-direction:column;align-items:flex-start}

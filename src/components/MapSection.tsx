@@ -8,7 +8,7 @@ export default function MapSection({ sand = true }: { sand?: boolean }) {
       <div className="wrap map">
         <Reveal className="map__txt">
           <p className="eyebrow">Dojazd</p>
-          <h2>Bliżej, niż myślicie</h2>
+          <h2>Jak do nas dotrzeć</h2>
           <p>Avocado leży w Kuśniach, 10 minut od Sieradza i tuż przy trasie S8. Z Łodzi czy Kalisza dojedziecie w niecałą godzinę – a na noc goście zostają w naszych domkach.</p>
           <ul className="dist">
             {DRIVE.map((c) => (

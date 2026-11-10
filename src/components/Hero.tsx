@@ -40,10 +40,10 @@ export default function Hero() {
 
       <div className="hero__txt">
         <motion.p className="eyebrow eyebrow--light" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
-          Kuśnie · 5 minut od Sieradza
+          Perfekcyjne miejsce na Twój wyjątkowy dzień
         </motion.p>
         <h1>
-          {["Wesela i przyjęcia", "blisko natury"].map((line, k) => (
+          {["Nowoczesność i natura", "w jednym miejscu"].map((line, k) => (
             <span className="line" key={line}>
               <motion.span
                 className={k ? "it" : undefined}

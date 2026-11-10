@@ -8,17 +8,17 @@ import Reveal from "./Reveal";
 const SPACES = {
   bankietowa: {
     name: "Sala bankietowa",
-    claim: "Jasna. Elegancka. Na każdą porę roku.",
+    claim: "Nowoczesne wnętrza",
     text: "Drewniany sufit, ciepłe światło i duże okna z widokiem na zieleń. Neutralne wnętrze, które łatwo dopasować do Waszego stylu – od klasyki po nowoczesny minimalizm.",
-    ticks: ["Parkiet do tańca i miejsce dla zespołu lub DJ-a", "Strefa baru i słodki stół", "Szatnia, klimatyzacja, parking"],
+    ticks: ["Pojemność: do 180 osób", "Klimatyzacja", "Dedykowany parking", "Przestrzeń gastronomiczna i zaplecze sanitarne"],
     day: { src: "/img/bank-dzien.webp", alt: "Sala bankietowa za dnia, stoły z kwiatami przy dużych oknach" },
     night: { src: "/img/bank-wieczor.webp", alt: "Sala bankietowa wieczorem, ciemne obrusy i ciepłe światło" },
   },
   plenerowa: {
     name: "Sala plenerowa",
-    claim: "Wśród brzóz. Pod gołym niebem.",
+    claim: "Industrialny sznyt",
     text: "Przeszklona sala w otoczeniu lasu – dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy lampek. Idealna na letnie wesela i ślub w plenerze.",
-    ticks: ["Ceremonia w plenerze na miejscu", "Ogród i strefa chill dla gości", "Plac zabaw dla dzieci"],
+    ticks: ["Pojemność: do 130 osób", "Klimatyzacja", "Dedykowany parking", "Przestrzeń gastronomiczna i zaplecze sanitarne"],
     day: { src: "/img/plener-dzien.webp", alt: "Sala plenerowa za dnia na skraju lasu" },
     night: { src: "/img/plener-wieczor.webp", alt: "Tort i zimne ognie wieczorem wśród brzóz" },
   },
@@ -35,8 +35,8 @@ export default function Spaces() {
     <section className="sec sec--sand" id="sale">
       <div className="wrap">
         <Reveal className="head head--center">
-          <p className="eyebrow">Nasze przestrzenie</p>
-          <h2>Dwie sale, dwa charaktery</h2>
+          <p className="eyebrow">Nasze obiekty</p>
+          <h2>Do Twojej dyspozycji mamy<br />dwie niezależne przestrzenie</h2>
         </Reveal>
 
         <div className="spaces__bar">
@@ -82,7 +82,7 @@ export default function Spaces() {
               <h3>{s.claim}</h3>
               <p>{s.text}</p>
               <ul className="ticks">{s.ticks.map((t) => <li key={t}>{t}</li>)}</ul>
-              <a href="#planer" className="link">Zapytaj o {s.name.toLowerCase()} →</a>
+              <a href="#planer" className="link">Zobacz nasze obiekty w pełnej okazałości – umów się na spotkanie →</a>
             </motion.div>
           </AnimatePresence>
         </div>

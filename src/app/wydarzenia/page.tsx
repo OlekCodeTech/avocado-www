@@ -51,9 +51,9 @@ export default function Wydarzenia() {
       <PageHero
         img="/img/kobieciarnia-sala.webp"
         alt="Sala Avocado udekorowana na Kobieciarnię"
-        eyebrow="Wydarzenia otwarte"
+        eyebrow="Zapraszamy na otwarte wydarzenia"
         title="Ekskluzywne spotkania, dostępne dla wszystkich"
-        lead="W ciągu roku organizujemy otwarte wydarzenia – szansę, by doświadczyć gościnności, wyjątkowego jedzenia i otulającej atmosfery Avocado bez okazji."
+        lead="W ciągu roku organizujemy otwarte wydarzenia, dające Ci szansę doświadczyć, jak bardzo wyjątkowe jest Avocado. Doświadcz naszej gościnności, wyjątkowego jedzenia i wspaniałej, otulającej atmosfery."
       >
         <a href="#kalendarz" className="btn btn--light">Zobacz kalendarz</a>
       </PageHero>

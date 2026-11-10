@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Sala bankietowa do 180 gości i sala plenerowa do 130 gości w Avocado koło Sieradza. Klimatyzacja, parking, ogród, plac zabaw i ceremonie w plenerze.",
 };
 
-const SPECS = ["Klimatyzacja", "Dedykowany parking", "Zaplecze gastronomiczne i sanitarne", "Nagłośnienie i multimedia", "Dostęp dla osób z niepełnosprawnością"];
+const SPECS = ["Klimatyzacja", "Dedykowany parking", "Przestrzeń gastronomiczna i zaplecze sanitarne", "Profesjonalne zaplecze multimedialne (nagłośnienie, projektor, ekran, mikrofony)", "Dedykowany koordynator wydarzenia"];
 
 const BANK = [
   { src: "/img/sala-szeroka.webp", alt: "Sala bankietowa w świetle dziennym" },
@@ -38,8 +38,8 @@ export default function Sale() {
         img="/img/plener-dron.webp"
         alt="Sala plenerowa Avocado z lotu ptaka"
         eyebrow="Nasze obiekty"
-        title="Dwie sale, dwa charaktery"
-        lead="Do Waszej dyspozycji mamy dwie niezależne przestrzenie – razem do 240 gości – oraz ogród, taras, plac zabaw i noclegi. Wszystko w jednym miejscu, przy brzozowym lesie."
+        title="Dwie niezależne przestrzenie"
+        lead="Do Twojej dyspozycji mamy dwie niezależne przestrzenie – razem do 240 osób. Zobacz nasze obiekty w pełnej okazałości i umów się na spotkanie już dzisiaj."
       >
         <a href="#bankietowa" className="btn btn--light">Sala bankietowa</a>
         <a href="#plenerowa" className="btn btn--ghost">Sala plenerowa</a>
@@ -50,10 +50,10 @@ export default function Sale() {
           <div className="split">
             <Reveal className="split__img"><img src={asset("/img/bank-dzien.webp")} alt="Sala bankietowa za dnia" loading="lazy" /></Reveal>
             <Reveal delay={0.1} className="split__txt">
-              <p className="eyebrow">Sala bankietowa · do 180 gości</p>
-              <h2>Jasna. Elegancka. Na każdą porę roku.</h2>
+              <p className="eyebrow">Sala bankietowa · Pojemność: do 180 osób</p>
+              <h2>Nowoczesne wnętrza</h2>
               <p>Nowoczesne wnętrze z drewnianym sufitem, ciepłym światłem i dużymi oknami z widokiem na zieleń. Neutralna baza, którą łatwo dopasować do Waszego stylu – od klasyki po minimalizm. Parkiet, bar i słodki stół mają swoje miejsce, a goście nie tłoczą się przy przejściach.</p>
-              <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}</ul>
+              <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}<li>Baza noclegowa: 4 pokoje dla 9 osób</li></ul>
               <Link href={planHref()} className="link">Zapytaj o salę bankietową →</Link>
             </Reveal>
           </div>
@@ -66,10 +66,10 @@ export default function Sale() {
           <div className="split split--rev">
             <Reveal className="split__img"><img src={asset("/img/plener-front.webp")} alt="Sala plenerowa na skraju lasu" loading="lazy" /></Reveal>
             <Reveal delay={0.1} className="split__txt">
-              <p className="eyebrow">Sala plenerowa · do 130 gości</p>
-              <h2>Industrialny sznyt. Wśród brzóz.</h2>
+              <p className="eyebrow">Sala plenerowa · Pojemność: do 130 osób</p>
+              <h2>Industrialny sznyt</h2>
               <p>Przeszklony, czarny pawilon na skraju lasu – latem otwarty na ogród, zimą przytulny i rozświetlony. Dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy lampek. Idealna na ślub w plenerze, letnie wesele i kameralne przyjęcia.</p>
-              <ul className="specs">{SPECS.slice(0, 3).map((s) => <li key={s}>{s}</li>)}<li>Taras i ogród</li><li>Ceremonia w plenerze</li></ul>
+              <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}<li>Taras, ogród i ceremonia w plenerze</li></ul>
               <Link href={planHref()} className="link">Zapytaj o salę plenerową →</Link>
             </Reveal>
           </div>
@@ -79,7 +79,7 @@ export default function Sale() {
 
       <section className="sec" id="teren">
         <div className="wrap">
-          <Reveal className="head head--center"><p className="eyebrow">Wokół sal</p><h2>Cały teren jest dla Was</h2></Reveal>
+          <Reveal className="head head--center"><p className="eyebrow">Ceremonia</p><h2>Na Twoje życzenie możemy też<br />zaaranżować ceremonię ślubną</h2><p className="head__lead">Nasze ogrody aż proszą się o zorganizowanie w nich uroczystości. Będą idealnym tłem w Waszym wymarzonym dniu. Dostosujemy wszystko do Waszych potrzeb.</p></Reveal>
           <div className="tiles tiles--4">
             {[
               { t: "Ogród i las", p: "Miejsce na ceremonię, sesję zdjęciową i wieczorne ognisko.", img: "/img/ceremonia-las.webp" },
@@ -106,7 +106,7 @@ export default function Sale() {
       </section>
 
       <Faq items={FAQ} sand />
-      <CtaBand title={<>Zobaczcie sale<br />w pełnej okazałości</>} text="Umówcie się na spotkanie – oprowadzimy Was po obiekcie i odpowiemy na wszystkie pytania." button="Umów spotkanie" />
+      <CtaBand title={<>Spełnienie<br />Waszych marzeń</>} text="Jeśli zainteresowało Cię to, co mamy do zaoferowania – zapraszamy. Na indywidualnym spotkaniu poznamy Państwa oczekiwania, spersonalizujemy ofertę oraz przybliżymy możliwości przyjęcia na sali lub cateringu." button="Zacznij planować" />
     </>
   );
 }

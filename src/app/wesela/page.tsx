@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
-import { asset, HALLS, planHref } from "@/lib/asset";
+import { asset, FAQ, HALLS, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Wesela",
@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const STEPS = [
-  ["Spotkanie", "Oprowadzamy Was po salach, ogrodzie i domkach. Rozmawiamy o Waszej wizji, terminie i budżecie – bez zobowiązań."],
-  ["Menu i aranżacja", "Szef kuchni układa z Wami menu, a opiekun pomaga dobrać dekoracje, ustawienie stołów i przebieg dnia."],
-  ["Ceremonia w ogrodzie", "Ślub wśród brzóz, kilka kroków od sali. W razie deszczu mamy gotowy plan B pod dachem."],
-  ["Wesele", "Powitanie, obiad, tort, pierwszy taniec i zabawa do rana. Nad wszystkim czuwa koordynator."],
+  ["Spotkanie", "Zobaczcie nasze obiekty w pełnej okazałości. Umówcie się na spotkanie – pozwoli to poczuć atmosferę miejsca oraz bliżej zapoznać się z nami i naszą ofertą."],
+  ["Kulinarna kreatywność", "Wraz z naszym szefem kuchni przygotowujemy sezonowe menu, udoskonalamy je i szyjemy na miarę Twoich potrzeb. Jesteśmy otwarci na Wasze propozycje, które szczegółowo omawiamy na spotkaniach."],
+  ["Ceremonia", "Jednym z wielu atutów naszych sal jest możliwość organizacji ślubu w plenerze. Wystarczy Wasza chęć, a my zaaranżujemy dla Was ślub jak z bajki w otoczeniu naszego ogrodu."],
+  ["Wesele", "Podczas ceremonii zaopiekuje się Wami doświadczony zespół koordynatorów oraz obsługi kelnerskiej – nikomu niczego nie zabraknie."],
   ["Poprawiny", "Goście nocują na miejscu, a rano spotykacie się przy wspólnym stole – u nas albo na tarasie."],
 ];
 
@@ -31,14 +31,7 @@ const PICS = [
   { src: "/img/para-love.webp", alt: "Para młoda przy napisie LOVE" },
 ];
 
-const FAQ_W = [
-  ["Ile kosztuje wesele w Avocado?", "Cena zależy od liczby gości, menu i terminu. Po krótkiej rozmowie przygotujemy indywidualną wycenę – bez ukrytych kosztów."],
-  ["Czy możemy mieć ślub cywilny na miejscu?", "Tak. Ceremonię organizujemy w ogrodzie wśród brzóz, a w razie niepogody – w sali."],
-  ["Czy jest możliwość wesela jednodniowego i z poprawinami?", "Oczywiście. Poprawiny możecie zrobić w tej samej sali, na tarasie albo w plenerze."],
-  ["Gdzie przenocują goście?", "Na miejscu: w domkach i pokojach przy sali bankietowej. Dla większych grup pomagamy w rezerwacji dodatkowych noclegów w okolicy."],
-  ["Czy przygotowujecie menu dla dzieci, wegetarian i alergików?", "Tak – menu dopasowujemy do Waszych gości. Wystarczy, że powiecie nam o tym na spotkaniu."],
-  ["Do której można się bawić?", "Do białego rana – sale są położone z dala od zabudowań, więc nikt Wam nie przeszkodzi."],
-] as const;
+const FAQ_W = [FAQ[0], FAQ[1], FAQ[4], FAQ[3], FAQ[2], FAQ[7], FAQ[13]];
 
 export default function Wesela() {
   return (
@@ -48,7 +41,7 @@ export default function Wesela() {
         alt="Sala bankietowa Avocado przygotowana na wesele"
         eyebrow="Wesela · Kuśnie koło Sieradza"
         title="Magiczne i niezapomniane wesele"
-        lead="Do każdego wesela podchodzimy indywidualnie: od ceremonii w ogrodzie, przez menu szefa kuchni, po poprawiny – tak, aby Wasz dzień odzwierciedlał Wasze gusta, potrzeby i marzenia."
+        lead="Do każdego wesela podchodzimy indywidualnie, aby zorganizować najbardziej spektakularny i magiczny wieczór dla Was i Waszych gości. Nasz zespół pomoże Ci zaplanować Twoje wesele w taki sposób, aby odzwierciedlało ono Wasze gusta, potrzeby i marzenia."
       >
         <Link href={planHref("Wesele")} className="btn btn--light">Sprawdź wolne terminy</Link>
         <a href="#przebieg" className="btn btn--ghost">Jak to u nas wygląda</a>
@@ -59,14 +52,13 @@ export default function Wesela() {
           <Reveal className="split__img"><img src={asset("/img/ceremonia-goscie.webp")} alt="Ceremonia ślubna w ogrodzie Avocado" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Niezapomniany dzień</p>
-            <h2>Jedzcie, pijcie i tańczcie – resztą zajmiemy się my</h2>
-            <p>Do Waszej dyspozycji mamy dwie wyjątkowe sale, które przemieniamy w wymarzoną przestrzeń, oraz ogród, w którym możecie powiedzieć sobie „tak”. Doświadczony zespół koordynatorów i kelnerów zadba, aby wszyscy goście byli obsłużeni z najwyższą starannością i aby nikomu niczego nie zabrakło.</p>
+            <h2>Jedz, pij i tańcz</h2>
+            <p>Podczas ceremonii zaopiekuje się Wami doświadczony zespół naszych koordynatorów oraz obsługi kelnerskiej. Zadbamy, aby wszyscy goście byli obsłużeni z najwyższą jakością i starannością oraz aby nikomu niczego nie zabrakło.</p>
             <ul className="ticks">
-              <li>Ślub w plenerze wśród brzóz</li>
-              <li>Sala bankietowa do 180 lub plenerowa do 130 gości</li>
-              <li>Sezonowe menu układane z szefem kuchni</li>
-              <li>Noclegi dla gości i poprawiny na miejscu</li>
-              <li>Dedykowany opiekun przyjęcia</li>
+              <li>Perfekcyjna sceneria</li>
+              <li>Wszystko, czego oczekujecie w jednym miejscu</li>
+              <li>Pyszne jedzenie</li>
+              <li>5* obsługa</li>
             </ul>
           </Reveal>
         </div>
@@ -100,8 +92,8 @@ export default function Wesela() {
           </Reveal>
           <div className="halls">
             {[
-              { ...HALLS.bankietowa, img: "/img/sala-biala.webp", txt: "Jasne, eleganckie wnętrze z drewnianym sufitem i widokiem na zieleń. Sprawdza się o każdej porze roku." },
-              { ...HALLS.plenerowa, img: "/img/plener-lato.webp", txt: "Przeszklony pawilon na skraju lasu. Dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy." },
+              { ...HALLS.bankietowa, img: "/img/sala-biala.webp", txt: "Nowoczesne wnętrza. Pojemność do 180 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
+              { ...HALLS.plenerowa, img: "/img/plener-lato.webp", txt: "Industrialny sznyt. Pojemność do 130 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
             ].map((h, k) => (
               <Reveal key={h.name} delay={k * 0.1}>
                 <Link href={h.href} className="hall">
@@ -125,7 +117,7 @@ export default function Wesela() {
       </section>
 
       <Faq items={FAQ_W} title="Pytania o wesele" />
-      <CtaBand title={<>Wesele, o którym marzycie,<br />jest naszą misją</>} text="Zapraszamy na indywidualne spotkanie – poczujecie atmosferę miejsca i poznacie nas oraz naszą ofertę." okazja="Wesele" />
+      <CtaBand title={<>Wesele, o którym marzycie,<br />jest naszą misją</>} text="Jeśli poczuliście, że nasze sale mogą stać się idealnym tłem dla jednego z najważniejszych dni w Waszym życiu, pozwolimy sobie zaprosić Was na indywidualne spotkanie. Pozwoli to bardziej poczuć atmosferę miejsca oraz bliżej zapoznać się z nami i naszą ofertą." okazja="Wesele" button="Zacznij planować" />
     </>
   );
 }

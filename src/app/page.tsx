@@ -7,6 +7,7 @@ import MapSection from "@/components/MapSection";
 import Gallery from "@/components/Gallery";
 import Planner from "@/components/Planner";
 import Faq from "@/components/Faq";
+import Reviews from "@/components/Reviews";
 import Reveal from "@/components/Reveal";
 import { asset, CONTACT, FAQ, planHref } from "@/lib/asset";
 
@@ -29,10 +30,10 @@ export default function Home() {
       <section className="facts">
         <div className="wrap facts__grid">
           {[
-            ["2 sale", "bankietowa do 180 i plenerowa do 130 gości"],
-            ["Własna kuchnia", "sezonowe menu szefa kuchni Roberta Piąstki"],
-            ["Noclegi", "domki i pokoje na miejscu"],
-            ["Jeden opiekun", "od pierwszej rozmowy do ostatniego tańca"],
+            ["2 sale", "do 240 osób – bankietowa i plenerowa"],
+            ["Wyjątkowa kuchnia", "sezonowe menu szefa kuchni Roberta Piąstki"],
+            ["Plenerowa magia", "ślub i przyjęcie przy brzozowym lesie"],
+            ["Noclegi i catering", "domki na miejscu, catering na każdą okazję"],
           ].map(([k, v], i) => (
             <Reveal key={k} delay={i * 0.06}>
               <span className="facts__k">{k}</span>
@@ -46,11 +47,11 @@ export default function Home() {
         <div className="wrap intro__grid">
           <Reveal>
             <p className="eyebrow">Nowoczesność i natura w jednym miejscu</p>
-            <h2>Z dala od zgiełku,<br />przy brzozowym lesie</h2>
+            <h2>Z dala od zgiełku miasta,<br />przy brzozowym lesie</h2>
           </Reveal>
           <Reveal delay={0.1} className="intro__txt">
-            <p>Avocado powstało z marzenia o miejscu, w którym sami chcielibyśmy świętować: świeże, jasne wnętrza, dobra kuchnia i spokój natury za oknem. Dwie niezależne sale, ogród, plac zabaw i noclegi dla gości – wszystko kilka kroków od siebie.</p>
-            <p>Nasz zespół zadba o każdy szczegół, dzięki czemu Wasz dzień będzie naprawdę niezapomniany – a Wy zamiast myśleć o organizacji, będziecie mogli po prostu cieszyć się tym, co dzieje się wokół.</p>
+            <p>Avocado położone jest w malowniczej okolicy, z dala od zgiełku miasta, przy brzozowym lesie. To wyjątkowa sceneria na wesele, przyjęcie oraz celebracje.</p>
+            <p>Nasz dedykowany zespół zadba o każdy szczegół, dzięki czemu Twój dzień będzie naprawdę niezapomniany. Odkryj nasze czarujące wnętrza, zapierające dech w piersiach otoczenie, fantastyczne jedzenie i 5* obsługę, na jaką zasługujesz.</p>
             <Link href="/o-nas/" className="link">Poznajcie nas →</Link>
           </Reveal>
         </div>
@@ -62,9 +63,9 @@ export default function Home() {
       <section className="stay" id="noclegi">
         <div className="wrap stay__grid">
           <Reveal className="stay__txt">
-            <p className="eyebrow eyebrow--light">Nowość · noclegi</p>
-            <h2>Goście nie muszą<br />wracać po północy</h2>
-            <p>Osiem domków Superior wśród brzóz – do 6 osób, z aneksem i tarasem – oraz pokoje przy sali bankietowej. Rodzina z daleka śpi kilka kroków od sali, a rano wszyscy spotykają się na poprawinach. Rezerwacja online.</p>
+            <p className="eyebrow eyebrow--light">Noclegi</p>
+            <h2>Goście zostają<br />na miejscu</h2>
+            <p>Osiem domków Superior wśród brzóz – do 6 osób, z aneksem i tarasem – oraz podstawowa baza noclegowa w sali bankietowej: 4 pokoje dla 9 osób. Goście spoza okolicy śpią kilka kroków od sali, a rano wszyscy spotykają się na poprawinach. Rezerwacja online.</p>
             <div className="btns">
               <Link href="/noclegi/" className="btn btn--light">Zobacz noclegi</Link>
               <Link href={planHref(undefined, { nocleg: "1" })} className="btn btn--ghost">Zapytaj o ofertę</Link>
@@ -84,10 +85,10 @@ export default function Home() {
         <div className="wrap host">
           <Reveal><img src={asset("/img/patryk.webp")} alt="Patryk Marcisiak, manager Avocado" className="host__img" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="host__txt">
-            <p className="eyebrow">Wasz opiekun</p>
+            <p className="eyebrow">Manager</p>
             <h2>Patryk Marcisiak</h2>
-            <p className="quote">„Są osoby, które po prostu dobrze czują ludzi, atmosferę i&nbsp;tempo wydarzeń.”</p>
-            <p>Od lat związany z branżą restauracyjną – organizację przyjęć zna od kuchni. Jest blisko Was od pierwszych rozmów aż po sam dzień wydarzenia: podpowie, doradzi, uporządkuje pomysły.</p>
+            <p className="quote">„Są osoby, które po prostu dobrze czują ludzi, atmosferę i&nbsp;tempo wydarzeń. Patryk zdecydowanie do nich należy.”</p>
+            <p>Od lat związany jest z branżą restauracyjną, a organizację przyjęć zna od kuchni. Lubi, kiedy wszystko ma swój rytm, Goście czują się swobodnie, a każdy detal jest dokładnie tam, gdzie powinien. W Avocado Patryk jest blisko Was od pierwszych rozmów o przyjęciu aż po sam dzień wydarzenia.</p>
             <p className="host__contact">
               <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
@@ -106,6 +107,7 @@ export default function Home() {
         <Gallery pics={PICS} />
       </section>
 
+      <Reviews />
       <Faq items={FAQ.slice(0, 5)} />
       <Planner />
     </>

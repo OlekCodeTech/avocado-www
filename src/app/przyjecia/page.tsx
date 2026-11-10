@@ -38,7 +38,7 @@ export default function Przyjecia() {
         alt="Sala plenerowa udekorowana na chrzciny"
         eyebrow="Przyjęcia · rodzinne i firmowe"
         title="Wyjątkowe miejsce spotkań"
-        lead="Ważne chwile wymagają wyjątkowej oprawy. Niezależnie od tego, czy organizujecie chrzciny, komunię, jubileusz czy spotkanie firmowe – pomożemy Wam zrealizować niezapomniane wydarzenie."
+        lead="Ważne chwile wymagają wyjątkowej oprawy. Avocado ma dla Ciebie i Twojej grupy przestrzeń, w której uciekniecie na chwilę od codzienności. Niezależnie czy organizujesz chrzciny, przyjęcie, czy jubileusz – my pomożemy Ci zrealizować niezapomniane wydarzenie."
       >
         <Link href={planHref("Chrzciny")} className="btn btn--light">Zapytaj o termin</Link>
         <a href="#firmowe" className="btn btn--ghost">Imprezy firmowe</a>
@@ -47,8 +47,8 @@ export default function Przyjecia() {
       <section className="sec">
         <div className="wrap">
           <Reveal className="head head--row">
-            <div><p className="eyebrow">Świętujcie i bawcie się</p><h2>Każda okazja ma u nas swoje miejsce</h2></div>
-            <p className="head__aside">My zaopiekujemy się całym wydarzeniem, abyście Wy mogli skupić się na świętowaniu.</p>
+            <div><p className="eyebrow">Świętuj i baw się w Avocado</p><h2>Każda okazja ma u nas swoje miejsce</h2></div>
+            <p className="head__aside">Każde przyjęcie traktujemy indywidualnie – możesz je z nami zaplanować według własnych upodobań, a jeśli nie masz na to czasu, we wszystkim chętnie pomożemy.</p>
           </Reveal>
           <div className="tiles tiles--4">
             {KINDS.map((x, k) => (
@@ -69,10 +69,10 @@ export default function Przyjecia() {
         <div className="wrap split split--rev">
           <Reveal className="split__img"><img src={asset("/img/plac-zabaw.webp")} alt="Plac zabaw w ogrodzie Avocado" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
-            <p className="eyebrow">Dla najmłodszych</p>
-            <h2>Dzieci mają gdzie się wybiegać</h2>
-            <p>Duży plac zabaw w ogrodzie, trawnik i brzozowy las tuż za salą. Rodzice siedzą przy stole, a dzieci bawią się w zasięgu wzroku. Menu dziecięce przygotowujemy osobno.</p>
-            <ul className="ticks"><li>Plac zabaw i ogrodzony teren</li><li>Menu dla dzieci</li><li>Przewijak i krzesełka do karmienia</li></ul>
+            <p className="eyebrow">Kulinarna kreatywność i obsługa</p>
+            <h2>Nasz szef kuchni opracuje z Wami dedykowane, sezonowe menu</h2>
+            <p>Menu, które zaskoczy największych smakoszy. Podczas wydarzenia zaopiekuje się Wami doświadczony zespół – zadbają oni, aby wszyscy goście byli napici, najedzeni i uśmiechnięci. A dzieci mają do dyspozycji plac zabaw w ogrodzie, w zasięgu wzroku rodziców.</p>
+            <ul className="ticks"><li>Perfekcyjna sceneria</li><li>Pyszne jedzenie</li><li>5* obsługa</li><li>Plac zabaw i ogród dla dzieci</li></ul>
           </Reveal>
         </div>
       </section>
@@ -82,13 +82,13 @@ export default function Przyjecia() {
           <Reveal className="split__img"><img src={asset("/img/firma-stol.webp")} alt="Bar i długi stół w sali bankietowej" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Imprezy firmowe</p>
-            <h2>Przenieście się z biura do azylu</h2>
-            <p>Integracje, bankiety, konferencje i spotkania z klientami. Dwie sale, które dopasujemy do charakteru wydarzenia, menu ustalane indywidualnie i catering poza Avocado.</p>
+            <h2>Przenieś się z biura do azylu</h2>
+            <p>Najlepsze miejsce na niezapomniane spotkanie lub event firmowy. W Avocado posiadamy przestrzenie idealne do organizacji firmowych spotkań, konferencji oraz pozostałych eventów. Menu na przyjęcia firmowe i cateringi zawsze ustalamy indywidualnie tak, aby sprostać Waszym oczekiwaniom. Podczas wydarzenia zaopiekuje się Wami doświadczony zespół – zadbamy, aby każdy bankiet, konferencja czy impreza firmowa na długo została w pamięci Państwa gości.</p>
             <ul className="ticks">
-              <li>Nagłośnienie, projektor, ekran i mikrofony</li>
+              <li>Integracja na najwyższym poziomie</li>
+              <li>Profesjonalne zaplecze multimedialne (nagłośnienie, projektor, ekran, mikrofony)</li>
               <li>Dedykowany koordynator wydarzenia</li>
-              <li>Przerwy kawowe, lunch, kolacja – lub catering u Was</li>
-              <li>Noclegi dla uczestników na miejscu</li>
+              <li>Przyjęcie na sali lub catering</li>
             </ul>
             <Link href={planHref("Impreza firmowa")} className="link">Zapytaj o ofertę dla firmy →</Link>
           </Reveal>
@@ -100,7 +100,7 @@ export default function Przyjecia() {
         <Gallery pics={PICS} cols={3} wide={[0]} />
       </section>
 
-      <CtaBand title={<>Wydarzenie, które na długo<br />zapadnie w pamięć</>} text="Zawsze polecamy odwiedzić Avocado – pozwoli to poczuć atmosferę miejsca i lepiej poznać to, co mamy do zaoferowania." okazja="Chrzciny" />
+      <CtaBand title={<>Wydarzenie, które na długo<br />zapadnie w pamięci wszystkich</>} text="Zawsze polecamy odwiedzenie Avocado. Pozwoli to poczuć wyjątkową atmosferę miejsca i lepiej poznać to, co mamy do zaoferowania." okazja="Chrzciny" button="Zacznij planować" />
     </>
   );
 }
