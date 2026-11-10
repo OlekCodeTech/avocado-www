@@ -6,14 +6,14 @@ import { CONTACT } from "@/lib/asset";
 /* Avocado + miasta (czasy dojazdu z obecnej strony). Współrzędne Avocado z systemu rezerwacji. */
 const AVO: [number, number] = [51.541871, 18.669349];
 // side: po której stronie kropki stoi etykieta (żeby się nie nakładały)
-const CITIES: { name: string; min: number; pos: [number, number]; side?: "l" | "b" }[] = [
-  { name: "Sieradz", min: 10, pos: [51.5956, 18.73], side: "b" },
+const CITIES: { name: string; min: number; pos: [number, number]; side?: "l" | "b" | "t" }[] = [
+  { name: "Sieradz", min: 10, pos: [51.5956, 18.73], side: "t" },
   { name: "Zduńska Wola", min: 20, pos: [51.5992, 18.9389], side: "l" },
   { name: "Łask", min: 30, pos: [51.5908, 19.134] },
-  { name: "Wieluń", min: 40, pos: [51.2207, 18.5697] },
-  { name: "Wieruszów", min: 40, pos: [51.2963, 18.1539], side: "l" },
-  { name: "Łódź", min: 55, pos: [51.7592, 19.456] },
-  { name: "Kalisz", min: 55, pos: [51.7611, 18.091], side: "l" },
+  { name: "Wieluń", min: 40, pos: [51.2207, 18.5697], side: "b" },
+  { name: "Wieruszów", min: 40, pos: [51.2963, 18.1539], side: "b" },
+  { name: "Łódź", min: 55, pos: [51.7592, 19.456], side: "l" },
+  { name: "Kalisz", min: 55, pos: [51.7611, 18.091] },
 ];
 
 const LEAFLET_JS = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
@@ -61,7 +61,7 @@ export default function LiveMap() {
         icon: L.divIcon({ className: "lm-avo", html: `<span class="lm-pin"></span><span class="lm-avo-lbl"><b>Avocado</b>Kuśnie 32A</span>`, iconAnchor: [14, 14] }),
       }).addTo(map!).bindPopup(`<b>Restauracja Avocado</b><br>${CONTACT.address}<br><a href="${CONTACT.maps}" target="_blank" rel="noopener">Wyznacz trasę →</a>`);
 
-      map.fitBounds(bounds.pad(0.05));
+      map.fitBounds(bounds, { padding: [70, 110] });
       const onResize = () => map?.invalidateSize();
       window.addEventListener("resize", onResize);
     }).catch(() => { /* bez mapy – zostaje lista czasów dojazdu */ });
