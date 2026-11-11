@@ -291,7 +291,11 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
   .motto__item:first-child{border-top:0}
   .review{padding:28px 24px}
   .host__img{max-width:360px}
-  .hero__dots{display:none}
+  .hero__dots{right:auto;left:24px;bottom:auto;top:92px;flex-direction:row;flex-wrap:wrap;gap:6px 16px;align-items:center}
+  .hero__dots button{font-size:.62rem;letter-spacing:.12em;gap:0;padding:6px 0;border-bottom:1px solid transparent}
+  .hero__dots button::after{display:none}
+  .hero__dots button.on{border-bottom-color:#fff}
+  .hero .eyebrow{line-height:1.5}
   .head--row{flex-direction:column;align-items:flex-start}
   .foot__grid{grid-template-columns:1fr 1fr}
 }
@@ -304,6 +308,7 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
   .sec,.stay,.cta{padding:80px 0}
   .hero{min-height:560px;height:88svh}
   .hero__txt{padding:0 16px 40px}
+  .hero__dots{left:16px;top:84px}
   .hero--page .hero__txt{padding-top:120px}
   .reels{grid-template-columns:repeat(3,72%);overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;margin-right:-16px;padding-right:16px}
   .reel{scroll-snap-align:start}

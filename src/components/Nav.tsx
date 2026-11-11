@@ -26,11 +26,13 @@ export default function Nav({ light = false }: { light?: boolean }) {
     document.documentElement.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  // podstrony bez ciemnego zdjęcia w nagłówku – pasek od razu jasny, żeby logo było widoczne
+  const noHero = /^\/(kontakt|zdjecia)/.test(path);
   const isActive = (href: string) => path.startsWith(href.replace(/\/$/, ""));
 
   return (
     <>
-      <header className={`nav${solid || light ? " is-solid" : ""}${open ? " is-open" : ""}`}>
+      <header className={`nav${solid || light || noHero ? " is-solid" : ""}${open ? " is-open" : ""}`}>
         <div className="nav__in">
           <Link href="/" className="logo" aria-label="Avocado – strona główna" onClick={() => setOpen(false)}>
             <Logo className="logo__svg" />

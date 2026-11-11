@@ -25,7 +25,7 @@ const BANK = [
   { src: "/img/bk-5.webp", alt: "Stół pary młodej" },
   { src: "/img/bk-7.webp", alt: "Sala z błękitnymi obrusami" },
   { src: "/img/bk-2.webp", alt: "Dekoracja z białych i pomarańczowych kwiatów" },
-  { src: "/img/bk-9.webp", alt: "Sala wieczorem – czarne obrusy" },
+  { src: "/img/nw-5.webp", alt: "Sala bankietowa w różu i bieli" },
   { src: "/img/wejscie.webp", alt: "Wejście do Avocado" },
 ];
 const PLENER = [
