@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { CONTACT, EVENT_TYPES, PLAN_EVENT } from "@/lib/asset";
 
-const YEARS = [2026, 2027, 2028, 2029, 2030];
+const YEARS = [2026, 2027, 2028, 2029, 2030, 2031];
 const MONTHS = ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"];
 const MONTHS_FULL = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
-const GUESTS = ["do 30", "30–60", "60–100", "100–150", "150+"];
+/** Minimalna liczba gości: komunie od 30, pozostałe przyjęcia od 60 (wydarzenia otwarte bez limitu). */
+const minGuests = (type: string) => (type === "Komunia" ? 30 : type === "Inne" ? 1 : 60);
 const STEPS = ["Okazja", "Termin", "Kontakt"];
 const SUB: Partial<Record<string, string[]>> = {
   Wesele: ["Jednodniowe", "Z poprawinami"],
@@ -54,7 +55,9 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const ok = [!!d.type, !!d.year, !!(d.name && d.phone)][step];
+  const min = minGuests(d.type);
+  const guestsOk = !d.guests || Number(d.guests) >= min;
+  const ok = [!!d.type, !!d.year && guestsOk, !!(d.name && d.phone)][step];
   const now = new Date();
   const firma = d.type === "Impreza firmowa";
 
@@ -62,11 +65,10 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
     <section className={`cta${compact ? " cta--compact" : ""}`} id="planer">
       <div className="wrap cta__grid">
         <div className="cta__intro">
-          <p className="eyebrow eyebrow--light">Terminy 2026–2030</p>
-          <h2>Zaplanujmy<br />Wasz dzień</h2>
-          <p>Trzy krótkie kroki – odezwiemy się w ciągu 24 godzin z wolnymi terminami i propozycją menu.</p>
+          <p className="eyebrow eyebrow--light">Terminy 2026–2031</p>
+          <h2>Zacznij<br />planować</h2>
+          <p>Tylko kilka krótkich kroków dzieli Cię od naszej oferty. Jeśli jednak wolisz kontakt bezpośredni – napisz lub zadzwoń:</p>
           <p className="cta__contact">
-            Wolicie porozmawiać?<br />
             <a href={CONTACT.phoneHref}>{CONTACT.phone}</a><br />
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           </p>
@@ -96,7 +98,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                 <motion.div key={step} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.35 }}>
                   {step === 0 && (
                     <fieldset>
-                      <legend>Co planujecie?</legend>
+                      <legend>Zaplanuj swoje przyjęcie</legend>
                       <div className="opts">
                         {EVENT_TYPES.map((t) => (
                           <button key={t} type="button" className={`opt${d.type === t ? " on" : ""}`} onClick={() => set({ type: t, variant: "" })}>{t}</button>
@@ -134,11 +136,10 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                         </div>
                       )}
                       <legend className="legend2">Ilu gości się spodziewacie?</legend>
-                      <div className="opts">
-                        {GUESTS.map((g) => (
-                          <button key={g} type="button" className={`opt opt--sm${d.guests === g ? " on" : ""}`} onClick={() => set({ guests: g })}>{g}</button>
-                        ))}
-                      </div>
+                      <input className="inp inp--num" type="number" inputMode="numeric" min={min} max={240} placeholder={`np. ${Math.max(min, 80)}`} value={d.guests} onChange={(e) => set({ guests: e.target.value })} aria-label="Liczba gości" />
+                      <p className={`hint${guestsOk ? "" : " hint--err"}`}>
+                        {d.type === "Komunia" ? "Komunie organizujemy od 30 osób." : d.type === "Inne" ? "Wpisz orientacyjną liczbę osób." : "Przyjęcia organizujemy od 60 osób (komunie od 30)."}
+                      </p>
                       <label className="toggle">
                         <input type="checkbox" checked={d.stay} onChange={(e) => set({ stay: e.target.checked })} />
                         <span className="toggle__ui" />
@@ -164,7 +165,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                       <label>Wasza wizja wydarzenia <i>(opcjonalnie)</i><textarea className="inp" rows={2} value={d.msg} onChange={(e) => set({ msg: e.target.value })} /></label>
                       <p className="summary">
                         {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""} · {d.month !== null ? MONTHS_FULL[d.month] + " " : ""}{d.year}
-                        {d.guests ? ` · ${d.guests} gości` : ""}{d.stay ? " · z noclegiem" : ""}
+                        {d.guests ? ` · ${d.guests} os.` : ""}{d.stay ? " · z noclegiem" : ""}
                       </p>
                     </fieldset>
                   )}

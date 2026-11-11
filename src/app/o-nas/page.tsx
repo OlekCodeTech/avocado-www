@@ -15,6 +15,7 @@ export default function ONas() {
     <>
       <PageHero
         img="/img/budynek.webp"
+        more={["/img/intro-10.webp", "/img/intro-11.webp"]}
         alt="Budynek Restauracji Avocado"
         eyebrow="O nas"
         title="Miejsce, o jakim sami marzyliśmy"

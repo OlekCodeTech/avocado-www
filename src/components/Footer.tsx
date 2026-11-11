@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="wrap foot__grid">
           <div className="foot__logo">
             <Logo className="logo__svg" />
-            <p>Restauracja &amp; catering przy brzozowym lesie. Wesela, przyjęcia, wydarzenia i noclegi – 10 minut od Sieradza.</p>
+            <p>Restauracja &amp; catering przy brzozowym lesie. Wesela, przyjęcia, wydarzenia i Avocado Domki – 10 minut od Sieradza.</p>
           </div>
           <div>
             <b>Oferta</b>

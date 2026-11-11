@@ -6,8 +6,8 @@ const TILES = [
   { t: "Wesela", p: "Avocado to perfekcyjne miejsce na Twoje wyjątkowe wesele. Nasz zespół zadba o każdy detal – od przygotowania wnętrz, poprzez menu, po koordynację całego wydarzenia.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
   { t: "Przyjęcia", p: "Niezależnie od okazji, Avocado to świetne miejsce, aby odnowić więzi i wspólnie doświadczyć cudownych chwil podczas przyjęć, jubileuszy i urodzin.", img: "/img/komunia.webp", alt: "Dekoracja komunijna w sali bankietowej", href: "/przyjecia/" },
   { t: "Spotkania firmowe", p: "Zapewnij swoim współpracownikom niezapomniany wieczór. Od tematycznych spotkań, po oficjalne konferencje.", img: "/img/firma-stol.webp", alt: "Bar i długi stół w sali bankietowej", href: "/przyjecia/#firmowe" },
-  { t: "Wydarzenia otwarte", p: "Ekskluzywne spotkania, dostępne dla wszystkich: Sylwester, Kobieciarnia, kolacje degustacyjne.", img: "/img/kobieciarnia.webp", alt: "Kobieciarnia w Avocado", href: "/wydarzenia/" },
-  { t: "Noclegi", p: "8 domków Superior wśród brzóz i pokoje przy sali – goście zostają na noc, a rano poprawiny.", img: "/img/domek-8.webp", alt: "Domek Avocado między brzozami", href: "/noclegi/" },
+  { t: "Wydarzenia otwarte", p: "Ekskluzywne spotkania, dostępne dla wszystkich: Kobieciarnia, kolacje walentynkowe i degustacyjne.", img: "/img/kobieciarnia.webp", alt: "Kobieciarnia w Avocado", href: "/wydarzenia/" },
+  { t: "Avocado Domki", p: "Stylowe, całoroczne domki w otoczeniu brzozowego lasu – kilka kroków od naszych sal.", img: "/img/domek-8.webp", alt: "Domek Avocado między brzozami", href: "/noclegi/" },
   { t: "Nasze sale", p: "Do Twojej dyspozycji mamy dwie niezależne przestrzenie: bankietową do 180 i plenerową do 130 osób.", img: "/img/sala-szeroka.webp", alt: "Sala bankietowa przygotowana na wesele", href: "/sale/" },
 ];
 

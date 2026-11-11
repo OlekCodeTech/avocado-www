@@ -26,8 +26,14 @@ const PICS = [
   { src: "/img/osiemnastka.webp", alt: "Sala udekorowana na 18-stkę" },
   { src: "/img/przyjecia.webp", alt: "Stół z dekoracją z kwiatów" },
   { src: "/img/komunia-dzieci.webp", alt: "Dzieci na trawniku przy dmuchańcu" },
-  { src: "/img/plac-zabaw.webp", alt: "Plac zabaw w ogrodzie Avocado" },
+  { src: "/img/kom-7.webp", alt: "Sala bankietowa przygotowana na komunię" },
   { src: "/img/slodki-stol.webp", alt: "Słodki stół" },
+  { src: "/img/kom-5.webp", alt: "Ścianka komunijna z balonów" },
+  { src: "/img/roc-1.webp", alt: "Sala plenerowa przygotowana na roczek" },
+  { src: "/img/chr-1.webp", alt: "Dekoracja chrztu z misiem i balonami" },
+  { src: "/img/roc-3.webp", alt: "Słodki stół na roczek" },
+  { src: "/img/chr-3.webp", alt: "Dziewczynki bawiące się w ogrodzie" },
+  { src: "/img/plac-zabaw.webp", alt: "Plac zabaw w ogrodzie Avocado" },
 ];
 
 export default function Przyjecia() {
@@ -35,6 +41,7 @@ export default function Przyjecia() {
     <>
       <PageHero
         img="/img/chrzciny.webp"
+        more={["/img/kom-7.webp", "/img/roc-1.webp", "/img/intro-13.webp"]}
         alt="Sala plenerowa udekorowana na chrzciny"
         eyebrow="Przyjęcia · rodzinne i firmowe"
         title="Wyjątkowe miejsce spotkań"
@@ -97,7 +104,7 @@ export default function Przyjecia() {
 
       <section className="sec sec--tight sec--sand">
         <div className="wrap"><Reveal className="head"><p className="eyebrow">Galeria</p><h2>Przyjęcia w Avocado</h2></Reveal></div>
-        <Gallery pics={PICS} cols={3} wide={[0]} />
+        <Gallery pics={PICS} cols={3} wide={[0, 7, 10]} />
       </section>
 
       <CtaBand title={<>Wydarzenie, które na długo<br />zapadnie w pamięci wszystkich</>} text="Zawsze polecamy odwiedzenie Avocado. Pozwoli to poczuć wyjątkową atmosferę miejsca i lepiej poznać to, co mamy do zaoferowania." okazja="Chrzciny" button="Zacznij planować" />

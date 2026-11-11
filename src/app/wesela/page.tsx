@@ -16,19 +16,27 @@ const STEPS = [
   ["Spotkanie", "Zobaczcie nasze obiekty w pełnej okazałości. Umówcie się na spotkanie – pozwoli to poczuć atmosferę miejsca oraz bliżej zapoznać się z nami i naszą ofertą."],
   ["Kulinarna kreatywność", "Wraz z naszym szefem kuchni przygotowujemy sezonowe menu, udoskonalamy je i szyjemy na miarę Twoich potrzeb. Jesteśmy otwarci na Wasze propozycje, które szczegółowo omawiamy na spotkaniach."],
   ["Ceremonia", "Jednym z wielu atutów naszych sal jest możliwość organizacji ślubu w plenerze. Wystarczy Wasza chęć, a my zaaranżujemy dla Was ślub jak z bajki w otoczeniu naszego ogrodu."],
-  ["Wesele", "Podczas ceremonii zaopiekuje się Wami doświadczony zespół koordynatorów oraz obsługi kelnerskiej – nikomu niczego nie zabraknie."],
+  ["Wesele", "Podczas ceremonii zaopiekuje się Wami doświadczony zespół koordynatorów oraz obsługi kelnerskiej – zawsze dbamy o to, aby goście czuli się zaopiekowani od samego początku."],
   ["Poprawiny", "Goście nocują na miejscu, a rano spotykacie się przy wspólnym stole – u nas albo na tarasie."],
 ];
 
 const PICS = [
   { src: "/img/sala-wesele-noc.webp", alt: "Sala bankietowa wieczorem w dniu wesela" },
   { src: "/img/ceremonia-goscie.webp", alt: "Ceremonia ślubna wśród brzóz" },
-  { src: "/img/g1.webp", alt: "Wejście pary młodej na salę" },
+  { src: "/img/intro-01.webp", alt: "Tort weselny na tarasie sali plenerowej" },
   { src: "/img/neon.webp", alt: "Ścianka z kwiatów z neonem" },
   { src: "/img/g3.webp", alt: "Pierwszy taniec w dymie" },
   { src: "/img/plener-wieczor.webp", alt: "Tort i zimne ognie wśród brzóz" },
   { src: "/img/para-wejscie.webp", alt: "Para młoda tańczy na sali" },
   { src: "/img/para-love.webp", alt: "Para młoda przy napisie LOVE" },
+  { src: "/img/intro-06.webp", alt: "Para młoda wśród brzóz o zachodzie słońca" },
+  { src: "/img/nw-2.webp", alt: "Para młoda z psem w brzozowym lesie" },
+  { src: "/img/nw-3.webp", alt: "Pierwszy taniec w sali plenerowej" },
+  { src: "/img/nw-4.webp", alt: "Zabawa weselna w sali plenerowej" },
+  { src: "/img/intro-05.webp", alt: "Para młoda wieczorem w ogrodzie" },
+  { src: "/img/intro-09.webp", alt: "Para młoda przy słodkim stole" },
+  { src: "/img/pl-tort-2.webp", alt: "Tort na tle makramy i fontann iskier" },
+  { src: "/img/intro-08.webp", alt: "Wejście pary młodej na salę bankietową" },
 ];
 
 const FAQ_W = [FAQ[0], FAQ[1], FAQ[4], FAQ[3], FAQ[2], FAQ[7], FAQ[13]];
@@ -38,6 +46,7 @@ export default function Wesela() {
     <>
       <PageHero
         img="/img/sala-wesele-noc.webp"
+        more={["/img/intro-06.webp", "/img/intro-08.webp", "/img/intro-02.webp", "/img/nw-1.webp"]}
         alt="Sala bankietowa Avocado przygotowana na wesele"
         eyebrow="Wesela · Kuśnie koło Sieradza"
         title="Magiczne i niezapomniane wesele"
@@ -92,8 +101,8 @@ export default function Wesela() {
           </Reveal>
           <div className="halls">
             {[
-              { ...HALLS.bankietowa, img: "/img/sala-biala.webp", txt: "Nowoczesne wnętrza. Pojemność do 180 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
-              { ...HALLS.plenerowa, img: "/img/plener-lato.webp", txt: "Industrialny sznyt. Pojemność do 130 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
+              { ...HALLS.bankietowa, img: "/img/hall-bank.webp", txt: "Nowoczesne wnętrza. Pojemność do 180 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
+              { ...HALLS.plenerowa, img: "/img/hall-plener.webp", txt: "Industrialny sznyt. Pojemność do 130 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
             ].map((h, k) => (
               <Reveal key={h.name} delay={k * 0.1}>
                 <Link href={h.href} className="hall">

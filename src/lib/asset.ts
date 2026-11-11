@@ -44,7 +44,7 @@ export const NAV = [
   { label: "Wesela", href: "/wesela/" },
   { label: "Przyjęcia", href: "/przyjecia/" },
   { label: "Sale", href: "/sale/" },
-  { label: "Noclegi", href: "/noclegi/" },
+  { label: "Avocado Domki", href: "/noclegi/" },
   { label: "Wydarzenia", href: "/wydarzenia/" },
   { label: "O nas", href: "/o-nas/" },
   { label: "Kontakt", href: "/kontakt/" },
@@ -72,7 +72,7 @@ export const planHref = (okazja?: string, extra?: Record<string, string>) => {
 export const FAQ = [
   ["Jak mogę dokonać rezerwacji?", "Skontaktuj się z nami telefonicznie lub mailowo – omówimy szczegóły i dostępność terminu."],
   ["Jakie są warunki wynajmu sali?", "Rezerwacja wymaga podpisania umowy i wpłaty zadatku."],
-  ["Czy sala posiada pokoje noclegowe?", "Tak. W sali bankietowej posiadamy podstawową bazę noclegową – 4 pokoje dla 9 osób. Dodatkowo do dyspozycji gości jest 8 domków."],
+  ["Czy sala posiada pokoje noclegowe?", "Tak. W sali bankietowej mamy dwa pokoje dwuosobowe – głównie dla naszych Par Młodych. Dla Gości przygotowaliśmy Avocado Domki: 8 całorocznych domków kilka kroków od sal."],
   ["Czy można zorganizować wydarzenie na świeżym powietrzu?", "Tak, oferujemy również przestrzeń plenerową."],
   ["Czy oferujecie usługę koordynatora wesel?", "Tak, każda impreza ma dedykowanego koordynatora."],
   ["Czy sale są klimatyzowane?", "Tak, zapewniamy komfortową temperaturę o każdej porze roku."],

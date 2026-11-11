@@ -6,10 +6,23 @@ import { asset, EVENT_TYPES } from "@/lib/asset";
 import { plan } from "@/lib/plan";
 
 const SLIDES = [
-  { src: "/img/hero.webp", alt: "Jasna sala bankietowa Avocado z kwiatami, za oknami zieleń", label: "Sala bankietowa" },
-  { src: "/img/hero-2.webp", alt: "Para młoda wieczorem wśród brzóz i girland lampek", label: "Sala plenerowa" },
-  { src: "/img/plener-lato.webp", alt: "Sala plenerowa latem na skraju brzozowego lasu", label: "Ogród i las" },
+  { g: 0, src: "/img/intro-11.webp", alt: "Sala bankietowa – okrągłe stoły z czarnymi obrusami" },
+  { g: 0, src: "/img/intro-08.webp", alt: "Wejście pary młodej na salę bankietową" },
+  { g: 0, src: "/img/intro-13.webp", alt: "Sala bankietowa – stoły z pomarańczowymi kwiatami" },
+  { g: 0, src: "/img/intro-09.webp", alt: "Para młoda przy słodkim stole" },
+  { g: 0, src: "/img/intro-14.webp", alt: "Sala bankietowa wieczorem – błękitne obrusy" },
+  { g: 0, src: "/img/intro-12.webp", alt: "Goście oglądają film na sali bankietowej" },
+  { g: 1, src: "/img/intro-15.webp", alt: "Sala plenerowa – okrągłe stoły i ściana z drewna" },
+  { g: 1, src: "/img/intro-02.webp", alt: "Para młoda przed salą plenerową wieczorem" },
+  { g: 1, src: "/img/intro-07.webp", alt: "Jasne wnętrze sali plenerowej" },
+  { g: 1, src: "/img/intro-01.webp", alt: "Tort weselny na tarasie sali plenerowej" },
+  { g: 1, src: "/img/intro-03.webp", alt: "Goście pod girlandami świateł przy sali plenerowej" },
+  { g: 1, src: "/img/intro-04.webp", alt: "Tort i fontanny iskier na tarasie" },
+  { g: 2, src: "/img/intro-06.webp", alt: "Para młoda wśród brzóz o zachodzie słońca" },
+  { g: 2, src: "/img/intro-10.webp", alt: "Sala plenerowa na skraju brzozowego lasu" },
+  { g: 2, src: "/img/intro-05.webp", alt: "Para młoda wieczorem w ogrodzie" },
 ];
+const GROUPS = ["Sala bankietowa", "Sala plenerowa", "Ogród i las"];
 
 export default function Hero() {
   const [i, setI] = useState(0);
@@ -17,9 +30,9 @@ export default function Hero() {
 
   useEffect(() => {
     if (reduce) return;
-    const t = setInterval(() => setI((v) => (v + 1) % SLIDES.length), 6500);
+    const t = setInterval(() => setI((v) => (v + 1) % SLIDES.length), 5000);
     return () => clearInterval(t);
-  }, [reduce]);
+  }, [reduce, i]);
 
   return (
     <section className="hero" id="top">
@@ -58,7 +71,7 @@ export default function Hero() {
         </h1>
 
         <motion.div className="picker" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.8 }}>
-          <span className="picker__q">Co planujecie?</span>
+          <span className="picker__q">Zaplanuj swoje przyjęcie</span>
           <div className="picker__chips">
             {EVENT_TYPES.slice(0, 6).map((t) => (
               <button key={t} className="chip" onClick={() => plan(t)}>{t}</button>
@@ -68,9 +81,9 @@ export default function Hero() {
       </div>
 
       <div className="hero__dots" role="tablist" aria-label="Zdjęcia w tle">
-        {SLIDES.map((s, k) => (
-          <button key={s.src} role="tab" aria-selected={k === i} aria-label={s.label} onClick={() => setI(k)} className={k === i ? "on" : ""}>
-            <span>{s.label}</span>
+        {GROUPS.map((label, g) => (
+          <button key={label} role="tab" aria-selected={SLIDES[i].g === g} aria-label={label} onClick={() => setI(SLIDES.findIndex((s) => s.g === g))} className={SLIDES[i].g === g ? "on" : ""}>
+            <span>{label}</span>
           </button>
         ))}
       </div>

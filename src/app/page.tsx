@@ -8,18 +8,23 @@ import Gallery from "@/components/Gallery";
 import Planner from "@/components/Planner";
 import Faq from "@/components/Faq";
 import Reviews from "@/components/Reviews";
+import Reels from "@/components/Reels";
 import Reveal from "@/components/Reveal";
 import { asset, CONTACT, FAQ, planHref } from "@/lib/asset";
 
 const PICS = [
-  { src: "/img/g1.webp", alt: "Wejście pary młodej na salę" },
+  { src: "/img/nw-1.webp", alt: "Pocałunek pary młodej podczas ceremonii w ogrodzie" },
   { src: "/img/neon.webp", alt: "Ścianka z kwiatów z neonowym napisem" },
   { src: "/img/g3.webp", alt: "Pierwszy taniec w dymie" },
-  { src: "/img/g7.webp", alt: "Długi drewniany stół ze świecami" },
+  { src: "/img/nw-6.webp", alt: "Para młoda wśród zimnych ogni" },
   { src: "/img/ceremonia-goscie.webp", alt: "Ceremonia ślubna w ogrodzie wśród brzóz" },
   { src: "/img/para-tort.webp", alt: "Para młoda przy torcie" },
   { src: "/img/dzieci-brzozy.webp", alt: "Dzieci bawiące się wśród brzóz" },
-  { src: "/img/plener-noc.webp", alt: "Sala plenerowa nocą" },
+  { src: "/img/pl-zew-3.webp", alt: "Sala plenerowa o zmierzchu" },
+  { src: "/img/intro-06.webp", alt: "Para młoda wśród brzóz o zachodzie słońca" },
+  { src: "/img/bk-1.webp", alt: "Łuk z kwiatów z neonem w sali bankietowej" },
+  { src: "/img/pl-wn-2.webp", alt: "Długie stoły w sali plenerowej" },
+  { src: "/img/intro-09.webp", alt: "Para młoda przy słodkim stole" },
 ];
 
 export default function Home() {
@@ -33,7 +38,7 @@ export default function Home() {
             ["2 sale", "do 240 osób – bankietowa i plenerowa"],
             ["Wyjątkowa kuchnia", "sezonowe menu szefa kuchni Roberta Piąstki"],
             ["Plenerowa magia", "ślub i przyjęcie przy brzozowym lesie"],
-            ["Noclegi i catering", "domki na miejscu, catering na każdą okazję"],
+            ["Avocado Domki", "8 domków na miejscu, catering na każdą okazję"],
           ].map(([k, v], i) => (
             <Reveal key={k} delay={i * 0.06}>
               <span className="facts__k">{k}</span>
@@ -59,15 +64,16 @@ export default function Home() {
 
       <Offer />
       <Spaces />
+      <Reels />
 
       <section className="stay" id="noclegi">
         <div className="wrap stay__grid">
           <Reveal className="stay__txt">
-            <p className="eyebrow eyebrow--light">Noclegi</p>
-            <h2>Goście zostają<br />na miejscu</h2>
-            <p>Osiem domków Superior wśród brzóz – do 6 osób, z aneksem i tarasem – oraz podstawowa baza noclegowa w sali bankietowej: 4 pokoje dla 9 osób. Goście spoza okolicy śpią kilka kroków od sali, a rano wszyscy spotykają się na poprawinach. Rezerwacja online.</p>
+            <p className="eyebrow eyebrow--light">Avocado Domki</p>
+            <h2>Komfort, natura<br />i wyjątkowy wypoczynek</h2>
+            <p>Nasze stylowe, całoroczne domki położone są w malowniczym otoczeniu brzozowego lasu. Zaledwie kilka kroków dzieli je od naszych sal bankietowych, dzięki czemu stanowią doskonałe miejsce noclegowe dla Gości weselnych, uczestników przyjęć okolicznościowych i wydarzeń firmowych. Rezerwacja online.</p>
             <div className="btns">
-              <Link href="/noclegi/" className="btn btn--light">Zobacz noclegi</Link>
+              <Link href="/noclegi/" className="btn btn--light">Zobacz Avocado Domki</Link>
               <Link href={planHref(undefined, { nocleg: "1" })} className="btn btn--ghost">Zapytaj o ofertę</Link>
             </div>
           </Reveal>

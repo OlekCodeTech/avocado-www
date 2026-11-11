@@ -18,7 +18,7 @@ export default function Kontakt() {
           <Reveal>
             <p className="eyebrow">Kontakt</p>
             <h1>Chcesz dowiedzieć się więcej<br />lub zarezerwować termin?</h1>
-            <p className="contact__lead">Skontaktuj się z nami – chętnie pomożemy! Najszybciej przez planer poniżej: w trzech krokach zbierzemy to, co potrzebne do wyceny, i oddzwonimy z wolnymi terminami.</p>
+            <p className="contact__lead">Skontaktuj się z nami – chętnie pomożemy!</p>
           </Reveal>
           <Reveal delay={0.1} className="contact__cards">
             <div className="ccard">

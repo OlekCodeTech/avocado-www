@@ -18,17 +18,29 @@ const BANK = [
   { src: "/img/sala-szeroka.webp", alt: "Sala bankietowa w świetle dziennym" },
   { src: "/img/sala-biala.webp", alt: "Sala bankietowa z długimi stołami" },
   { src: "/img/bank-wieczor.webp", alt: "Sala bankietowa wieczorem" },
+  { src: "/img/bk-1.webp", alt: "Łuk z kwiatów z neonem" },
   { src: "/img/sala-dlugie-stoly.webp", alt: "Układ długich stołów" },
+  { src: "/img/bk-3.webp", alt: "Okrągłe stoły przy oknach" },
   { src: "/img/stol-dlugi.webp", alt: "Drewniany stół ze świecami" },
+  { src: "/img/bk-5.webp", alt: "Stół pary młodej" },
+  { src: "/img/bk-7.webp", alt: "Sala z błękitnymi obrusami" },
+  { src: "/img/bk-2.webp", alt: "Dekoracja z białych i pomarańczowych kwiatów" },
+  { src: "/img/bk-9.webp", alt: "Sala wieczorem – czarne obrusy" },
   { src: "/img/wejscie.webp", alt: "Wejście do Avocado" },
 ];
 const PLENER = [
-  { src: "/img/plener-lato.webp", alt: "Sala plenerowa latem" },
+  { src: "/img/intro-15.webp", alt: "Okrągłe stoły w sali plenerowej" },
   { src: "/img/plener-wnetrze.webp", alt: "Jasne wnętrze sali plenerowej" },
-  { src: "/img/ceremonia-las.webp", alt: "Ceremonia w lesie – krzesła wśród brzóz" },
-  { src: "/img/plener-noc.webp", alt: "Sala plenerowa nocą" },
+  { src: "/img/pl-wn-2.webp", alt: "Długie stoły z zielenią" },
+  { src: "/img/pl-zew-3.webp", alt: "Sala plenerowa o zmierzchu" },
   { src: "/img/plener-stoly.webp", alt: "Długie stoły w sali plenerowej" },
   { src: "/img/plener-zima.webp", alt: "Sala plenerowa zimą" },
+  { src: "/img/pl-wn-1.webp", alt: "Białe stoły w sali plenerowej" },
+  { src: "/img/pl-wn-4.webp", alt: "Sala plenerowa z widokiem na las" },
+  { src: "/img/pl-zew-2.webp", alt: "Goście na tarasie sali plenerowej" },
+  { src: "/img/intro-07.webp", alt: "Sufit z tkaniny i ściana z drewna" },
+  { src: "/img/pl-wn-7.webp", alt: "Stół pary młodej w sali plenerowej" },
+  { src: "/img/pl-las.webp", alt: "Brzozowy las przy sali plenerowej" },
 ];
 
 export default function Sale() {
@@ -36,6 +48,7 @@ export default function Sale() {
     <>
       <PageHero
         img="/img/plener-dron.webp"
+        more={["/img/intro-11.webp", "/img/intro-10.webp", "/img/intro-15.webp", "/img/intro-14.webp"]}
         alt="Sala plenerowa Avocado z lotu ptaka"
         eyebrow="Nasze obiekty"
         title="Dwie niezależne przestrzenie"
@@ -53,7 +66,7 @@ export default function Sale() {
               <p className="eyebrow">Sala bankietowa · Pojemność: do 180 osób</p>
               <h2>Nowoczesne wnętrza</h2>
               <p>Nowoczesne wnętrze z drewnianym sufitem, ciepłym światłem i dużymi oknami z widokiem na zieleń. Neutralna baza, którą łatwo dopasować do Waszego stylu – od klasyki po minimalizm. Parkiet, bar i słodki stół mają swoje miejsce, a goście nie tłoczą się przy przejściach.</p>
-              <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}<li>Baza noclegowa: 4 pokoje dla 9 osób</li></ul>
+              <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}<li>Dwa pokoje dwuosobowe – głównie dla naszych Par Młodych</li></ul>
               <Link href={planHref()} className="link">Zapytaj o salę bankietową →</Link>
             </Reveal>
           </div>
@@ -85,7 +98,7 @@ export default function Sale() {
               { t: "Ogród i las", p: "Miejsce na ceremonię, sesję zdjęciową i wieczorne ognisko.", img: "/img/ceremonia-las.webp" },
               { t: "Plac zabaw", p: "Dzieci bawią się w zasięgu wzroku rodziców.", img: "/img/plac-zabaw.webp" },
               { t: "Taras", p: "Kawa o poranku i drink wieczorem – z widokiem na zieleń.", img: "/img/g8.webp" },
-              { t: "Noclegi", p: "8 domków i pokoje kilka kroków od sali.", img: "/img/domek-taras.webp", href: "/noclegi/" },
+              { t: "Avocado Domki", p: "8 całorocznych domków kilka kroków od sal.", img: "/img/domek-taras.webp", href: "/noclegi/" },
             ].map((x, k) => (
               <Reveal key={x.t} delay={k * 0.08}>
                 {x.href ? (

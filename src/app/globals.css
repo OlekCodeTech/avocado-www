@@ -133,6 +133,15 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
 .ticks li{padding-left:24px;position:relative}
 .ticks li::before{content:"";position:absolute;left:0;top:.8em;width:12px;height:1px;background:var(--gold)}
 
+/* REELS */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.reel{margin:0;position:relative;overflow:hidden;background:var(--sand)}
+.clip{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--sand)}
+.clip--wide{aspect-ratio:16/9;margin-top:36px}
+.reel figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;color:#fff;font:500 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(180deg,transparent,rgba(20,20,16,.65))}
+.planner .inp--num{max-width:180px;border:1px solid rgba(255,255,255,.35);padding:12px 14px;border-radius:2px}
+.hint{font-size:.82rem;opacity:.75;margin-top:8px}
+.hint--err{color:#F2B8A8;opacity:1}
 /* REVIEWS */
 .reviews{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px}
 .review{background:var(--bg);padding:38px 40px;border:1px solid var(--line);height:100%;display:flex;flex-direction:column;gap:22px}
@@ -295,6 +304,9 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
   .sec,.stay,.cta{padding:80px 0}
   .hero{min-height:560px;height:88svh}
   .hero__txt{padding:0 16px 40px}
+  .hero--page .hero__txt{padding-top:120px}
+  .reels{grid-template-columns:repeat(3,72%);overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;margin-right:-16px;padding-right:16px}
+  .reel{scroll-snap-align:start}
   .chip{padding:9px 14px;font-size:.84rem}
   .tiles{grid-template-columns:1fr 1fr;gap:16px}
   .tile p{display:none}
@@ -316,7 +328,10 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.dishes__track{transform:none}}
 
 /* ===== PODSTRONY ===== */
-.hero--page{height:min(72vh,680px);min-height:480px}
+.hero--page{height:auto;min-height:min(72vh,680px)}
+.hero--page .hero__txt{padding-top:150px}
+.hero__tag{margin-top:26px}
+.hero--page .hero__shade{background:linear-gradient(90deg,rgba(20,20,16,.62) 0%,rgba(20,20,16,.28) 60%,rgba(20,20,16,.12) 100%),linear-gradient(180deg,rgba(20,20,16,.45) 0%,rgba(20,20,16,.15) 30%,rgba(20,20,16,.4) 100%)}
 .hero--page h1{font-size:clamp(2.4rem,5.2vw,4.2rem);max-width:14ch}
 .hero__lead{max-width:560px;margin:22px 0 30px;font-size:1.05rem;opacity:.94}
 .hero--page .btns{margin-top:0}

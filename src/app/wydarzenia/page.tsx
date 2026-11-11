@@ -4,44 +4,50 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
 import CtaBand from "@/components/CtaBand";
+import Clip from "@/components/Clip";
 import { asset, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Wydarzenia otwarte",
-  description: "Otwarte wydarzenia w Avocado koło Sieradza: Sylwester, Kobieciarnia, kolacje degustacyjne. Sprawdź kalendarz i zarezerwuj miejsce.",
+  description: "Otwarte wydarzenia w Avocado koło Sieradza: Kobieciarnia, kolacje walentynkowe i degustacyjne. Sprawdź kalendarz i zarezerwuj miejsce.",
 };
 
 const EVENTS = [
-  { d: "31", m: "gru", y: "2026", t: "Sylwester w Avocado", p: "Bal z zespołem na żywo, menu szefa kuchni i toast o północy pod gwiazdami.", tag: "Zapisy otwarte" },
   { d: "06", m: "mar", y: "2027", t: "Kobieciarnia", p: "Wieczór dla kobiet: warsztaty, strefa relaksu, lampka wina i kolacja w dobrym towarzystwie.", tag: "Zapisy otwarte" },
   { d: "14", m: "lut", y: "2027", t: "Kolacja walentynkowa", p: "Kilkudaniowe menu szefa kuchni dla dwojga, świece i muzyka na żywo. Jak co roku – miejsca znikają szybko.", tag: "Termin wkrótce" },
   { d: "—", m: "", y: "wkrótce", t: "Kolacja degustacyjna", p: "Kilkudaniowe menu sezonowe szefa kuchni, każde danie opowiedziane przy stole, do tego dobrane wina i muzyka na żywo. Termin ogłosimy wkrótce.", tag: "Termin wkrótce" },
 ];
 
 const GAL = {
-  sylwester: [
-    { src: "/img/sylwester.webp", alt: "Sala udekorowana na sylwestra 2025" },
-    { src: "/img/sylwester-2.webp", alt: "Stoły sylwestrowe z pomarańczowymi kwiatami" },
-    { src: "/img/sylwester-zespol.webp", alt: "Zespół muzyczny na scenie" },
-    { src: "/img/sylwester-stol.webp", alt: "Dekoracja stołu z cytrusami" },
-  ],
   kobieciarnia: [
     { src: "/img/kobieciarnia.webp", alt: "Uczestniczki przy ściance Kobieciarni" },
     { src: "/img/kobieciarnia-sala.webp", alt: "Sala udekorowana na Kobieciarnię" },
     { src: "/img/kobieciarnia-drinki.webp", alt: "Drinki powitalne" },
     { src: "/img/kobieciarnia-taniec.webp", alt: "Uczestniczki na parkiecie" },
+    { src: "/img/kob-5.webp", alt: "Sala przygotowana na Kobieciarnię" },
+    { src: "/img/kob-7.webp", alt: "Bar i strefa powitalna" },
+    { src: "/img/kob-9.webp", alt: "Uczestniczki przy ściance Kobieciarni" },
+    { src: "/img/kob-6.webp", alt: "Stoły z czerwonymi kwiatami" },
   ],
   walentynki: [
     { src: "/img/walentynki.webp", alt: "Sala przygotowana na kolację walentynkową" },
     { src: "/img/walentynki-danie.webp", alt: "Danie z kolacji walentynkowej" },
     { src: "/img/walentynki-kuchnia.webp", alt: "Zespół kuchni przy wydawce" },
     { src: "/img/walentynki-stol.webp", alt: "Stół z czerwonymi kwiatami" },
+    { src: "/img/wal-5.webp", alt: "Deser z kolacji walentynkowej" },
+    { src: "/img/wal-7.webp", alt: "Stół dla dwojga ze świecami" },
+    { src: "/img/wal-8.webp", alt: "Sala w czerwieni i czerni" },
+    { src: "/img/wal-10.webp", alt: "Okrągłe stoły przygotowane na kolację" },
   ],
   degustacja: [
     { src: "/img/degust-sala.webp", alt: "Sala przygotowana na kolację degustacyjną" },
     { src: "/img/degust-sos.webp", alt: "Polewanie dania sosem" },
     { src: "/img/degust-talerze.webp", alt: "Talerze gotowe do wydania" },
     { src: "/img/degust-desery.webp", alt: "Desery z malinami" },
+    { src: "/img/dg-5.webp", alt: "Sala w dniu kolacji degustacyjnej" },
+    { src: "/img/dg-6.webp", alt: "Przystawki gotowe do wydania" },
+    { src: "/img/dg-7.webp", alt: "Zespół kuchni wydaje dania" },
+    { src: "/img/dg-8.webp", alt: "Kucharze przy wydawce" },
   ],
 };
 
@@ -50,6 +56,7 @@ export default function Wydarzenia() {
     <>
       <PageHero
         img="/img/kobieciarnia-sala.webp"
+        more={["/img/walentynki.webp", "/img/degust-sala.webp", "/img/kob-5.webp"]}
         alt="Sala Avocado udekorowana na Kobieciarnię"
         eyebrow="Zapraszamy na otwarte wydarzenia"
         title="Ekskluzywne spotkania, dostępne dla wszystkich"
@@ -82,13 +89,6 @@ export default function Wydarzenia() {
         </div>
       </section>
 
-      <section className="sec sec--sand">
-        <div className="wrap">
-          <Reveal className="head"><p className="eyebrow">Tak było</p><h2>Sylwester 2024/25</h2></Reveal>
-        </div>
-        <Gallery pics={GAL.sylwester} cols={4} wide={[]} />
-      </section>
-
       <section className="sec">
         <div className="wrap split">
           <Reveal className="split__img"><img src={asset("/img/kobieciarnia-goscie.webp")} alt="Uczestniczki Kobieciarni 2026" loading="lazy" /></Reveal>
@@ -108,7 +108,9 @@ export default function Wydarzenia() {
       </section>
 
       <section className="sec sec--tight">
-        <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacje degustacyjne</p><h2>Kilka dań, jedno wino, jeden długi stół</h2></Reveal></div>
+        <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacje degustacyjne</p><h2>Kilka dań, jedno wino, jeden długi stół</h2></Reveal>
+          <Reveal><Clip name="kolacja" label="Film z kolacji degustacyjnej w Avocado" className="clip--wide" /></Reveal>
+        </div>
         <Gallery pics={GAL.degustacja} cols={4} wide={[]} />
       </section>
 
