@@ -45,9 +45,9 @@ export default function Wesela() {
   return (
     <>
       <PageHero
-        img="/img/sala-wesele-noc.webp"
-        more={["/img/intro-06.webp", "/img/intro-08.webp", "/img/intro-02.webp", "/img/nw-1.webp"]}
-        alt="Sala bankietowa Avocado przygotowana na wesele"
+        img="/img/wes-hero-1.webp"
+        more={["/img/wes-hero-2.webp", "/img/wes-hero-3.webp"]}
+        alt="Para młoda przy torcie wśród fontann iskier w ogrodzie Avocado"
         eyebrow="Wesela · Kuśnie koło Sieradza"
         title="Wasze wesele, Wasz sposób świętowania"
         lead="Chcecie długo rozmawiać przy stole, tańczyć do ulubionych piosenek i mieć bliskich obok? W Avocado znajdziecie przestrzeń na taki dzień. Pomożemy Wam połączyć Wasze pomysły z możliwościami miejsca — od wyboru sali po menu i przebieg przyjęcia."

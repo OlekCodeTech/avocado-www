@@ -21,7 +21,7 @@ const SPACES = {
     text: "Przeszklona sala wśród brzóz, w której zieleń staje się częścią Waszego przyjęcia. W ciągu dnia pełna naturalnego światła, wieczorem nabiera przytulnego charakteru dzięki girlandom lampek. Tuż obok ogród — miejsce na ceremonię, serwis tortu, akustyczny występ pod gołym niebem oraz chwilę rozmowy z dala od parkietu.",
     ticks: ["Przyjęcia do 130 osób", "Klimatyzacja", "Dedykowany parking", "Kameralne tarasy wśród zieleni"],
     day: { src: "/img/plener-dzien-2.webp", alt: "Sala plenerowa za dnia – kryształowe żyrandole i girlandy lampek" },
-    night: { src: "/img/plener-wieczor.webp", alt: "Tort i zimne ognie wieczorem wśród brzóz" },
+    night: { src: "/img/plener-noc-2.webp", alt: "Para młoda nocą w sali plenerowej pod girlandami lampek" },
   },
 } as const;
 type Key = keyof typeof SPACES;

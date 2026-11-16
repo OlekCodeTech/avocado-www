@@ -14,18 +14,17 @@ export default function ONas() {
   return (
     <>
       <PageHero
-        img="/img/budynek.webp"
+        img="/img/onas.webp"
         more={["/img/intro-10.webp", "/img/intro-11.webp"]}
-        alt="Budynek Restauracji Avocado"
+        alt="Wejście do sali bankietowej Avocado"
         eyebrow="O nas"
         title="Miejsce, o jakim sami marzyliśmy"
         lead="Avocado powstało z chęci stworzenia miejsca, o jakim sami marzyliśmy, aby zorganizować w nim przyjęcie. Z pasji do gotowania oraz perfekcyjnej organizacji, a także potrzeby świeżych i nowoczesnych wnętrz."
-        pos="center 60%"
       />
 
       <section className="sec">
         <div className="wrap host">
-          <Reveal><img src={asset("/img/wlasciciele.webp")} alt="Ewelina i Marek Molscy, właściciele Avocado" className="host__img" loading="lazy" /></Reveal>
+          <Reveal><img src={asset("/img/wlasciciele-2.webp")} alt="Ewelina i Marek Molscy, właściciele Avocado" className="host__img" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="host__txt">
             <p className="eyebrow">Właściciele</p>
             <h2>Ewelina i Marek Molscy</h2>

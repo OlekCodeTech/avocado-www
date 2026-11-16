@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import BookingWidget from "@/components/BookingWidget";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
+import Clip from "@/components/Clip";
 import { asset, CONTACT, IDO, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
@@ -86,6 +87,10 @@ export default function Noclegi() {
             <p className="price">od <b>449 zł</b> / domek / noc · śniadanie 40 zł/os.</p>
           </Reveal>
         </div>
+      </section>
+
+      <section className="sec sec--tight">
+        <div className="wrap"><Reveal><Clip name="domki" label="Film o Avocado Domki" className="clip--wide" /></Reveal></div>
       </section>
 
       <section className="sec sec--tight sec--sand">

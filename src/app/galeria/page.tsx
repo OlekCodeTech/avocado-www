@@ -15,12 +15,12 @@ const COVER: Record<string, number> = { "michalina-michal": 12, "gabi-kuba": 9, 
 
 const WESELA: Album[] = data.map((a) => ({ name: a.name, sub: a.sub, cover: a.pics[COVER[a.slug] ?? 0].src, pics: a.pics.map((p) => ({ src: p.src })) }));
 
-WESELA.push({ name: "Ślub w ogrodzie", sub: "Ceremonie plenerowe", cover: "/img/ceremonia-goscie.webp", pics: img(["ceremonia-goscie", "nw-1", "ceremonia-las", "pl-cer-2", "pl-cer-3", "intro-06"]) });
+WESELA.push({ name: "Ślub w ogrodzie", sub: "Ceremonie plenerowe", cover: "/img/ceremonia-goscie.webp", pics: img(["ceremonia-goscie", "slub-1", "slub-2", "slub-3", "slub-4", "slub-5", "slub-6", "slub-7", "slub-8", "slub-9", "nw-1", "ceremonia-las", "pl-cer-2", "pl-cer-3", "intro-06"]) });
 
 const PRZYJECIA: Album[] = [
   { name: "Chrzciny i roczki", cover: "/img/of-przyjecia.webp", pics: img(["of-przyjecia", "gchr-1", "gchr-2", "gchr-3", "gchr-4", "gchr-5", "gchr-6", "chr-1", "roc-3", "roc-2"]) },
-  { name: "Komunie", cover: "/img/gkom-1.webp", pics: img(["gkom-1", "gkom-2", "gkom-3", "komunia", "kom-5", "kom-7", "komunia-stoly", "komunia-desery"]) },
-  { name: "18-stka", sub: "Sala bankietowa", cover: "/img/g18-2.webp", pics: img(["g18-1", "g18-2", "g18-3", "g18-4", "g18-5", "g18-6", "g18-7", "g18-8", "g18-9"]) },
+  { name: "Komunie", cover: "/img/gkom-0.webp", pics: img(["gkom-0", "gkom-1", "gkom-2", "gkom-3", "gkom-4", "gkom-5", "gkom-6", "kom-5", "kom-7", "komunia-stoly", "komunia-desery"]) },
+  { name: "18-stka", sub: "Sala bankietowa", cover: "/img/g18-2.webp", pics: img(["g18-1", "g18-2", "g18-3", "g18-4", "g18-5", "g18-6", "g18-7", "g18-8", "g18-9", "g18b-1", "g18b-2", "g18b-3", "g18b-4", "g18b-5", "g18b-6", "g18b-7", "g18b-8"]) },
   { name: "30-tka", sub: "Sala plenerowa", cover: "/img/g30-5.webp", pics: img(["g30-5", "g30-1", "g30-2", "g30-3", "g30-4", "g30-6", "g30-7", "g30-8"]) },
   { name: "Urodziny", sub: "Sala bankietowa", cover: "/img/gsb-136.webp", pics: img(["gsb-136", "gsb-130", "gsb-131", "gsb-132", "gsb-133", "gsb-134", "gsb-135", "gsb-137", "gsb-138", "gsb-139", "gsb-140", "gsb-141"]) },
   { name: "25-lecie firmy", sub: "Impreza firmowa", cover: "/img/of-firma.webp", pics: img(["of-firma", "gf-10", "gf-12", "gf-13", "gf-19", "gf-26", "gf-44", "gf-45", "gf-46", "gf-35", "gf-165", "gf-214", "gf-226", "gf-116", "gf-1"]) },
