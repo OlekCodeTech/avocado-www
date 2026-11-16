@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 
@@ -9,17 +10,17 @@ const SPACES = {
   bankietowa: {
     name: "Sala bankietowa",
     claim: "Nowoczesne wnętrza",
-    text: "Drewniany sufit, ciepłe światło i duże okna z widokiem na zieleń. Neutralne wnętrze, które łatwo dopasować do Waszego stylu – od klasyki po nowoczesny minimalizm.",
-    ticks: ["Pojemność: do 180 osób", "Klimatyzacja", "Dedykowany parking", "Przestrzeń gastronomiczna i zaplecze sanitarne"],
+    text: "Duże okna, ciepłe światło i drewno. Wnętrze, w którym możecie stworzyć oprawę pasującą do Waszego stylu — od minimalistycznych, naturalnych dekoracji po bardziej eleganckie aranżacje. Do tego przestronny taras i ogród pełen zakamarków, w których można usiąść, porozmawiać i odpocząć.",
+    ticks: ["Przyjęcia taneczne do 180 osób", "Konferencje do 240 osób", "Klimatyzacja", "Dedykowany parking", "Zadaszone tarasy", "Grill bar", "Altana"],
     day: { src: "/img/bank-dzien.webp", alt: "Sala bankietowa za dnia, stoły z kwiatami przy dużych oknach" },
     night: { src: "/img/bank-wieczor.webp", alt: "Sala bankietowa wieczorem, ciemne obrusy i ciepłe światło" },
   },
   plenerowa: {
     name: "Sala plenerowa",
     claim: "Industrialny sznyt",
-    text: "Przeszklona sala w otoczeniu lasu – dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy lampek. Idealna na letnie wesela i ślub w plenerze.",
-    ticks: ["Pojemność: do 130 osób", "Klimatyzacja", "Dedykowany parking", "Przestrzeń gastronomiczna i zaplecze sanitarne"],
-    day: { src: "/img/plener-dzien.webp", alt: "Sala plenerowa za dnia na skraju lasu" },
+    text: "Przeszklona sala wśród brzóz, w której zieleń staje się częścią Waszego przyjęcia. W ciągu dnia pełna naturalnego światła, wieczorem nabiera przytulnego charakteru dzięki girlandom lampek. Tuż obok ogród — miejsce na ceremonię, serwis tortu, akustyczny występ pod gołym niebem oraz chwilę rozmowy z dala od parkietu.",
+    ticks: ["Przyjęcia do 130 osób", "Klimatyzacja", "Dedykowany parking", "Kameralne tarasy wśród zieleni"],
+    day: { src: "/img/plener-dzien-2.webp", alt: "Sala plenerowa za dnia – kryształowe żyrandole i girlandy lampek" },
     night: { src: "/img/plener-wieczor.webp", alt: "Tort i zimne ognie wieczorem wśród brzóz" },
   },
 } as const;
@@ -35,7 +36,7 @@ export default function Spaces() {
     <section className="sec sec--sand" id="sale">
       <div className="wrap">
         <Reveal className="head head--center">
-          <p className="eyebrow">Nasze obiekty</p>
+          <p className="eyebrow">Nasze sale</p>
           <h2>Do Twojej dyspozycji mamy<br />dwie niezależne przestrzenie</h2>
         </Reveal>
 
@@ -82,7 +83,7 @@ export default function Spaces() {
               <h3>{s.claim}</h3>
               <p>{s.text}</p>
               <ul className="ticks">{s.ticks.map((t) => <li key={t}>{t}</li>)}</ul>
-              <a href="#planer" className="link">Zobacz nasze obiekty w pełnej okazałości – umów się na spotkanie →</a>
+              <Link href="/sale/" className="link">Zobacz nasze sale →</Link>
             </motion.div>
           </AnimatePresence>
         </div>

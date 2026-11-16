@@ -35,7 +35,7 @@ export default function Hero() {
   }, [reduce, i]);
 
   return (
-    <section className="hero" id="top">
+    <section className="hero hero--home" id="top">
       <AnimatePresence initial={false}>
         <motion.img
           key={SLIDES[i].src}
@@ -53,13 +53,13 @@ export default function Hero() {
 
       <div className="hero__txt">
         <motion.p className="eyebrow eyebrow--light" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}>
-          Perfekcyjne miejsce na Twój wyjątkowy dzień
+          Avocado – dobrze być razem
         </motion.p>
         <h1>
-          {["Nowoczesność i natura", "w jednym miejscu"].map((line, k) => (
+          {["Miejsce z klimatem,", "świetnym jedzeniem i ludźmi,", "na których możesz liczyć."].map((line, k) => (
             <span className="line" key={line}>
               <motion.span
-                className={k ? "it" : undefined}
+                className={k === 2 ? "it" : undefined}
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ delay: 0.35 + k * 0.15, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}

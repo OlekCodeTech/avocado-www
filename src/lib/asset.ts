@@ -59,6 +59,7 @@ export const EVENT_TYPES = [
   "Urodziny / 18-stka",
   "Jubileusz",
   "Impreza firmowa",
+  "Catering",
   "Inne",
 ] as const;
 export type EventType = (typeof EVENT_TYPES)[number];
@@ -68,6 +69,19 @@ export const planHref = (okazja?: string, extra?: Record<string, string>) => {
   const q = new URLSearchParams({ ...(okazja ? { okazja } : {}), ...(extra || {}) }).toString();
   return `/kontakt/${q ? `?${q}` : ""}#planer`;
 };
+
+/** Pytania dopisane przez Ewelinę 16.11.2026 – na stronie głównej rozwijane przyciskiem „Pokaż więcej”. */
+export const FAQ_MORE = [
+  ["Czy możemy zapytać o kilka terminów?", "Tak. W wiadomości wpiszcie interesujące Was daty albo miesiące. Jeśli jesteście elastyczni, również dajcie nam znać."],
+  ["Jak rezerwujemy termin?", "Najpierw potwierdzamy dostępność i ustalamy ofertę. Rezerwacja wymaga podpisania umowy oraz wpłaty zadatku. Szczegóły i terminy płatności otrzymacie przed podjęciem decyzji."],
+  ["Czy możemy zorganizować ceremonię w ogrodzie?", "Możecie zapytać o ceremonię w naszym ogrodzie. Omówimy miejsce, oprawę i zakres przygotowań."],
+  ["Czy goście mogą zostać na noc?", "Na terenie Avocado znajdują się domki. Podajcie orientacyjną liczbę osób zainteresowanych noclegiem, a my sprawdzimy dostępność na Wasz termin."],
+  ["Czy możemy zorganizować poprawiny?", "Zapytajcie o poprawiny razem z weselem. Ustalimy dostępność przestrzeni, liczbę osób i proponowaną formę spotkania."],
+  ["Co z dietami i alergiami gości?", "Powiedzcie nam o nich podczas ustalania menu. Zawsze dopasowujemy się do Waszych potrzeb."],
+  ["Czy w tym samym czasie odbywa się drugie przyjęcie?", "Dysponujemy dwoma niezależnymi obiektami, a nasi Goście się nie mieszają na salach. Do naszych obiektów są przydzielone również dedykowane, oddzielne parkingi. Jedynym punktem stycznym jest plac zabaw."],
+] as const;
+
+export const CALENDLY = "https://calendly.com/avocadocalendly/45min";
 
 export const FAQ = [
   ["Jak mogę dokonać rezerwacji?", "Skontaktuj się z nami telefonicznie lub mailowo – omówimy szczegóły i dostępność terminu."],

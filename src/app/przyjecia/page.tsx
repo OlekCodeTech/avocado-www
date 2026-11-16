@@ -4,19 +4,13 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
 import CtaBand from "@/components/CtaBand";
+import Kinds from "@/components/Kinds";
 import { asset, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Przyjęcia rodzinne i firmowe",
   description: "Chrzciny, komunie, roczki, 18-stki, jubileusze oraz imprezy firmowe i konferencje w Avocado koło Sieradza. Dwie sale, ogród, plac zabaw i własna kuchnia.",
 };
-
-const KINDS = [
-  { t: "Chrzciny i roczki", p: "Kameralnie, w jasnej sali albo w plenerze. Plac zabaw i ogród dla dzieci tuż obok.", img: "/img/chrzciny-2.webp", okazja: "Chrzciny" },
-  { t: "Komunie", p: "Rodzinny obiad w spokojnym miejscu, słodki stół i przestrzeń do zabawy dla najmłodszych.", img: "/img/komunia.webp", okazja: "Komunia" },
-  { t: "18-stki i urodziny", p: "Parkiet, bar, dekoracje w Waszym stylu – i zabawa do rana z dala od sąsiadów.", img: "/img/osiemnastka.webp", okazja: "Urodziny / 18-stka" },
-  { t: "Jubileusze i rocznice", p: "Elegancka oprawa dla bliskich. Zadbamy o menu, kwiaty i każdy szczegół.", img: "/img/stol-dlugi.webp", okazja: "Jubileusz" },
-];
 
 const PICS = [
   { src: "/img/chrzciny.webp", alt: "Dekoracja chrzcin w sali plenerowej" },
@@ -29,7 +23,7 @@ const PICS = [
   { src: "/img/kom-7.webp", alt: "Sala bankietowa przygotowana na komunię" },
   { src: "/img/slodki-stol.webp", alt: "Słodki stół" },
   { src: "/img/kom-5.webp", alt: "Ścianka komunijna z balonów" },
-  { src: "/img/roc-1.webp", alt: "Sala plenerowa przygotowana na roczek" },
+  { src: "/img/gchr-2.webp", alt: "Sala plenerowa przygotowana na roczek" },
   { src: "/img/chr-1.webp", alt: "Dekoracja chrztu z misiem i balonami" },
   { src: "/img/roc-3.webp", alt: "Słodki stół na roczek" },
   { src: "/img/chr-3.webp", alt: "Dziewczynki bawiące się w ogrodzie" },
@@ -40,12 +34,12 @@ export default function Przyjecia() {
   return (
     <>
       <PageHero
-        img="/img/chrzciny.webp"
-        more={["/img/kom-7.webp", "/img/roc-1.webp", "/img/intro-13.webp"]}
-        alt="Sala plenerowa udekorowana na chrzciny"
+        img="/img/prz-hero-1.webp"
+        more={["/img/prz-hero-2.webp", "/img/kom-7.webp", "/img/intro-13.webp"]}
+        alt="Sala plenerowa udekorowana na rodzinne przyjęcie"
         eyebrow="Przyjęcia · rodzinne i firmowe"
         title="Wyjątkowe miejsce spotkań"
-        lead="Ważne chwile wymagają wyjątkowej oprawy. Avocado ma dla Ciebie i Twojej grupy przestrzeń, w której uciekniecie na chwilę od codzienności. Niezależnie czy organizujesz chrzciny, przyjęcie, czy jubileusz – my pomożemy Ci zrealizować niezapomniane wydarzenie."
+        lead="Ważne chwile wymagają wyjątkowej oprawy. Chrzciny, urodziny, jubileusz — każda okazja ma swoją historię i ludzi, z którymi chcecie ją dzielić. W Avocado jest miejsce na wspólny obiad, długie rozmowy i zabawę. Opowiedzcie nam, co planujecie, a pomożemy dobrać salę, ustalić menu i przygotować przyjęcie po Waszemu."
       >
         <Link href={planHref("Chrzciny")} className="btn btn--light">Zapytaj o termin</Link>
         <a href="#firmowe" className="btn btn--ghost">Imprezy firmowe</a>
@@ -57,18 +51,7 @@ export default function Przyjecia() {
             <div><p className="eyebrow">Świętuj i baw się w Avocado</p><h2>Każda okazja ma u nas swoje miejsce</h2></div>
             <p className="head__aside">Każde przyjęcie traktujemy indywidualnie – możesz je z nami zaplanować według własnych upodobań, a jeśli nie masz na to czasu, we wszystkim chętnie pomożemy.</p>
           </Reveal>
-          <div className="tiles tiles--4">
-            {KINDS.map((x, k) => (
-              <Reveal key={x.t} delay={k * 0.08}>
-                <Link className="tile" href={planHref(x.okazja)}>
-                  <div className="tile__media"><img src={asset(x.img)} alt={x.t} loading="lazy" /></div>
-                  <h3>{x.t}</h3>
-                  <p>{x.p}</p>
-                  <span className="more">Zapytaj <i>→</i></span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+          <Kinds />
         </div>
       </section>
 

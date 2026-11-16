@@ -16,6 +16,7 @@ export default function Footer() {
             {NAV.filter((l) => l.href !== "/kontakt/").map((l) => (
               <Link key={l.href} href={l.href}>{l.label}</Link>
             ))}
+            <Link href="/galeria/">Galeria</Link>
           </div>
           <div>
             <b>Kontakt</b>

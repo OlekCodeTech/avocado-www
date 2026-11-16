@@ -12,7 +12,7 @@ export default function Reviews() {
   return (
     <section className="sec sec--sand" id="opinie">
       <div className="wrap">
-        <Reveal className="head head--center"><p className="eyebrow">Nasza historia</p><h2>Co mówią nasi goście</h2></Reveal>
+        <Reveal className="head head--center"><h2>Co mówią nasi goście</h2></Reveal>
         <div className="reviews">
           {REVIEWS.map((r, k) => (
             <Reveal key={r.who} delay={k * 0.08}>

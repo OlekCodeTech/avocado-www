@@ -9,7 +9,7 @@ const PAGES: [string, string][] = [
   ["src/app/page.tsx", "Strona główna"], ["src/components/Hero.tsx", "Strona główna"], ["src/components/Offer.tsx", "Strona główna"],
   ["src/components/Spaces.tsx", "Strona główna"], ["src/components/Kitchen.tsx", "Kuchnia"],
   ["src/app/wesela/page.tsx", "Wesela"], ["src/app/przyjecia/page.tsx", "Przyjęcia"], ["src/app/sale/page.tsx", "Sale"],
-  ["src/app/noclegi/page.tsx", "Noclegi"], ["src/app/wydarzenia/page.tsx", "Wydarzenia"], ["src/app/o-nas/page.tsx", "O nas"], ["src/app/kontakt/page.tsx", "Kontakt"],
+  ["src/app/noclegi/page.tsx", "Noclegi"], ["src/app/wydarzenia/page.tsx", "Wydarzenia"], ["src/app/o-nas/page.tsx", "O nas"], ["src/app/kontakt/page.tsx", "Kontakt"], ["src/app/galeria/page.tsx", "Galeria"], ["src/components/Kinds.tsx", "Przyjęcia"],
 ];
 
 /** Lista zdjęć budowana w czasie eksportu: plik + na których podstronach występuje. */

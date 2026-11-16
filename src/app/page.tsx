@@ -2,7 +2,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Offer from "@/components/Offer";
 import Spaces from "@/components/Spaces";
-import Kitchen from "@/components/Kitchen";
 import MapSection from "@/components/MapSection";
 import Gallery from "@/components/Gallery";
 import Planner from "@/components/Planner";
@@ -10,7 +9,7 @@ import Faq from "@/components/Faq";
 import Reviews from "@/components/Reviews";
 import Reels from "@/components/Reels";
 import Reveal from "@/components/Reveal";
-import { asset, CONTACT, FAQ, planHref } from "@/lib/asset";
+import { asset, FAQ, FAQ_MORE, planHref } from "@/lib/asset";
 
 const PICS = [
   { src: "/img/nw-1.webp", alt: "Pocałunek pary młodej podczas ceremonii w ogrodzie" },
@@ -33,18 +32,31 @@ export default function Home() {
       <Hero />
 
       <section className="facts">
-        <div className="wrap facts__grid">
-          {[
-            ["2 sale", "do 240 osób – bankietowa i plenerowa"],
-            ["Wyjątkowa kuchnia", "sezonowe menu szefa kuchni Roberta Piąstki"],
-            ["Plenerowa magia", "ślub i przyjęcie przy brzozowym lesie"],
-            ["Avocado Domki", "8 domków na miejscu, catering na każdą okazję"],
-          ].map(([k, v], i) => (
-            <Reveal key={k} delay={i * 0.06}>
-              <span className="facts__k">{k}</span>
-              <span className="facts__v">{v}</span>
-            </Reveal>
-          ))}
+        <div className="wrap facts__grid facts__grid--5">
+          <Reveal>
+            <span className="facts__k">Dwie sale – dwa różne charaktery</span>
+            <span className="facts__v">sala bankietowa – do 180 osób<br />sala plenerowa – do 130<br />konferencje, sala główna – do 240 osób</span>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <span className="facts__k">Ogród i leśne otoczenie</span>
+            <span className="facts__v">śluby plenerowe i przyjęcia przy brzozowym lesie</span>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <span className="facts__k">Kuchnia, która zapada w pamięć</span>
+            <span className="facts__v">sezonowe menu oraz pełna precyzja wykonania pod okiem szefa kuchni Roberta Piąstki</span>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <Link href="/noclegi/" className="facts__a">
+              <span className="facts__k">Avocado Domki</span>
+              <span className="facts__v">8 całorocznych domków tuż obok naszych sal bankietowych</span>
+            </Link>
+          </Reveal>
+          <Reveal delay={0.24}>
+            <Link href={planHref("Catering")} className="facts__a">
+              <span className="facts__k">Catering</span>
+              <span className="facts__v">Twoje przyjęcie z naszym cateringiem – spytaj o ofertę →</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -55,9 +67,11 @@ export default function Home() {
             <h2>Z dala od zgiełku miasta,<br />przy brzozowym lesie</h2>
           </Reveal>
           <Reveal delay={0.1} className="intro__txt">
-            <p>Avocado położone jest w malowniczej okolicy, z dala od zgiełku miasta, przy brzozowym lesie. To wyjątkowa sceneria na wesele, przyjęcie oraz celebracje.</p>
-            <p>Nasz dedykowany zespół zadba o każdy szczegół, dzięki czemu Twój dzień będzie naprawdę niezapomniany. Odkryj nasze czarujące wnętrza, zapierające dech w piersiach otoczenie, fantastyczne jedzenie i 5* obsługę, na jaką zasługujesz.</p>
-            <Link href="/o-nas/" className="link">Poznajcie nas →</Link>
+            <p>Avocado położone jest przy brzozowym lesie, blisko natury i z dala od miejskiego zgiełku. To dobre jedzenie i zespół ludzi, którzy pomogą Wam na każdym etapie planowania i organizacji przyjęcia. Nasze otoczenie tworzy wyjątkową scenerię dla wesel, rodzinnych uroczystości i spotkań biznesowych. Pomagamy realizować Wasze pomysły i dbamy o szczegóły, żebyście mieli czas dla bliskich i zaproszonych gości.</p>
+            <div className="intro__act">
+              <Link href={planHref()} className="btn">Opowiedzcie nam o swoich planach</Link>
+              <Link href="/o-nas/" className="link">Poznajcie nas →</Link>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -84,37 +98,20 @@ export default function Home() {
         </div>
       </section>
 
-      <Kitchen />
       <MapSection />
-
-      <section className="sec" id="opiekun">
-        <div className="wrap host">
-          <Reveal><img src={asset("/img/patryk.webp")} alt="Patryk Marcisiak, manager Avocado" className="host__img" loading="lazy" /></Reveal>
-          <Reveal delay={0.1} className="host__txt">
-            <p className="eyebrow">Manager</p>
-            <h2>Patryk Marcisiak</h2>
-            <p className="quote">„Są osoby, które po prostu dobrze czują ludzi, atmosferę i&nbsp;tempo wydarzeń. Patryk zdecydowanie do nich należy.”</p>
-            <p>Od lat związany jest z branżą restauracyjną, a organizację przyjęć zna od kuchni. Lubi, kiedy wszystko ma swój rytm, Goście czują się swobodnie, a każdy detal jest dokładnie tam, gdzie powinien. W Avocado Patryk jest blisko Was od pierwszych rozmów o przyjęciu aż po sam dzień wydarzenia.</p>
-            <p className="host__contact">
-              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-            </p>
-          </Reveal>
-        </div>
-      </section>
 
       <section className="sec sec--tight" id="galeria">
         <div className="wrap">
           <Reveal className="head head--row">
             <div><p className="eyebrow">Galeria</p><h2>Tak u nas świętujecie</h2></div>
-            <Link href="/sale/" className="link">Zobacz sale →</Link>
+            <Link href="/galeria/" className="link">Zobacz więcej →</Link>
           </Reveal>
         </div>
         <Gallery pics={PICS} />
       </section>
 
       <Reviews />
-      <Faq items={FAQ.slice(0, 5)} />
+      <Faq items={FAQ.slice(0, 5)} more={FAQ_MORE} />
       <Planner />
     </>
   );

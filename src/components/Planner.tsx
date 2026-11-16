@@ -7,8 +7,8 @@ import { CONTACT, EVENT_TYPES, PLAN_EVENT } from "@/lib/asset";
 const YEARS = [2026, 2027, 2028, 2029, 2030, 2031];
 const MONTHS = ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"];
 const MONTHS_FULL = ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"];
-/** Minimalna liczba gości: komunie od 30, pozostałe przyjęcia od 60 (wydarzenia otwarte bez limitu). */
-const minGuests = (type: string) => (type === "Komunia" ? 30 : type === "Inne" ? 1 : 60);
+/** Minimalna liczba gości: komunie od 25, pozostałe przyjęcia od 60 (catering i wydarzenia otwarte bez limitu). */
+const minGuests = (type: string) => (type === "Komunia" ? 25 : type === "Inne" || type === "Catering" ? 1 : 60);
 const STEPS = ["Okazja", "Termin", "Kontakt"];
 const SUB: Partial<Record<string, string[]>> = {
   Wesele: ["Jednodniowe", "Z poprawinami"],
@@ -16,12 +16,12 @@ const SUB: Partial<Record<string, string[]>> = {
 };
 
 type Data = {
-  type: string; variant: string; year: number | null; month: number | null;
+  type: string; variant: string; year: number | null; months: number[]; dateNote: string; where: string;
   guests: string; stay: boolean; name: string; phone: string; email: string;
   company: string; role: string; msg: string;
 };
 const EMPTY: Data = {
-  type: "", variant: "", year: null, month: null, guests: "", stay: false,
+  type: "", variant: "", year: null, months: [], dateNote: "", where: "", guests: "", stay: false,
   name: "", phone: "", email: "", company: "", role: "", msg: "",
 };
 
@@ -34,7 +34,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
 
   const pick = (type: string, info?: string) => {
     set({ type, variant: info || "" });
-    setStep(SUB[type] && !info ? 0 : 1);
+    setStep((SUB[type] && !info) || type === "Catering" ? 0 : 1); // catering: najpierw pytanie „Gdzie?”
   };
 
   useEffect(() => {
@@ -56,6 +56,8 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
   }, []);
 
   const min = minGuests(d.type);
+  const monthsTxt = [...d.months].sort((a, b) => a - b).map((m) => MONTHS_FULL[m]).join(', ');
+  const toggleMonth = (k: number) => setD((v) => ({ ...v, months: v.months.includes(k) ? v.months.filter((m) => m !== k) : [...v.months, k] }));
   const guestsOk = !d.guests || Number(d.guests) >= min;
   const ok = [!!d.type, !!d.year && guestsOk, !!(d.name && d.phone)][step];
   const now = new Date();
@@ -79,7 +81,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
             <motion.div className="planner__done" initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
               <span className="planner__check">✓</span>
               <h3>Dziękujemy, {d.name.split(" ")[0]}!</h3>
-              <p>Patryk odezwie się z dostępnymi terminami{d.year ? ` na ${d.month !== null ? MONTHS_FULL[d.month] + " " : ""}${d.year}` : ""}.</p>
+              <p>Patryk odezwie się z dostępnymi terminami{d.year ? ` na ${monthsTxt ? monthsTxt + " " : ""}${d.year}` : ""}.</p>
               <p className="planner__note">To makieta – wysyłka zostanie podpięta w wersji docelowej.</p>
             </motion.div>
           ) : (
@@ -111,6 +113,9 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                           ))}
                         </div>
                       )}
+                      {d.type === "Catering" && (
+                        <label className="lbl">Gdzie?<input className="inp" placeholder="miejscowość lub adres przyjęcia" value={d.where} onChange={(e) => set({ where: e.target.value })} /></label>
+                      )}
                       {d.type === "Inne" && (
                         <input className="inp" placeholder="np. roczek, rocznica, spotkanie klasowe" value={d.variant} onChange={(e) => set({ variant: e.target.value })} />
                       )}
@@ -130,15 +135,17 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                           {MONTHS.map((m, k) => {
                             const past = d.year === now.getFullYear() && k < now.getMonth();
                             return (
-                              <button key={m} type="button" disabled={past} className={`month${d.month === k ? " on" : ""}`} onClick={() => set({ month: d.month === k ? null : k })}>{m}</button>
+                              <button key={m} type="button" disabled={past} aria-pressed={d.months.includes(k)} className={`month${d.months.includes(k) ? " on" : ""}`} onClick={() => toggleMonth(k)}>{m}</button>
                             );
                           })}
                         </div>
                       )}
+                      {d.year && <p className="hint">Możecie zaznaczyć kilka miesięcy.</p>}
+                      <label className="lbl">Kluczowe informacje co do terminu <i>(opcjonalnie)</i><input className="inp" placeholder="np. tylko soboty, konkretna data, elastycznie" value={d.dateNote} onChange={(e) => set({ dateNote: e.target.value })} /></label>
                       <legend className="legend2">Ilu gości się spodziewacie?</legend>
                       <input className="inp inp--num" type="number" inputMode="numeric" min={min} max={240} placeholder={`np. ${Math.max(min, 80)}`} value={d.guests} onChange={(e) => set({ guests: e.target.value })} aria-label="Liczba gości" />
                       <p className={`hint${guestsOk ? "" : " hint--err"}`}>
-                        {d.type === "Komunia" ? "Komunie organizujemy od 30 osób." : d.type === "Inne" ? "Wpisz orientacyjną liczbę osób." : "Przyjęcia organizujemy od 60 osób (komunie od 30)."}
+                        {d.type === "Komunia" ? "Komunie organizujemy od 25 osób." : min === 1 ? "Wpisz orientacyjną liczbę osób." : "Przyjęcia organizujemy od 60 osób (komunie od 25)."}
                       </p>
                       <label className="toggle">
                         <input type="checkbox" checked={d.stay} onChange={(e) => set({ stay: e.target.checked })} />
@@ -164,7 +171,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                       )}
                       <label>Wasza wizja wydarzenia <i>(opcjonalnie)</i><textarea className="inp" rows={2} value={d.msg} onChange={(e) => set({ msg: e.target.value })} /></label>
                       <p className="summary">
-                        {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""} · {d.month !== null ? MONTHS_FULL[d.month] + " " : ""}{d.year}
+                        {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""}{d.where ? ` · ${d.where}` : ""} · {monthsTxt ? monthsTxt + " " : ""}{d.year}{d.dateNote ? ` · ${d.dateNote}` : ""}
                         {d.guests ? ` · ${d.guests} os.` : ""}{d.stay ? " · z noclegiem" : ""}
                       </p>
                     </fieldset>

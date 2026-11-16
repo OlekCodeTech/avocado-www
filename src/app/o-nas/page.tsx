@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Kitchen from "@/components/Kitchen";
 import CtaBand from "@/components/CtaBand";
-import { asset, CONTACT } from "@/lib/asset";
+import { asset, CALENDLY, CONTACT } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "O nas",
@@ -29,9 +29,50 @@ export default function ONas() {
           <Reveal delay={0.1} className="host__txt">
             <p className="eyebrow">Właściciele</p>
             <h2>Ewelina i Marek Molscy</h2>
-            <p className="quote">„Chcieliśmy stworzyć miejsce, w którym każde spotkanie będzie niezapomniane.”</p>
-            <p>Avocado powstało z chęci stworzenia miejsca o jakim sami marzyliśmy, aby zorganizować w nim przyjęcie. Żaden z obiektów, mimo że różnorodnych i naprawdę dobrych, nie był dla nas idealny. Chcieliśmy stworzyć miejsce, w którym każde spotkanie będzie niezapomniane. Z pasji do gotowania oraz perfekcyjnej organizacji, a także potrzeby świeżych i nowoczesnych wnętrz...</p>
+            <p>Pomysł na Avocado zaczął się od miejsca, w którym sami chcielibyśmy urządzić przyjęcie. Zależało nam na dobrej kuchni, przyjemnych wnętrzach i atmosferze, w której można poczuć się swobodnie. Takie miejsce tworzymy dla Was.</p>
+            <p>Lubimy poznawać ludzi i ich pomysły na wspólne świętowanie. Chcemy, żebyście mogli przyjechać, porozmawiać i spokojnie zdecydować, czy Avocado wpisuje się w Wasze plany.</p>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="sec sec--sand" id="manager">
+        <div className="wrap host">
+          <Reveal><img src={asset("/img/patryk.webp")} alt="Patryk Marcisiak, manager Avocado" className="host__img" loading="lazy" /></Reveal>
+          <Reveal delay={0.1} className="host__txt">
+            <p className="eyebrow">Manager</p>
+            <h2>Patryk Marcisiak</h2>
+            <p>Od lat związany jest z branżą restauracyjną, a organizację przyjęć zna od kuchni. Lubi, kiedy wszystko ma swój rytm, Goście czują się swobodnie, a każdy detal jest dokładnie tam, gdzie powinien. Świetne wyczucie estetyki przekłada się na dużą uważność w wyglądzie Waszych przyjęć.</p>
+            <p>W Avocado Patryk jest blisko Was od pierwszych rozmów o przyjęciu – podpowie, doradzi, uporządkuje pomysły i zadba o to, żebyście zamiast myśleć o organizacji, mogli po prostu cieszyć się tym, co dzieje się wokół.</p>
+            <p className="host__note">Nie musisz podejmować decyzji od razu ani znać wszystkich odpowiedzi – po prostu przyjedź się poznać.</p>
+            <p className="host__contact">
+              <a href={CALENDLY} target="_blank" rel="noopener" className="btn btn--sm">Umów spotkanie</a>
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="sec" id="koordynatorzy">
+        <div className="wrap">
+          <Reveal className="head head--row">
+            <div><p className="eyebrow">Zespół do zadań specjalnych</p><h2>Nasi koordynatorzy</h2></div>
+            <p className="head__aside head__aside--wide">Od ustawienia stołów po ostatni taniec na parkiecie — nasi koordynatorzy czuwają nad przebiegiem Waszego przyjęcia. Dbają o przygotowanie sali, współpracują z kuchnią i obsługą oraz pilnują ustalonych szczegółów. Są blisko, gdy potrzebujecie pomocy, pojawia się pytanie lub trzeba coś zmienić w planie. To nasz zespół do zadań specjalnych. Poznajcie ich bliżej.</p>
+          </Reveal>
+          <div className="team">
+            {[
+              ["Natalia Jarominek", "/img/koord-natalia.webp"],
+              ["Oskar Sibiński", "/img/koord-oskar.webp"],
+              ["Mateusz Jarzembski", "/img/koord-mateusz.webp"],
+            ].map(([n, src], k) => (
+              <Reveal key={n} delay={k * 0.08}>
+                <figure className="team__item">
+                  <img src={asset(src)} alt={`${n}, koordynator przyjęć w Avocado`} loading="lazy" />
+                  <figcaption><b>{n}</b><span>Koordynator przyjęć</span></figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -41,31 +82,13 @@ export default function ONas() {
           <Reveal delay={0.1} className="host__txt">
             <p className="eyebrow">Szef kuchni</p>
             <h2>Robert Piąstka</h2>
-            <p className="quote">„Właściwy człowiek na właściwym miejscu.”</p>
-            <p>W naszej firmie od 2016 roku, od 2018 jako szef kuchni Restauracji Avocado. Wspaniale odnalazł się w roli szefa kuchni. Swoim doświadczeniem mógłby obdarzyć kilku kucharzy. Ma smak, uwagę oraz dokładność. Wszystkie cechy, które na co dzień pozwalają zarządzać sporym zespołem kucharzy i pomocników oraz przygotowywać najlepsze kulinarne przyjęcia w naszym regionie.</p>
-            <p>Z pasją śledzi kulinarne nowinki, które znajdują odzwierciedlenie w naszym menu. Nie boi się wyzwań i chętnie współpracuje z innymi szefami kuchni, czerpiąc inspiracje oraz nowe doświadczenia. Jego zaangażowanie i dążenie do perfekcji kształtują smak i jakość serwowanych dań.</p>
+            <p>Robert jest z nami od 2016 roku, a od 2018 prowadzi kuchnię Avocado. Odpowiada za menu i pracę zespołu, który przygotowuje dania na Wasze przyjęcia. Łączy duże doświadczenie z wyczuciem smaku i dbałością o szczegóły. W kuchni stawia na sezonowość i pomysły dopasowane do okazji.</p>
+            <p>Chętnie poznaje nowe smaki, śledzi kulinarne nowinki i współpracuje z innymi szefami kuchni. Z tych spotkań czerpie inspiracje, które później trafiają do naszego menu. Jest też otwarty na Wasze pomysły — jeśli macie ulubione potrawy lub szczególne potrzeby dotyczące jedzenia, opowiedzcie nam o nich. Robert wraz z zespołem pomoże dobrać menu do Waszego przyjęcia.</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="sec">
-        <div className="wrap host">
-          <Reveal><img src={asset("/img/patryk.webp")} alt="Patryk Marcisiak, manager Avocado" className="host__img" loading="lazy" /></Reveal>
-          <Reveal delay={0.1} className="host__txt">
-            <p className="eyebrow">Manager</p>
-            <h2>Patryk Marcisiak</h2>
-            <p className="quote">„Są osoby, które po prostu dobrze czują ludzi, atmosferę i&nbsp;tempo wydarzeń. Patryk zdecydowanie do nich należy.”</p>
-            <p>Od lat związany jest z branżą restauracyjną, a organizację przyjęć zna od kuchni. Lubi, kiedy wszystko ma swój rytm, Goście czują się swobodnie, a każdy detal jest dokładnie tam, gdzie powinien. Świetne wyczucie estetyki przekłada się na dużą uważność w wyglądzie Waszych przyjęć.</p>
-            <p>W Avocado Patryk jest blisko Was od pierwszych rozmów o przyjęciu aż po sam dzień wydarzenia. Podpowie, doradzi, uporządkuje pomysły i zadba o to, żebyście zamiast myśleć o organizacji, mogli po prostu cieszyć się tym, co dzieje się wokół.</p>
-            <p className="host__contact">
-              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
-              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="sec sec--sand" id="motto">
+      <section className="sec" id="motto">
         <div className="wrap">
           <Reveal className="head head--center"><p className="eyebrow">Kuchnia</p><h2>Dobre jedzenie to podstawa<br />udanej imprezy</h2></Reveal>
           <div className="motto">

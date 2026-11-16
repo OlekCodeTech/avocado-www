@@ -3,12 +3,10 @@ import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 
 const TILES = [
-  { t: "Wesela", p: "Avocado to perfekcyjne miejsce na Twoje wyjątkowe wesele. Nasz zespół zadba o każdy detal – od przygotowania wnętrz, poprzez menu, po koordynację całego wydarzenia.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
-  { t: "Przyjęcia", p: "Niezależnie od okazji, Avocado to świetne miejsce, aby odnowić więzi i wspólnie doświadczyć cudownych chwil podczas przyjęć, jubileuszy i urodzin.", img: "/img/komunia.webp", alt: "Dekoracja komunijna w sali bankietowej", href: "/przyjecia/" },
-  { t: "Spotkania firmowe", p: "Zapewnij swoim współpracownikom niezapomniany wieczór. Od tematycznych spotkań, po oficjalne konferencje.", img: "/img/firma-stol.webp", alt: "Bar i długi stół w sali bankietowej", href: "/przyjecia/#firmowe" },
-  { t: "Wydarzenia otwarte", p: "Ekskluzywne spotkania, dostępne dla wszystkich: Kobieciarnia, kolacje walentynkowe i degustacyjne.", img: "/img/kobieciarnia.webp", alt: "Kobieciarnia w Avocado", href: "/wydarzenia/" },
-  { t: "Avocado Domki", p: "Stylowe, całoroczne domki w otoczeniu brzozowego lasu – kilka kroków od naszych sal.", img: "/img/domek-8.webp", alt: "Domek Avocado między brzozami", href: "/noclegi/" },
-  { t: "Nasze sale", p: "Do Twojej dyspozycji mamy dwie niezależne przestrzenie: bankietową do 180 i plenerową do 130 osób.", img: "/img/sala-szeroka.webp", alt: "Sala bankietowa przygotowana na wesele", href: "/sale/" },
+  { t: "Wesela", p: "A co, jeśli właśnie znaleźliście miejsce na Wasze wesele? Poznajcie Avocado i sprawdźcie, czy poczujecie się tu u siebie.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
+  { t: "Przyjęcia", p: "Zbierzcie rodzinę i przyjaciół przy jednym stole. My zajmiemy się menu i organizacją, a Wy cieszcie się rozmowami, śmiechem i czasem razem. Niezależnie od okazji Avocado będzie bardzo dobrym wyborem.", img: "/img/of-przyjecia.webp", alt: "Sala plenerowa przygotowana na rodzinne przyjęcie", href: "/przyjecia/" },
+  { t: "Spotkania firmowe", p: "Zapewnij swoim współpracownikom niezapomniany wieczór. Od tematycznych spotkań, po oficjalne konferencje.", img: "/img/of-firma.webp", alt: "Sala bankietowa przygotowana na jubileusz firmy", href: "/przyjecia/#firmowe" },
+  { t: "Wydarzenia otwarte", p: "Nie musicie czekać na zaproszenie, aby bawić się w Avocado. Zobaczcie wydarzenia, jakie dla Was tworzymy – sprawdźcie, co planujemy w najbliższym czasie.", img: "/img/of-wydarzenia.webp", alt: "Goście przy stołach podczas wydarzenia w Avocado", href: "/wydarzenia/" },
 ];
 
 export default function Offer() {
@@ -20,11 +18,11 @@ export default function Offer() {
             <p className="eyebrow">Oferta</p>
             <h2>Jedno miejsce,<br />wiele okazji</h2>
           </div>
-          <p className="head__aside">Nasz dedykowany zespół zadba o to, aby Wasze spotkanie było wyjątkowe – tak, abyście w tym najważniejszym dniu nie musieli się o nic martwić.</p>
+          <p className="head__aside">Nasz dedykowany koordynator oraz zespół kelnerski zadba, aby Wasze spotkanie było wyjątkowe – jeden człowiek, jeden zespół, wszystko po to, abyście w najważniejszym dniu nie musieli się o nic martwić.</p>
         </Reveal>
-        <div className="tiles tiles--3">
+        <div className="tiles tiles--4 tiles--offer">
           {TILES.map((x, k) => (
-            <Reveal key={x.t} delay={(k % 3) * 0.08}>
+            <Reveal key={x.t} delay={k * 0.08}>
               <Link className="tile" href={x.href}>
                 <div className="tile__media">
                   <img src={asset(x.img)} alt={x.alt} loading="lazy" />

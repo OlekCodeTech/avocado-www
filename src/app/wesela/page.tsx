@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 };
 
 const STEPS = [
-  ["Spotkanie", "Zobaczcie nasze obiekty w pełnej okazałości. Umówcie się na spotkanie – pozwoli to poczuć atmosferę miejsca oraz bliżej zapoznać się z nami i naszą ofertą."],
+  ["Spotkanie. Poznajemy Wasze plany", "Zaczynamy od terminu, liczby gości i tego, co jest dla Was ważne. Nie musicie mieć gotowej koncepcji. Podczas umówionego spotkania zobaczycie przestrzenie i porozmawiacie z nami o możliwościach organizacji. Omawiamy zakres przyjęcia, menu i wybrane dodatki. Zasady rezerwacji oraz płatności przedstawiamy przed podpisaniem umowy."],
   ["Kulinarna kreatywność", "Wraz z naszym szefem kuchni przygotowujemy sezonowe menu, udoskonalamy je i szyjemy na miarę Twoich potrzeb. Jesteśmy otwarci na Wasze propozycje, które szczegółowo omawiamy na spotkaniach."],
   ["Ceremonia", "Jednym z wielu atutów naszych sal jest możliwość organizacji ślubu w plenerze. Wystarczy Wasza chęć, a my zaaranżujemy dla Was ślub jak z bajki w otoczeniu naszego ogrodu."],
   ["Wesele", "Podczas ceremonii zaopiekuje się Wami doświadczony zespół koordynatorów oraz obsługi kelnerskiej – zawsze dbamy o to, aby goście czuli się zaopiekowani od samego początku."],
-  ["Poprawiny", "Goście nocują na miejscu, a rano spotykacie się przy wspólnym stole – u nas albo na tarasie."],
+  ["Poprawiny", "Goście nocują na miejscu, a rano spotykacie się przy wspólnym stole. Po południu parkiet znów należy do Was. Jest czas na rozmowy, wspominanie wczorajszego wieczoru i dalszą zabawę – już na luzie, bez pośpiechu."],
 ];
 
 const PICS = [
@@ -49,8 +49,8 @@ export default function Wesela() {
         more={["/img/intro-06.webp", "/img/intro-08.webp", "/img/intro-02.webp", "/img/nw-1.webp"]}
         alt="Sala bankietowa Avocado przygotowana na wesele"
         eyebrow="Wesela · Kuśnie koło Sieradza"
-        title="Magiczne i niezapomniane wesele"
-        lead="Do każdego wesela podchodzimy indywidualnie, aby zorganizować najbardziej spektakularny i magiczny wieczór dla Was i Waszych gości. Nasz zespół pomoże Ci zaplanować Twoje wesele w taki sposób, aby odzwierciedlało ono Wasze gusta, potrzeby i marzenia."
+        title="Wasze wesele, Wasz sposób świętowania"
+        lead="Chcecie długo rozmawiać przy stole, tańczyć do ulubionych piosenek i mieć bliskich obok? W Avocado znajdziecie przestrzeń na taki dzień. Pomożemy Wam połączyć Wasze pomysły z możliwościami miejsca — od wyboru sali po menu i przebieg przyjęcia."
       >
         <Link href={planHref("Wesele")} className="btn btn--light">Sprawdź wolne terminy</Link>
         <a href="#przebieg" className="btn btn--ghost">Jak to u nas wygląda</a>
@@ -62,12 +62,12 @@ export default function Wesela() {
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Niezapomniany dzień</p>
             <h2>Jedz, pij i tańcz</h2>
-            <p>Podczas ceremonii zaopiekuje się Wami doświadczony zespół naszych koordynatorów oraz obsługi kelnerskiej. Zadbamy, aby wszyscy goście byli obsłużeni z najwyższą jakością i starannością oraz aby nikomu niczego nie zabrakło.</p>
+            <p>Każda para ma swój pomysł na wesele. Chętnie poznamy Wasz i pomożemy go zrealizować — wspólnie ustalimy menu, przygotowanie sali i przebieg przyjęcia. Chcemy, żebyście czuli się u nas swobodnie i mogli cieszyć się tym dniem z bliskimi.</p>
             <ul className="ticks">
-              <li>Perfekcyjna sceneria</li>
-              <li>Wszystko, czego oczekujecie w jednym miejscu</li>
-              <li>Pyszne jedzenie</li>
-              <li>5* obsługa</li>
+              <li>Zieleń za oknem, swoboda przy stole</li>
+              <li>Wasze pomysły i nasza pomoc w organizacji</li>
+              <li>Jedzenie, do którego chce się wracać</li>
+              <li>Zespół, który jest z Wami od pierwszej rozmowy po ostatni taniec</li>
             </ul>
           </Reveal>
         </div>
@@ -101,16 +101,14 @@ export default function Wesela() {
           </Reveal>
           <div className="halls">
             {[
-              { ...HALLS.bankietowa, img: "/img/hall-bank.webp", txt: "Nowoczesne wnętrza. Pojemność do 180 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
-              { ...HALLS.plenerowa, img: "/img/hall-plener.webp", txt: "Industrialny sznyt. Pojemność do 130 osób, klimatyzacja, dedykowany parking, przestrzeń gastronomiczna i zaplecze sanitarne." },
+              { ...HALLS.bankietowa, img: "/img/hall-bank.webp" },
+              { ...HALLS.plenerowa, img: "/img/hall-plener.webp" },
             ].map((h, k) => (
               <Reveal key={h.name} delay={k * 0.1}>
                 <Link href={h.href} className="hall">
                   <img src={asset(h.img)} alt={h.name} loading="lazy" />
                   <div className="hall__txt">
-                    <p className="eyebrow">{h.tag} · do {h.cap} gości</p>
                     <h3>{h.name}</h3>
-                    <p>{h.txt}</p>
                     <span className="more">Zobacz salę <i>→</i></span>
                   </div>
                 </Link>
@@ -121,12 +119,12 @@ export default function Wesela() {
       </section>
 
       <section className="sec sec--tight">
-        <div className="wrap"><Reveal className="head"><p className="eyebrow">Galeria</p><h2>Wesela w Avocado</h2></Reveal></div>
+        <div className="wrap"><Reveal className="head head--row"><p className="eyebrow eyebrow--lg">Wesela w Avocado</p><Link href="/galeria/#wesela" className="link">Zobacz więcej →</Link></Reveal></div>
         <Gallery pics={PICS} />
       </section>
 
       <Faq items={FAQ_W} title="Pytania o wesele" />
-      <CtaBand title={<>Wesele, o którym marzycie,<br />jest naszą misją</>} text="Jeśli poczuliście, że nasze sale mogą stać się idealnym tłem dla jednego z najważniejszych dni w Waszym życiu, pozwolimy sobie zaprosić Was na indywidualne spotkanie. Pozwoli to bardziej poczuć atmosferę miejsca oraz bliżej zapoznać się z nami i naszą ofertą." okazja="Wesele" button="Zacznij planować" />
+      <CtaBand title={<>Wyobrażacie już sobie<br />Wasze wesele?</>} text="Spotkajmy się i porozmawiajmy o szczegółach. Pokażemy Wam nasze miejsce, poznamy Wasze pomysły i wspólnie zastanowimy się, jak je zrealizować. A jeśli dopiero szukacie inspiracji — też zapraszamy. Być może atmosfera tego miejsca zachwyci Was tak samo jak nas." okazja="Wesele" button="Zacznij planować" />
     </>
   );
 }

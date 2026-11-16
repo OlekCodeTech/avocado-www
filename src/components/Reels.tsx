@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Reveal from "./Reveal";
 import Clip from "./Clip";
 
@@ -5,25 +8,35 @@ const REELS = [
   { name: "wesele", label: "Wesele wśród brzóz" },
   { name: "plenerowa", label: "Sala plenerowa" },
   { name: "bankietowa", label: "Sala bankietowa" },
+  { name: "dekoracje", label: "Dekoracje" },
+  { name: "detale", label: "Detale" },
 ];
 
-/** Trzy pionowe klipy z filmów Avocado. */
+/** Karuzela pionowych klipów z filmów Avocado (strzałki < > lub przesunięcie palcem). */
 export default function Reels() {
+  const box = useRef<HTMLDivElement>(null);
+  const go = (dir: number) => {
+    const el = box.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".reel");
+    el.scrollBy({ left: dir * ((card?.offsetWidth || 300) + 22), behavior: "smooth" });
+  };
   return (
     <section className="sec" id="film">
       <div className="wrap">
-        <Reveal className="head head--center">
-          <p className="eyebrow">Avocado w ruchu</p>
-          <h2>Zobacz, jak to wygląda na żywo</h2>
+        <Reveal className="head head--row">
+          <h2>Avocado w ruchu</h2>
+          <div className="reels__nav">
+            <button type="button" aria-label="Poprzednie filmy" onClick={() => go(-1)}>‹</button>
+            <button type="button" aria-label="Następne filmy" onClick={() => go(1)}>›</button>
+          </div>
         </Reveal>
-        <div className="reels">
-          {REELS.map((r, k) => (
-            <Reveal key={r.name} delay={k * 0.1}>
-              <figure className="reel">
-                <Clip name={r.name} label={r.label} />
-                <figcaption>{r.label}</figcaption>
-              </figure>
-            </Reveal>
+        <div className="reels" ref={box} data-lenis-prevent>
+          {REELS.map((r) => (
+            <figure className="reel" key={r.name}>
+              <Clip name={r.name} label={r.label} />
+              <figcaption>{r.label}</figcaption>
+            </figure>
           ))}
         </div>
       </div>
