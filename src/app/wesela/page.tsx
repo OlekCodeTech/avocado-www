@@ -46,7 +46,7 @@ export default function Wesela() {
     <>
       <PageHero
         img="/img/wes-hero-1.webp"
-        more={["/img/wes-hero-4.webp", "/img/wes-hero-2.webp", "/img/wes-hero-3.webp"]}
+        more={["/img/wes-hero-4.webp", "/img/wes-hero-3.webp"]}
         alt="Para młoda przy torcie wśród fontann iskier w ogrodzie Avocado"
         eyebrow="Wesela · Kuśnie koło Sieradza"
         title="Wasze wesele, Wasz sposób świętowania"

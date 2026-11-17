@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import Typo from "@/components/Typo";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pl" className={`${serif.variable} ${sans.variable}`}>
       <body>
         <SmoothScroll />
+        <Typo />
         <Nav />
         <main>{children}</main>
         <Footer />
