@@ -18,8 +18,8 @@ export default function ONas() {
         more={["/img/intro-10.webp", "/img/intro-11.webp"]}
         alt="Wejście do sali bankietowej Avocado"
         eyebrow="O nas"
-        title="Miejsce, o jakim sami marzyliśmy"
-        lead="Avocado powstało z chęci stworzenia miejsca, o jakim sami marzyliśmy, aby zorganizować w nim przyjęcie. Z pasji do gotowania oraz perfekcyjnej organizacji, a także potrzeby świeżych i nowoczesnych wnętrz."
+        title="Tworzymy miejsce, w którym chce się być razem."
+        lead="Avocado powstało z myślą o spotkaniach w subtelnych wnętrzach, przy dobrym jedzeniu oraz swobodnej atmosferze, których nam brakowało. Takich, jakie sami lubimy."
       />
 
       <section className="sec">
