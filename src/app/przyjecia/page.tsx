@@ -36,7 +36,23 @@ export default function Przyjecia() {
         </div>
       </section>
 
-      <section className="sec sec--sand" id="firmowe">
+      <section className="sec sec--sand">
+        <div className="wrap split split--rev">
+          <Reveal className="split__img"><img src={asset("/img/prz-stol.webp")} alt="Słodki stół przygotowany na rodzinne przyjęcie w Avocado" loading="lazy" /></Reveal>
+          <Reveal delay={0.1} className="split__txt">
+            <h2>Przy wspólnym stole, po Waszemu</h2>
+            <p>Z naszym managerem i szefem kuchni ustalicie menu dopasowane do okazji, sezonu i upodobań Waszych gości, a nasz zespół zadba o przygotowanie i przebieg przyjęcia. Nie masz czasu na przygotowania, a planowanie generuje niepotrzebny stres? Nie ma problemu, my się wszystkim zajmiemy.</p>
+            <ul className="ticks">
+              <li>Menu dopasowane do Waszego spotkania</li>
+              <li>Jasne wnętrza i swobodna atmosfera</li>
+              <li>Tarasy i ogród pełen zakamarków</li>
+              <li>Plac zabaw dla najmłodszych</li>
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="sec" id="firmowe">
         <div className="wrap split">
           <Reveal className="split__img"><img src={asset("/img/firma-stol.webp")} alt="Bar i długi stół w sali bankietowej" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
