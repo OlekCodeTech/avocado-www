@@ -36,19 +36,7 @@ export default function Przyjecia() {
         </div>
       </section>
 
-      <section className="sec sec--sand">
-        <div className="wrap split split--rev">
-          <Reveal className="split__img"><img src={asset("/img/plac-zabaw.webp")} alt="Plac zabaw w ogrodzie Avocado" loading="lazy" /></Reveal>
-          <Reveal delay={0.1} className="split__txt">
-            <p className="eyebrow">Kulinarna kreatywność i obsługa</p>
-            <h2>Nasz szef kuchni opracuje z Wami dedykowane, sezonowe menu</h2>
-            <p>Menu, które zaskoczy największych smakoszy. Podczas wydarzenia zaopiekuje się Wami doświadczony zespół – zadbają oni, aby wszyscy goście byli napici, najedzeni i uśmiechnięci. A dzieci mają do dyspozycji plac zabaw w ogrodzie, w zasięgu wzroku rodziców.</p>
-            <ul className="ticks"><li>Perfekcyjna sceneria</li><li>Pyszne jedzenie</li><li>5* obsługa</li><li>Plac zabaw i ogród dla dzieci</li></ul>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="sec" id="firmowe">
+      <section className="sec sec--sand" id="firmowe">
         <div className="wrap split">
           <Reveal className="split__img"><img src={asset("/img/firma-stol.webp")} alt="Bar i długi stół w sali bankietowej" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
