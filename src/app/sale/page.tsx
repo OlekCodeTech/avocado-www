@@ -80,7 +80,7 @@ export default function Sale() {
             <Reveal className="split__img"><img src={asset("/img/plener-front.webp")} alt="Sala plenerowa na skraju lasu" loading="lazy" /></Reveal>
             <Reveal delay={0.1} className="split__txt">
               <p className="eyebrow">Sala plenerowa · Pojemność: do 130 osób</p>
-              <h2>Industrialny sznyt</h2>
+              <h2>Przestrzeń pełna światła</h2>
               <p>Przeszklony, czarny pawilon na skraju lasu – latem otwarty na ogród, zimą przytulny i rozświetlony. Dzień spędzacie w zieleni, a wieczorem całość rozświetlają girlandy lampek. Idealna na ślub w plenerze, letnie wesele i kameralne przyjęcia.</p>
               <ul className="specs">{SPECS.map((s) => <li key={s}>{s}</li>)}<li>Taras, ogród i ceremonia w plenerze</li></ul>
               <Link href={planHref()} className="link">Zapytaj o salę plenerową →</Link>

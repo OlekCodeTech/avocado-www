@@ -37,7 +37,7 @@ export const DRIVE = [
 
 export const HALLS = {
   bankietowa: { name: "Sala bankietowa", cap: 180, tag: "Nowoczesne wnętrza", href: "/sale/#bankietowa" },
-  plenerowa: { name: "Sala plenerowa", cap: 130, tag: "Industrialny sznyt wśród brzóz", href: "/sale/#plenerowa" },
+  plenerowa: { name: "Sala plenerowa", cap: 130, tag: "Przestrzeń pełna światła", href: "/sale/#plenerowa" },
 } as const;
 
 export const NAV = [
