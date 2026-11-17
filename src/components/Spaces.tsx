@@ -17,7 +17,7 @@ const SPACES = {
   },
   plenerowa: {
     name: "Sala plenerowa",
-    claim: "Industrialny sznyt",
+    claim: "Przestrzeń pełna światła",
     text: "Przeszklona sala wśród brzóz, w której zieleń staje się częścią Waszego przyjęcia. W ciągu dnia pełna naturalnego światła, wieczorem nabiera przytulnego charakteru dzięki girlandom lampek. Tuż obok ogród — miejsce na ceremonię, serwis tortu, akustyczny występ pod gołym niebem oraz chwilę rozmowy z dala od parkietu.",
     ticks: ["Przyjęcia do 130 osób", "Klimatyzacja", "Dedykowany parking", "Kameralne tarasy wśród zieleni"],
     day: { src: "/img/plener-dzien-2.webp", alt: "Sala plenerowa za dnia – kryształowe żyrandole i girlandy lampek" },
