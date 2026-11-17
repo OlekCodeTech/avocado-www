@@ -3,7 +3,7 @@ import { asset } from "@/lib/asset";
 import Reveal from "./Reveal";
 
 const TILES = [
-  { t: "Wesela", p: "A co, jeśli właśnie znaleźliście miejsce na Wasze wesele? Poznajcie Avocado i sprawdźcie, czy poczujecie się tu u siebie.", img: "/img/wesela.webp", alt: "Para młoda wieczorem wśród brzóz", href: "/wesela/" },
+  { t: "Wesela", p: "A co, jeśli właśnie znaleźliście miejsce na Wasze wesele? Poznajcie Avocado i sprawdźcie, czy poczujecie się tu u siebie.", img: "/img/of-wesela.webp", alt: "Para młoda wśród brzóz o zachodzie słońca", href: "/wesela/" },
   { t: "Przyjęcia", p: "Zbierzcie rodzinę i przyjaciół przy jednym stole. My zajmiemy się menu i organizacją, a Wy cieszcie się rozmowami, śmiechem i czasem razem. Niezależnie od okazji Avocado będzie bardzo dobrym wyborem.", img: "/img/of-przyjecia.webp", alt: "Sala plenerowa przygotowana na rodzinne przyjęcie", href: "/przyjecia/" },
   { t: "Spotkania firmowe", p: "Zapewnij swoim współpracownikom niezapomniany wieczór. Od tematycznych spotkań, po oficjalne konferencje.", img: "/img/of-firma.webp", alt: "Sala bankietowa przygotowana na jubileusz firmy", href: "/przyjecia/#firmowe" },
   { t: "Wydarzenia otwarte", p: "Nie musicie czekać na zaproszenie, aby bawić się w Avocado. Zobaczcie wydarzenia, jakie dla Was tworzymy – sprawdźcie, co planujemy w najbliższym czasie.", img: "/img/of-wydarzenia.webp", alt: "Goście przy stołach podczas wydarzenia w Avocado", href: "/wydarzenia/" },

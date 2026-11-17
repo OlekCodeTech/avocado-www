@@ -67,7 +67,7 @@ export default function Home() {
             <h2>Z dala od zgiełku miasta,<br />przy brzozowym lesie</h2>
           </Reveal>
           <Reveal delay={0.1} className="intro__txt">
-            <p>Avocado położone jest przy brzozowym lesie, blisko natury i z dala od miejskiego zgiełku. To dobre jedzenie i zespół ludzi, którzy pomogą Wam na każdym etapie planowania i organizacji przyjęcia. Nasze otoczenie tworzy wyjątkową scenerię dla wesel, rodzinnych uroczystości i spotkań biznesowych. Pomagamy realizować Wasze pomysły i dbamy o szczegóły, żebyście mieli czas dla bliskich i zaproszonych gości.</p>
+            <p>Avocado położone jest przy brzozowym lesie, blisko natury i z dala od miejskiego zgiełku. To co nas wyróżnia, to dobre jedzenie i zespół ludzi, którzy pomogą Wam na każdym etapie planowania i organizacji przyjęcia. Nasze otoczenie tworzy wyjątkową scenerię dla wesel, rodzinnych uroczystości i spotkań biznesowych. Pomagamy realizować Wasze pomysły i dbamy o szczegóły, żebyście Wy mieli czas dla bliskich i zaproszonych gości.</p>
             <div className="intro__act">
               <Link href={planHref()} className="btn">Opowiedzcie nam o swoich planach</Link>
               <Link href="/o-nas/" className="link">Poznajcie nas →</Link>

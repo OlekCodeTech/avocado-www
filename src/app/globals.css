@@ -139,7 +139,10 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
 .facts__grid--5 .facts__k{font-size:1.25rem}
 .facts__a{display:flex;flex-direction:column;gap:4px;text-decoration:none;color:inherit}
 .facts__a:hover .facts__k{color:var(--gold)}
-.intro__act{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:28px}
+.intro__act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:24px}
+.intro__act .link{margin-top:0}
+/* mapa nie może wychodzić nad pasek nawigacji (warstwy Leaflet mają z-index do 1000) */
+.lm{position:relative;z-index:0;isolation:isolate}
 .tiles--offer .tile__media{aspect-ratio:4/5}
 .faq__more{background:none;border:0;border-bottom:1px solid var(--gold);padding:0 0 4px;margin-top:26px;cursor:pointer;font:500 .72rem/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
 .eyebrow--lg{font-size:.86rem}
