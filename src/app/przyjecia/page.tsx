@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import Gallery from "@/components/Gallery";
 import CtaBand from "@/components/CtaBand";
 import Kinds from "@/components/Kinds";
 import { asset, planHref } from "@/lib/asset";
@@ -11,24 +10,6 @@ export const metadata: Metadata = {
   title: "Przyjęcia rodzinne i firmowe",
   description: "Chrzciny, komunie, roczki, 18-stki, jubileusze oraz imprezy firmowe i konferencje w Avocado koło Sieradza. Dwie sale, ogród, plac zabaw i własna kuchnia.",
 };
-
-const PICS = [
-  { src: "/img/chrzciny.webp", alt: "Dekoracja chrzcin w sali plenerowej" },
-  { src: "/img/komunia-stoly.webp", alt: "Stoły komunijne w sali bankietowej" },
-  { src: "/img/komunia-desery.webp", alt: "Desery komunijne" },
-  { src: "/img/dzieci-brzozy.webp", alt: "Dzieci bawiące się wśród brzóz" },
-  { src: "/img/osiemnastka.webp", alt: "Sala udekorowana na 18-stkę" },
-  { src: "/img/przyjecia.webp", alt: "Stół z dekoracją z kwiatów" },
-  { src: "/img/komunia-dzieci.webp", alt: "Dzieci na trawniku przy dmuchańcu" },
-  { src: "/img/kom-7.webp", alt: "Sala bankietowa przygotowana na komunię" },
-  { src: "/img/slodki-stol.webp", alt: "Słodki stół" },
-  { src: "/img/kom-5.webp", alt: "Ścianka komunijna z balonów" },
-  { src: "/img/gchr-2.webp", alt: "Sala plenerowa przygotowana na roczek" },
-  { src: "/img/chr-1.webp", alt: "Dekoracja chrztu z misiem i balonami" },
-  { src: "/img/roc-3.webp", alt: "Słodki stół na roczek" },
-  { src: "/img/chr-3.webp", alt: "Dziewczynki bawiące się w ogrodzie" },
-  { src: "/img/plac-zabaw.webp", alt: "Plac zabaw w ogrodzie Avocado" },
-];
 
 export default function Przyjecia() {
   return (
@@ -83,11 +64,6 @@ export default function Przyjecia() {
             <Link href={planHref("Impreza firmowa")} className="link">Zapytaj o ofertę dla firmy →</Link>
           </Reveal>
         </div>
-      </section>
-
-      <section className="sec sec--tight sec--sand">
-        <div className="wrap"><Reveal className="head"><p className="eyebrow">Galeria</p><h2>Przyjęcia w Avocado</h2></Reveal></div>
-        <Gallery pics={PICS} cols={3} wide={[0, 7, 10]} />
       </section>
 
       <CtaBand title={<>Wydarzenie, które na długo<br />zapadnie w pamięci wszystkich</>} text="Zawsze polecamy odwiedzenie Avocado. Pozwoli to poczuć wyjątkową atmosferę miejsca i lepiej poznać to, co mamy do zaoferowania." okazja="Chrzciny" button="Zacznij planować" />
