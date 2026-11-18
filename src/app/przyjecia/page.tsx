@@ -54,18 +54,21 @@ export default function Przyjecia() {
 
       <section className="sec" id="firmowe">
         <div className="wrap split">
-          <Reveal className="split__img"><img src={asset("/img/firma-stol.webp")} alt="Bar i długi stół w sali bankietowej" loading="lazy" /></Reveal>
+          <Reveal className="split__img"><img src={asset("/img/gf-13.webp")} alt="Sala bankietowa przygotowana na jubileusz firmy" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Imprezy firmowe</p>
-            <h2>Przenieś się z biura do azylu</h2>
-            <p>Najlepsze miejsce na niezapomniane spotkanie lub event firmowy. W Avocado posiadamy przestrzenie idealne do organizacji firmowych spotkań, konferencji oraz pozostałych eventów. Menu na przyjęcia firmowe i cateringi zawsze ustalamy indywidualnie tak, aby sprostać Waszym oczekiwaniom. Podczas wydarzenia zaopiekuje się Wami doświadczony zespół – zadbamy, aby każdy bankiet, konferencja czy impreza firmowa na długo została w pamięci Państwa gości.</p>
+            <h2>Przenieście się z biur na… event firmowy</h2>
+            <p>Kolacja zespołu, jubileusz firmy czy spotkanie po szkoleniu? W Avocado możecie połączyć wspólny posiłek z czasem na rozmowy. Napiszcie, jaki charakter ma mieć wydarzenie, ilu uczestników zapraszacie i czy potrzebujecie noclegów lub wyposażenia do prezentacji.</p>
+            <h3 className="sub">Zacznijmy od Waszych planów:</h3>
+            <p>Podajcie okazję, przybliżony termin i liczbę gości. Dobierzemy możliwą przestrzeń i przygotujemy propozycję przyjęcia.</p>
+            <h3 className="sub">Przyjęcia firmowe z Avocado:</h3>
             <ul className="ticks">
               <li>Integracja na najwyższym poziomie</li>
               <li>Profesjonalne zaplecze multimedialne (nagłośnienie, projektor, ekran, mikrofony)</li>
               <li>Dedykowany koordynator wydarzenia</li>
               <li>Przyjęcie na sali lub catering</li>
             </ul>
-            <Link href={planHref("Impreza firmowa")} className="link">Zapytaj o ofertę dla firmy →</Link>
+            <div className="btns btns--top"><Link href={planHref("Impreza firmowa")} className="btn">Zapytajcie o termin i ofertę</Link></div>
           </Reveal>
         </div>
       </section>

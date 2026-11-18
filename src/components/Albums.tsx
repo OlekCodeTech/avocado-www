@@ -6,7 +6,7 @@ import Lightbox, { type LbPic } from "./Lightbox";
 
 export type Album = { name: string; sub?: string; cover: string; pics: LbPic[] };
 
-/** Siatka albumów: po najechaniu na okładkę pojawia się imię / nazwa, kliknięcie otwiera galerię. */
+/** Siatka galerii par: podłużna okładka, po najechaniu beżowy prostokąt z imionami i kreską, kliknięcie otwiera galerię. */
 export default function Albums({ albums }: { albums: Album[] }) {
   const [al, setAl] = useState<number | null>(null);
   const [open, setOpen] = useState<number | null>(null);
@@ -17,9 +17,11 @@ export default function Albums({ albums }: { albums: Album[] }) {
           <button key={a.name} type="button" className="album" onClick={() => { setAl(k); setOpen(0); }} aria-label={`Zobacz galerię: ${a.name}`}>
             <img src={asset(a.cover)} alt="" loading="lazy" />
             <span className="album__over">
-              <b>{a.name}</b>
-              {a.sub && <i>{a.sub}</i>}
-              <em>Zobacz galerię <span aria-hidden="true">→</span></em>
+              <span className="album__box">
+                <b>{a.name}</b>
+                <i aria-hidden="true" />
+                <em>Zobacz galerię</em>
+              </span>
             </span>
           </button>
         ))}

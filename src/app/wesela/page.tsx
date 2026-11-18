@@ -119,7 +119,7 @@ export default function Wesela() {
       </section>
 
       <section className="sec sec--tight">
-        <div className="wrap"><Reveal className="head head--row"><p className="eyebrow eyebrow--lg">Wesela w Avocado</p><Link href="/galeria/#wesela" className="link">Zobacz więcej →</Link></Reveal></div>
+        <div className="wrap"><Reveal className="head head--row"><p className="eyebrow eyebrow--lg">Wesela w Avocado</p><Link href="/galeria/" className="link">Zobacz więcej →</Link></Reveal></div>
         <Gallery pics={PICS} />
       </section>
 

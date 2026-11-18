@@ -7,7 +7,7 @@ import BookingWidget from "@/components/BookingWidget";
 import Faq from "@/components/Faq";
 import CtaBand from "@/components/CtaBand";
 import Clip from "@/components/Clip";
-import { asset, CONTACT, IDO, planHref } from "@/lib/asset";
+import { asset, CONTACT, planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Avocado Domki – komfort i natura w jednym miejscu",
@@ -44,12 +44,9 @@ const PICS = [
 ];
 
 const FAQ_N = [
-  ["Ile kosztuje nocleg?", "Ceny zaczynają się od 449 zł za domek za noc (2 osoby) i zależą od terminu oraz liczby gości. Aktualne ceny i dostępność pokazuje wyszukiwarka poniżej."],
-  ["Czy jest śniadanie?", "Tak – śniadanie w restauracji dokupicie przy rezerwacji (40 zł od osoby za noc)."],
-  ["Jakie są warunki rezerwacji?", "Przedpłata 10%, bezkosztowa anulacja zgodnie z regulaminem silnika rezerwacji. Dowolna długość i początek pobytu."],
-  ["O której zameldowanie?", "Zameldowanie i wymeldowanie są bezobsługowe i dostępne 24/7 – pełna swoboda i niezależność."],
-  ["Czy goście weselni mogą zarezerwować domki razem z przyjęciem?", "Tak. Zaznaczcie w planerze „potrzebujemy noclegu” – zablokujemy domki dla Waszych gości i przygotujemy jedną ofertę."],
-  ["Czy można przyjechać z dzieckiem lub większą rodziną?", "Domek mieści do 6 osób (2 sypialnie, rozkładane sofy), a na życzenie dostawimy łóżeczko. Na terenie jest plac zabaw."],
+  ["Ile kosztuje pobyt?", "Cenę dla wybranych dat i liczby osób sprawdzicie w systemie rezerwacji. W sprawie noclegu dla grupy przyjęciowej napiszcie do nas razem z zapytaniem o wydarzenie."],
+  ["O której można się zameldować?", "Zameldowanie od 14:00, wymeldowanie do 11:00."],
+  ["Czy w czasie pobytu odbywają się przyjęcia?", "Domki znajdują się przy naszych salach, w których organizujemy wesela i inne wydarzenia. Jeśli zależy Wam na spokojnym pobycie, zapytajcie przed rezerwacją o plany na wybrany termin."],
 ] as const;
 
 export default function Noclegi() {
@@ -101,8 +98,8 @@ export default function Noclegi() {
       <section className="sec" id="rezerwacja">
         <div className="wrap">
           <Reveal className="head head--row">
-            <div><p className="eyebrow">Rezerwacja online</p><h2>Sprawdźcie wolne terminy</h2></div>
-            <p className="head__aside">Wybierzcie daty i liczbę gości – system pokaże dostępne domki i cenę. Bez prowizji portali.</p>
+            <div><p className="eyebrow">Rezerwacja online</p><h2>Wybierzcie termin pobytu</h2></div>
+            <p className="head__aside">Wpiszcie daty i liczbę osób. Przed potwierdzeniem rezerwacji sprawdźcie wybrany wariant, cenę oraz warunki pobytu.</p>
           </Reveal>
           <Reveal delay={0.1}><BookingWidget /></Reveal>
         </div>
@@ -122,31 +119,30 @@ export default function Noclegi() {
       </section>
 
       <section className="sec">
-        <div className="wrap">
-          <Reveal className="head head--center"><p className="eyebrow">Dla kogo</p><h2>Nie tylko na wesele</h2></Reveal>
-          <div className="tiles tiles--3">
-            {[
-              { t: "Goście weselni", p: "Rodzina z daleka śpi kilka kroków od sali, a rano wszyscy spotykają się na poprawinach.", href: planHref("Wesele", { nocleg: "1" }), img: "/img/plener-lampki.webp" },
-              { t: "Weekend za miastem", p: "Las, cisza, śniadanie w restauracji i 10 minut do Sieradza. Rezerwacja online.", href: IDO.engine, img: "/img/domek-8.webp" },
-              { t: "Firmy", p: "Szkolenie lub integracja z noclegiem – sala, catering i domki w jednym miejscu.", href: planHref("Impreza firmowa", { nocleg: "1" }), img: "/img/firma-stol.webp" },
-            ].map((x, k) => (
-              <Reveal key={x.t} delay={k * 0.08}>
-                <Link className="tile" href={x.href} target={x.href.startsWith("http") ? "_blank" : undefined}>
-                  <div className="tile__media"><img src={asset(x.img)} alt={x.t} loading="lazy" /></div>
-                  <h3>{x.t}</h3><p>{x.p}</p><span className="more">{x.href.startsWith("http") ? "Rezerwuj" : "Zapytaj"} <i>→</i></span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+        <div className="wrap duo">
+          <Reveal>
+            <div className="duo__item">
+              <h2>Noclegi dla gości przyjęcia</h2>
+              <p>Przyjeżdża do Was rodzina z daleka? Podajcie przy zapytaniu o przyjęcie orientacyjną liczbę osób, które chciałyby zostać na noc. Sprawdzimy dostępność i zasady rezerwacji domków na ten termin.</p>
+              <Link href={planHref(undefined, { nocleg: "1" })} className="link">Zapytaj o przyjęcie z noclegiem →</Link>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="duo__item">
+              <h2>Przyjazd na wypoczynek</h2>
+              <p>Jeśli planujecie pobyt niezwiązany z przyjęciem, wybierzcie daty w systemie rezerwacji. Zobaczycie dostępne warianty i cenę dla Waszej grupy.</p>
+              <a href="#rezerwacja" className="link">Wybierz termin pobytu →</a>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <Faq items={FAQ_N} title="Pytania o Avocado Domki" sand />
+      <Faq items={FAQ_N} title="Pytania i odpowiedzi" sand />
       <CtaBand
-        title={<>Pytania o domki?<br />Zadzwońcie</>}
-        text={`Recepcja domków: ${CONTACT.domkiPhone} · ${CONTACT.domkiEmail}. Grupy weselne i firmowe wyceniamy razem z przyjęciem.`}
+        title={<>Macie pytania<br />o nocleg?</>}
+        text="Napiszcie lub zadzwońcie do osoby zajmującej się domkami: 511 647 111, avocado.domki@gmail.com. Przyjęcie z noclegiem omówicie z Patrykiem."
         extra={{ nocleg: "1" }}
-        button="Zapytaj o nocleg dla grupy"
+        button="Zapytaj o nocleg"
       />
     </>
   );
