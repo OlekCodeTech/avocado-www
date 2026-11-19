@@ -19,14 +19,17 @@ const BANK = [
   { src: "/img/sala-szeroka.webp", alt: "Sala bankietowa w świetle dziennym" },
   { src: "/img/sb-139.webp", alt: "Bar w sali bankietowej" },
   { src: "/img/bank-wieczor.webp", alt: "Sala bankietowa wieczorem" },
+  { src: "/img/sb-gk-pop13.webp", alt: "Długie stoły na tle świetlnej kurtyny" },
   { src: "/img/sb-116.webp", alt: "Okrągłe stoły z błękitnymi obrusami" },
   { src: "/img/sala-dlugie-stoly.webp", alt: "Układ długich stołów" },
   { src: "/img/sb-a50.webp", alt: "Dekoracja stołu ze świecami i czerwonymi kwiatami" },
   { src: "/img/bk-3.webp", alt: "Okrągłe stoły przy oknach" },
+  { src: "/img/sb-113.webp", alt: "Okrągły stół z błękitnym obrusem i pomarańczowymi serwetami" },
   { src: "/img/sb-d44.webp", alt: "Stoły przy wejściu do sali" },
   { src: "/img/stol-dlugi.webp", alt: "Drewniany stół ze świecami" },
   { src: "/img/sb-a4.webp", alt: "Sala w czerni i czerwieni" },
   { src: "/img/bk-5.webp", alt: "Stół pary młodej" },
+  { src: "/img/sb-gk-pop.webp", alt: "Sala bankietowa z długimi stołami przy oknach" },
   { src: "/img/bk-7.webp", alt: "Sala z błękitnymi obrusami" },
   { src: "/img/sb-119.webp", alt: "Długie stoły z granatowymi obrusami" },
   { src: "/img/nw-5.webp", alt: "Sala bankietowa w różu i bieli" },
@@ -35,14 +38,17 @@ const BANK = [
 const PLENER = [
   { src: "/img/intro-15.webp", alt: "Okrągłe stoły w sali plenerowej" },
   { src: "/img/plener-wnetrze.webp", alt: "Jasne wnętrze sali plenerowej" },
+  { src: "/img/pl-3u2a7479.webp", alt: "Sala plenerowa z dekoracją z białych kwiatów" },
   { src: "/img/pl-k09.webp", alt: "Stół z białymi kwiatami przy oknie" },
   { src: "/img/pl-wn-2.webp", alt: "Długie stoły z zielenią" },
   { src: "/img/pl-zew-3.webp", alt: "Sala plenerowa o zmierzchu" },
   { src: "/img/plener-stoly.webp", alt: "Długie stoły w sali plenerowej" },
+  { src: "/img/pl-525a1302.webp", alt: "Sala plenerowa w bordowej oprawie" },
   { src: "/img/pl-k19.webp", alt: "Miejsce ceremonii wśród brzóz" },
   { src: "/img/plener-zima.webp", alt: "Sala plenerowa zimą" },
   { src: "/img/pl-wn-1.webp", alt: "Białe stoły w sali plenerowej" },
   { src: "/img/pl-wn-4.webp", alt: "Sala plenerowa z widokiem na las" },
+  { src: "/img/pl-525a1340.webp", alt: "Miejsce ceremonii w ogrodzie z bordową dekoracją" },
   { src: "/img/pl-k196.webp", alt: "Wieża kieliszków w ogrodzie" },
   { src: "/img/pl-zew-2.webp", alt: "Goście na tarasie sali plenerowej" },
   { src: "/img/intro-07.webp", alt: "Sufit z tkaniny i ściana z drewna" },
@@ -50,9 +56,11 @@ const PLENER = [
 const CEREMONIA = [
   { src: "/img/ceremonia-goscie.webp", alt: "Ceremonia ślubna w ogrodzie wśród brzóz" },
   { src: "/img/cer-k094.webp", alt: "Przysięga pary młodej w ogrodzie" },
+  { src: "/img/cer-3u2a8516.webp", alt: "Para młoda wśród gości po ceremonii" },
   { src: "/img/slub-1.webp", alt: "Para młoda wśród gości po ceremonii" },
   { src: "/img/cer-k145.webp", alt: "Para młoda przy dekoracji z białej tkaniny" },
   { src: "/img/slub-3.webp", alt: "Ceremonia pod altaną" },
+  { src: "/img/cer-3u2a8268.webp", alt: "Ceremonia w ogrodzie z białym dywanem" },
   { src: "/img/slub-4.webp", alt: "Wejście pary młodej na ceremonię" },
   { src: "/img/nw-1.webp", alt: "Pocałunek pary młodej podczas ceremonii" },
   { src: "/img/slub-2.webp", alt: "Goście witają parę młodą" },
@@ -92,7 +100,7 @@ export default function Sale() {
             </Reveal>
           </div>
         </div>
-        <Gallery pics={BANK} cols={3} wide={[0, 6, 12]} tight />
+        <Gallery pics={BANK} cols={3} wide={[]} tight />
       </section>
 
       <section className="sec sec--sand" id="plenerowa">
@@ -108,7 +116,7 @@ export default function Sale() {
             </Reveal>
           </div>
         </div>
-        <Gallery pics={PLENER} cols={3} wide={[0, 3, 6, 9, 12]} tight />
+        <Gallery pics={PLENER} cols={3} wide={[0, 9]} tight />
       </section>
 
       <section className="sec" id="teren">
