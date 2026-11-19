@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import Gallery from "@/components/Gallery";
+import MoreGallery from "@/components/MoreGallery";
+import EV from "@/lib/events.json";
 import CtaBand from "@/components/CtaBand";
 import Clip from "@/components/Clip";
-import { asset, planHref } from "@/lib/asset";
+import { planHref } from "@/lib/asset";
 
 export const metadata: Metadata = {
   title: "Wydarzenia otwarte",
@@ -18,49 +19,15 @@ const EVENTS = [
   { d: "—", m: "", y: "wkrótce", t: "Kolacja degustacyjna", p: "Kilkudaniowe menu sezonowe szefa kuchni, każde danie opowiedziane przy stole, do tego dobrane wina i muzyka na żywo. Termin ogłosimy wkrótce.", tag: "Termin wkrótce" },
 ];
 
-const GAL = {
-  kobieciarnia: [
-    { src: "/img/kobieciarnia.webp", alt: "Uczestniczki przy ściance Kobieciarni" },
-    { src: "/img/kobieciarnia-sala.webp", alt: "Sala udekorowana na Kobieciarnię" },
-    { src: "/img/kobieciarnia-drinki.webp", alt: "Drinki powitalne" },
-    { src: "/img/kobieciarnia-taniec.webp", alt: "Uczestniczki na parkiecie" },
-    { src: "/img/kob-5.webp", alt: "Sala przygotowana na Kobieciarnię" },
-    { src: "/img/kob-7.webp", alt: "Bar i strefa powitalna" },
-    { src: "/img/kob-9.webp", alt: "Uczestniczki przy ściance Kobieciarni" },
-    { src: "/img/kob-6.webp", alt: "Stoły z czerwonymi kwiatami" },
-  ],
-  walentynki: [
-    { src: "/img/walentynki.webp", alt: "Sala przygotowana na kolację walentynkową" },
-    { src: "/img/walentynki-danie.webp", alt: "Danie z kolacji walentynkowej" },
-    { src: "/img/walentynki-kuchnia.webp", alt: "Zespół kuchni przy wydawce" },
-    { src: "/img/walentynki-stol.webp", alt: "Stół z czerwonymi kwiatami" },
-    { src: "/img/wal-5.webp", alt: "Deser z kolacji walentynkowej" },
-    { src: "/img/wal-7.webp", alt: "Stół dla dwojga ze świecami" },
-    { src: "/img/wal-8.webp", alt: "Sala w czerwieni i czerni" },
-    { src: "/img/wal-10.webp", alt: "Okrągłe stoły przygotowane na kolację" },
-  ],
-  degustacja: [
-    { src: "/img/degust-sala.webp", alt: "Sala przygotowana na kolację degustacyjną" },
-    { src: "/img/degust-sos.webp", alt: "Polewanie dania sosem" },
-    { src: "/img/degust-talerze.webp", alt: "Talerze gotowe do wydania" },
-    { src: "/img/degust-desery.webp", alt: "Desery z malinami" },
-    { src: "/img/dg-5.webp", alt: "Sala w dniu kolacji degustacyjnej" },
-    { src: "/img/dg-6.webp", alt: "Przystawki gotowe do wydania" },
-    { src: "/img/dg-7.webp", alt: "Zespół kuchni wydaje dania" },
-    { src: "/img/dg-8.webp", alt: "Kucharze przy wydawce" },
-  ],
-};
-
 export default function Wydarzenia() {
   return (
     <>
       <PageHero
-        img="/img/kobieciarnia-sala.webp"
-        more={["/img/walentynki.webp", "/img/degust-sala.webp", "/img/kob-5.webp"]}
-        alt="Sala Avocado udekorowana na Kobieciarnię"
-        eyebrow="Zapraszamy na otwarte wydarzenia"
-        title="Ekskluzywne spotkania, dostępne dla wszystkich"
-        lead="W ciągu roku organizujemy otwarte wydarzenia, dające Ci szansę doświadczyć, jak bardzo wyjątkowe jest Avocado. Doświadcz naszej gościnności, wyjątkowego jedzenia i wspaniałej, otulającej atmosfery."
+        img="/img/wyd-hero.webp"
+        alt="Goście przy stołach podczas kolacji w Avocado, w tle zespół kuchni"
+        eyebrow="Wydarzenia"
+        title="Spotkajmy się w Avocado"
+        lead="Dobra kolacja, muzyka i czas spędzony razem. W ciągu roku zapraszamy Was na wydarzenia, podczas których możecie poznać naszą kuchnię, spotkać znajomych i po prostu miło spędzić wieczór. Jeśli zastanawiasz się nad wyborem Avocado na swoje przyjęcie, to najlepsza okazja, aby się poznać."
       >
         <a href="#kalendarz" className="btn btn--light">Zobacz kalendarz</a>
       </PageHero>
@@ -89,29 +56,32 @@ export default function Wydarzenia() {
         </div>
       </section>
 
-      <section className="sec">
-        <div className="wrap split">
-          <Reveal className="split__img"><img src={asset("/img/kobieciarnia-goscie.webp")} alt="Uczestniczki Kobieciarni 2026" loading="lazy" /></Reveal>
-          <Reveal delay={0.1} className="split__txt">
-            <p className="eyebrow">Kobieciarnia · 06.03.2027</p>
-            <h2>Wieczór tylko dla Was</h2>
-            <p>Dzień Kobiet świętujemy razem – już po raz trzeci. Czerwony dywan, drink powitalny, pokazy i strefa piękna, kolacja przygotowana przez naszą kuchnię i parkiet do rana. Przyjdźcie z przyjaciółkami, siostrą, mamą.</p>
-            <Link href={planHref("Inne", { info: "Kobieciarnia 06.03.2027" })} className="link">Zarezerwuj miejsce →</Link>
-          </Reveal>
+      <section className="sec sec--sand" id="kolacja-swiateczna">
+        <div className="wrap">
+          <Reveal className="head head--center"><p className="eyebrow">Kolacja świąteczna</p><h2>Kolacja z Pascalem Brodnickim</h2></Reveal>
+          <Reveal><div className="film"><Clip name="kolacja" label="Film z kolacji świątecznej w Avocado" className="clip--wide" /></div></Reveal>
         </div>
-        <Gallery pics={GAL.kobieciarnia} cols={4} wide={[]} tight />
       </section>
 
-      <section className="sec sec--sand sec--tight">
-        <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacja walentynkowa</p><h2>Luty w Avocado pachnie różami</h2></Reveal></div>
-        <Gallery pics={GAL.walentynki} cols={4} wide={[]} />
+      <section className="sec" id="walentynki">
+        <div className="wrap">
+          <Reveal className="head"><p className="eyebrow eyebrow--lg">Walentynki 2025 | 2026</p></Reveal>
+          <MoreGallery pics={EV.walentynki} title="Kolacja walentynkowa w Avocado" />
+        </div>
       </section>
 
-      <section className="sec sec--tight">
-        <div className="wrap"><Reveal className="head"><p className="eyebrow">Kolacje degustacyjne</p><h2>Kilka dań, jedno wino, jeden długi stół</h2></Reveal>
-          <Reveal><Clip name="kolacja" label="Film z kolacji degustacyjnej w Avocado" className="clip--wide" /></Reveal>
+      <section className="sec sec--sand" id="kobieciarnia">
+        <div className="wrap">
+          <Reveal className="head"><p className="eyebrow eyebrow--lg">Kobieciarnia</p></Reveal>
+          <MoreGallery pics={EV.kobieciarnia} title="Kobieciarnia w Avocado" />
         </div>
-        <Gallery pics={GAL.degustacja} cols={4} wide={[]} />
+      </section>
+
+      <section className="sec" id="degustacje">
+        <div className="wrap">
+          <Reveal className="head"><p className="eyebrow eyebrow--lg">Kolacje degustacyjne</p></Reveal>
+          <MoreGallery pics={EV.degustacja} title="Kolacja degustacyjna w Avocado" />
+        </div>
       </section>
 
       <section className="sec newsletter">

@@ -1,457 +1,890 @@
 [
  {
-  "slug": "michalina-michal",
-  "name": "Michalina & Michał",
-  "sub": "Wesele · sala plenerowa",
+  "slug": "aleksandra-maciej",
+  "name": "Aleksandra & Maciej",
+  "cover": "/img/alb/aleksandra-maciej-7.webp",
   "pics": [
    {
-    "src": "/img/alb/michalina-michal-1.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/aleksandra-maciej-7.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-2.webp",
-    "w": 935,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-1.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-3.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-2.webp",
+    "w": 1001,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-4.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/aleksandra-maciej-3.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-5.webp",
-    "w": 935,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-4.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-6.webp",
-    "w": 934,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-5.webp",
+    "w": 1001,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-7.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-6.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-8.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-8.webp",
+    "w": 999,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-9.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-9.webp",
+    "w": 1500,
+    "h": 998
    },
    {
-    "src": "/img/alb/michalina-michal-10.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-10.webp",
+    "w": 1500,
+    "h": 998
    },
    {
-    "src": "/img/alb/michalina-michal-11.webp",
-    "w": 935,
-    "h": 1400
+    "src": "/img/alb/aleksandra-maciej-11.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-12.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/aleksandra-maciej-12.webp",
+    "w": 998,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-13.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/aleksandra-maciej-13.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/michalina-michal-14.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/aleksandra-maciej-14.webp",
+    "w": 998,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-15.webp",
+    "w": 999,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-16.webp",
+    "w": 998,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-17.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-18.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-19.webp",
+    "w": 998,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-20.webp",
+    "w": 998,
+    "h": 1500
+   }
+  ]
+ },
+ {
+  "slug": "kamila-oskar",
+  "name": "Kamila & Oskar",
+  "cover": "/img/alb/kamila-oskar-29.webp",
+  "pics": [
+   {
+    "src": "/img/alb/kamila-oskar-29.webp",
+    "w": 853,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/kamila-oskar-1.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-2.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-3.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-4.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/kamila-oskar-5.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/kamila-oskar-6.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-7.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-8.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-9.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/kamila-oskar-10.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-11.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-12.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-13.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-14.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-15.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-16.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-17.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-18.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-19.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-20.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-21.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-22.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-23.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-24.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-25.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-26.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-27.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-28.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/kamila-oskar-30.webp",
+    "w": 1280,
+    "h": 853
+   },
+   {
+    "src": "/img/alb/kamila-oskar-31.webp",
+    "w": 1280,
+    "h": 853
+   },
+   {
+    "src": "/img/alb/kamila-oskar-32.webp",
+    "w": 1280,
+    "h": 853
    }
   ]
  },
  {
   "slug": "gabi-kuba",
   "name": "Gabi & Kuba",
-  "sub": "Wesele i poprawiny · sala bankietowa",
+  "cover": "/img/alb/gabi-kuba-12.webp",
   "pics": [
    {
+    "src": "/img/alb/gabi-kuba-12.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
     "src": "/img/alb/gabi-kuba-1.webp",
-    "w": 933,
-    "h": 1400
+    "w": 1000,
+    "h": 1500
    },
    {
     "src": "/img/alb/gabi-kuba-2.webp",
-    "w": 933,
-    "h": 1400
+    "w": 1000,
+    "h": 1500
    },
    {
     "src": "/img/alb/gabi-kuba-3.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1000,
+    "h": 1500
    },
    {
     "src": "/img/alb/gabi-kuba-4.webp",
-    "w": 933,
-    "h": 1400
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-5.webp",
-    "w": 933,
-    "h": 1400
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-6.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-7.webp",
-    "w": 1400,
-    "h": 934
+    "w": 1000,
+    "h": 1500
    },
    {
     "src": "/img/alb/gabi-kuba-8.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-9.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-10.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-11.webp",
-    "w": 1400,
-    "h": 933
-   },
-   {
-    "src": "/img/alb/gabi-kuba-12.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1000,
+    "h": 1500
    },
    {
     "src": "/img/alb/gabi-kuba-13.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/gabi-kuba-14.webp",
-    "w": 1400,
-    "h": 933
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/gabi-kuba-15.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/gabi-kuba-16.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/gabi-kuba-17.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-18.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-19.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-20.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-21.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-22.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/gabi-kuba-23.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/gabi-kuba-24.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-25.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/gabi-kuba-26.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-27.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-28.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-29.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-30.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/gabi-kuba-31.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-32.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-33.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-34.webp",
+    "w": 1500,
+    "h": 1000
+   },
+   {
+    "src": "/img/alb/gabi-kuba-35.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/gabi-kuba-36.webp",
+    "w": 1500,
+    "h": 1000
    }
   ]
  },
  {
-  "slug": "a-j",
-  "name": "A & J",
-  "sub": "Ślub w plenerze",
+  "slug": "klaudia-daniel",
+  "name": "Klaudia & Daniel",
+  "cover": "/img/alb/klaudia-daniel-11.webp",
   "pics": [
    {
-    "src": "/img/alb/a-j-1.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-11.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-2.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-1.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-3.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-2.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-4.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-3.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-5.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-4.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-6.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-5.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-7.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-6.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-8.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-7.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-9.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-8.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-10.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-9.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-11.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/klaudia-daniel-10.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/a-j-12.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/klaudia-daniel-12.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-13.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-14.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-15.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-16.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-17.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-18.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-19.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-20.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-21.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-22.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-23.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-24.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-25.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-26.webp",
+    "w": 1000,
+    "h": 1500
    }
   ]
  },
  {
-  "slug": "n-k",
-  "name": "N & K",
-  "sub": "Wesele · sala bankietowa",
+  "slug": "monika-przemek",
+  "name": "Monika & Przemek",
+  "cover": "/img/alb/monika-przemek-14.webp",
   "pics": [
    {
-    "src": "/img/alb/n-k-1.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-14.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-2.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-1.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-3.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-2.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-4.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-3.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-5.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-4.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-6.webp",
-    "w": 932,
-    "h": 1400
+    "src": "/img/alb/monika-przemek-5.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-7.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-6.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/n-k-8.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-7.webp",
+    "w": 854,
+    "h": 1280
    },
    {
-    "src": "/img/alb/n-k-9.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-8.webp",
+    "w": 854,
+    "h": 1280
    },
    {
-    "src": "/img/alb/n-k-10.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-9.webp",
+    "w": 854,
+    "h": 1280
    },
    {
-    "src": "/img/alb/n-k-11.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-10.webp",
+    "w": 854,
+    "h": 1280
    },
    {
-    "src": "/img/alb/n-k-12.webp",
-    "w": 1400,
-    "h": 932
+    "src": "/img/alb/monika-przemek-11.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-12.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-13.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-15.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-16.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-17.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-18.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/monika-przemek-19.webp",
+    "w": 1280,
+    "h": 853
+   },
+   {
+    "src": "/img/alb/monika-przemek-20.webp",
+    "w": 1280,
+    "h": 853
    }
   ]
  },
  {
-  "slug": "paulina-igor",
-  "name": "Paulina & Igor",
-  "sub": "Wesele · sala plenerowa",
+  "slug": "alicja-krzysztof",
+  "name": "Alicja & Krzysztof",
+  "cover": "/img/alb/alicja-krzysztof-16.webp",
   "pics": [
    {
-    "src": "/img/alb/paulina-igor-1.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/alicja-krzysztof-16.webp",
+    "w": 854,
+    "h": 1280
    },
    {
-    "src": "/img/alb/paulina-igor-2.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/alicja-krzysztof-1.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-3.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/alicja-krzysztof-2.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-4.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/alicja-krzysztof-3.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-5.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/alicja-krzysztof-4.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-6.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/alicja-krzysztof-5.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-7.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/alicja-krzysztof-6.webp",
+    "w": 1280,
+    "h": 854
    },
    {
-    "src": "/img/alb/paulina-igor-8.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/alicja-krzysztof-7.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-8.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-9.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-10.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-11.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-12.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-13.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-14.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-15.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-17.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-18.webp",
+    "w": 1280,
+    "h": 853
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-19.webp",
+    "w": 1280,
+    "h": 853
+   },
+   {
+    "src": "/img/alb/alicja-krzysztof-20.webp",
+    "w": 1280,
+    "h": 853
    }
   ]
  },
  {
-  "slug": "sabina-nick",
-  "name": "Sabina & Nick",
-  "sub": "Wesele · sala plenerowa",
+  "slug": "agata-jakub",
+  "name": "Agata & Jakub",
+  "cover": "/img/alb/agata-jakub-13.webp",
   "pics": [
    {
-    "src": "/img/alb/sabina-nick-1.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-13.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-2.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-1.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-3.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-2.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-4.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-3.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-5.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/agata-jakub-4.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-6.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-5.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-7.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/agata-jakub-6.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/sabina-nick-8.webp",
-    "w": 933,
-    "h": 1400
-   }
-  ]
- },
- {
-  "slug": "ola-bartosz",
-  "name": "Ola & Bartosz",
-  "sub": "Wesele · sala bankietowa",
-  "pics": [
-   {
-    "src": "/img/alb/ola-bartosz-1.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/agata-jakub-7.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/ola-bartosz-2.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/agata-jakub-8.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/ola-bartosz-3.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-9.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/ola-bartosz-4.webp",
-    "w": 933,
-    "h": 1400
+    "src": "/img/alb/agata-jakub-10.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/ola-bartosz-5.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-11.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
-    "src": "/img/alb/ola-bartosz-6.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-12.webp",
+    "w": 1000,
+    "h": 1500
    },
    {
-    "src": "/img/alb/ola-bartosz-7.webp",
-    "w": 933,
-    "h": 1400
-   }
-  ]
- },
- {
-  "slug": "natalia-blazej",
-  "name": "Natalia & Błażej",
-  "sub": "Wesele · sala plenerowa",
-  "pics": [
-   {
-    "src": "/img/alb/natalia-blazej-1.webp",
-    "w": 1400,
-    "h": 933
-   },
-   {
-    "src": "/img/alb/natalia-blazej-2.webp",
-    "w": 933,
-    "h": 1400
-   },
-   {
-    "src": "/img/alb/natalia-blazej-3.webp",
-    "w": 933,
-    "h": 1400
-   },
-   {
-    "src": "/img/alb/natalia-blazej-4.webp",
-    "w": 933,
-    "h": 1400
-   },
-   {
-    "src": "/img/alb/natalia-blazej-5.webp",
-    "w": 1400,
-    "h": 933
+    "src": "/img/alb/agata-jakub-14.webp",
+    "w": 1500,
+    "h": 1000
    }
   ]
  }
