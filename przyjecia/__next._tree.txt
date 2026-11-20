@@ -7,4 +7,4 @@
 :HL["/_next/static/media/b3db9f750640a943-s.p.0dguglgc-iz4q.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"przyjecia","h":64,"c":"$Q2"}]]
-0:{"b":"c8kCyxqZHgkWlrSzW-5ET","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"N7oTH4UuflCgjMMrxGndn","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
