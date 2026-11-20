@@ -56,30 +56,41 @@ export default function Wydarzenia() {
         </div>
       </section>
 
-      <section className="sec sec--sand" id="kolacja-swiateczna">
+      <section className="sec sec--sand" id="walentynki">
         <div className="wrap">
-          <Reveal className="head head--center"><p className="eyebrow">Kolacja świąteczna</p><h2>Kolacja z Pascalem Brodnickim</h2></Reveal>
-          <Reveal><div className="film"><Clip name="kolacja" label="Film z kolacji świątecznej w Avocado" className="clip--wide" /></div></Reveal>
+          <Reveal className="head">
+            <p className="eyebrow eyebrow--lg">Walentynki 2025 | 2026</p>
+            <h2>Kolacje degustacyjne z Pascalem Brodnickim</h2>
+            <p className="head__sub">Pascal Brodnicki, Patryk Dziamski i zespół Avocado</p>
+          </Reveal>
+          <MoreGallery pics={EV.walentynki} title="Kolacja degustacyjna z Pascalem Brodnickim w Avocado" />
         </div>
       </section>
 
-      <section className="sec" id="walentynki">
-        <div className="wrap">
-          <Reveal className="head"><p className="eyebrow eyebrow--lg">Walentynki 2025 | 2026</p></Reveal>
-          <MoreGallery pics={EV.walentynki} title="Kolacja walentynkowa w Avocado" />
-        </div>
-      </section>
-
-      <section className="sec sec--sand" id="kobieciarnia">
+      <section className="sec" id="kobieciarnia">
         <div className="wrap">
           <Reveal className="head"><p className="eyebrow eyebrow--lg">Kobieciarnia</p></Reveal>
           <MoreGallery pics={EV.kobieciarnia} title="Kobieciarnia w Avocado" />
         </div>
       </section>
 
+      <section className="sec sec--sand" id="kolacja-swiateczna">
+        <div className="wrap">
+          <Reveal className="head head--center">
+            <p className="eyebrow eyebrow--lg">Kolacja świąteczna</p>
+            <h2>Kolacja degustacyjna</h2>
+            <p className="head__sub">Avocado i Patryk Dziamski</p>
+          </Reveal>
+          <Reveal><div className="film"><Clip name="kolacja" label="Film z kolacji świątecznej w Avocado" className="clip--wide" /></div></Reveal>
+        </div>
+      </section>
+
       <section className="sec" id="degustacje">
         <div className="wrap">
-          <Reveal className="head"><p className="eyebrow eyebrow--lg">Kolacje degustacyjne</p></Reveal>
+          <Reveal className="head">
+            <p className="eyebrow eyebrow--lg">Kolacja degustacyjna</p>
+            <h2>Avocado – Patryk Dziamski, Rafał Niewiarowski i Witold Szeszycki</h2>
+          </Reveal>
           <MoreGallery pics={EV.degustacja} title="Kolacja degustacyjna w Avocado" />
         </div>
       </section>

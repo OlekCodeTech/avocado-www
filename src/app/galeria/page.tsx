@@ -9,13 +9,16 @@ export const metadata: Metadata = {
   description: "Galeria Avocado koło Sieradza: wesela naszych par w sali bankietowej, sali plenerowej i ogrodzie wśród brzóz.",
 };
 
-/** Galerie par – foldery od Eweliny (scripts/prep_albums.py). Pierwsze zdjęcie albumu to okładka. */
-const PARY: Album[] = data.map((a) => ({ name: a.name, cover: a.cover, pics: a.pics.map((p) => ({ src: p.src })) }));
+/** Galerie par – foldery od Eweliny (scripts/prep_albums.py). Każda para ma osobną podstronę /galeria/[slug]/. */
+const PARY: Album[] = data.map((a) => ({ slug: a.slug, name: a.name, cover: a.cover }));
 
 const AUTORZY = [
   ["Dagmara Chaładaj Fotografia", "https://www.facebook.com/fotografiadagmarachaladaj/?locale=pl_PL"],
   ["Asia Frize-Szulc", "https://www.facebook.com/joannafrizeszulc/?locale=pl_PL"],
   ["Kochana Fotografia", "https://kochanafotografia.pl/"],
+  ["Shots of love", "https://shotsoflove.pl/"],
+  ["Paulina Gałuszka", "https://www.galuszkapaulina.pl"],
+  ["Marta Chruścińska", "https://www.instagram.com/martachruscinskafotografia/"],
 ];
 
 export default function Galeria() {

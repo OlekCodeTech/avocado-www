@@ -3,12 +3,8 @@
   "slug": "aleksandra-maciej",
   "name": "Aleksandra & Maciej",
   "cover": "/img/alb/aleksandra-maciej-7.webp",
+  "banner": "/img/alb/aleksandra-maciej-9.webp",
   "pics": [
-   {
-    "src": "/img/alb/aleksandra-maciej-7.webp",
-    "w": 998,
-    "h": 1500
-   },
    {
     "src": "/img/alb/aleksandra-maciej-1.webp",
     "w": 1000,
@@ -36,6 +32,11 @@
    },
    {
     "src": "/img/alb/aleksandra-maciej-6.webp",
+    "w": 998,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-maciej-7.webp",
     "w": 998,
     "h": 1500
    },
@@ -110,12 +111,8 @@
   "slug": "kamila-oskar",
   "name": "Kamila & Oskar",
   "cover": "/img/alb/kamila-oskar-29.webp",
+  "banner": "/img/alb/kamila-oskar-1.webp",
   "pics": [
-   {
-    "src": "/img/alb/kamila-oskar-29.webp",
-    "w": 853,
-    "h": 1280
-   },
    {
     "src": "/img/alb/kamila-oskar-1.webp",
     "w": 1280,
@@ -257,6 +254,11 @@
     "h": 854
    },
    {
+    "src": "/img/alb/kamila-oskar-29.webp",
+    "w": 853,
+    "h": 1280
+   },
+   {
     "src": "/img/alb/kamila-oskar-30.webp",
     "w": 1280,
     "h": 853
@@ -277,12 +279,8 @@
   "slug": "gabi-kuba",
   "name": "Gabi & Kuba",
   "cover": "/img/alb/gabi-kuba-12.webp",
+  "banner": "/img/alb/gabi-kuba-4.webp",
   "pics": [
-   {
-    "src": "/img/alb/gabi-kuba-12.webp",
-    "w": 1000,
-    "h": 1500
-   },
    {
     "src": "/img/alb/gabi-kuba-1.webp",
     "w": 1000,
@@ -335,6 +333,11 @@
    },
    {
     "src": "/img/alb/gabi-kuba-11.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/gabi-kuba-12.webp",
     "w": 1000,
     "h": 1500
    },
@@ -461,15 +464,189 @@
   ]
  },
  {
-  "slug": "klaudia-daniel",
-  "name": "Klaudia & Daniel",
-  "cover": "/img/alb/klaudia-daniel-11.webp",
+  "slug": "aleksandra-mikolaj",
+  "name": "Aleksandra & Mikołaj",
+  "cover": "/img/alb/aleksandra-mikolaj-9.webp",
+  "banner": "/img/alb/aleksandra-mikolaj-2.webp",
   "pics": [
    {
-    "src": "/img/alb/klaudia-daniel-11.webp",
+    "src": "/img/alb/aleksandra-mikolaj-1.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-2.webp",
+    "w": 1500,
+    "h": 1003
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-3.webp",
+    "w": 1003,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-4.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-5.webp",
+    "w": 1003,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-6.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-7.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-8.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-9.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-10.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-11.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-12.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-13.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-14.webp",
+    "w": 1500,
+    "h": 1002
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-15.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-16.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-17.webp",
+    "w": 1003,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-18.webp",
+    "w": 1003,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-19.webp",
+    "w": 1500,
+    "h": 1001
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-20.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-21.webp",
+    "w": 1003,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-22.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-23.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-24.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-25.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-26.webp",
+    "w": 1500,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-27.webp",
+    "w": 1001,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-28.webp",
+    "w": 1002,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-29.webp",
+    "w": 1500,
+    "h": 1003
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-30.webp",
+    "w": 1500,
+    "h": 1003
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-31.webp",
     "w": 1000,
     "h": 1500
    },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-32.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-33.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/aleksandra-mikolaj-34.webp",
+    "w": 1000,
+    "h": 1500
+   }
+  ]
+ },
+ {
+  "slug": "klaudia-daniel",
+  "name": "Klaudia & Daniel",
+  "cover": "/img/alb/klaudia-daniel-11.webp",
+  "banner": "/img/alb/klaudia-daniel-11.webp",
+  "pics": [
    {
     "src": "/img/alb/klaudia-daniel-1.webp",
     "w": 1000,
@@ -517,6 +694,11 @@
    },
    {
     "src": "/img/alb/klaudia-daniel-10.webp",
+    "w": 1000,
+    "h": 1500
+   },
+   {
+    "src": "/img/alb/klaudia-daniel-11.webp",
     "w": 1000,
     "h": 1500
    },
@@ -601,12 +783,8 @@
   "slug": "monika-przemek",
   "name": "Monika & Przemek",
   "cover": "/img/alb/monika-przemek-14.webp",
+  "banner": "/img/alb/monika-przemek-1.webp",
   "pics": [
-   {
-    "src": "/img/alb/monika-przemek-14.webp",
-    "w": 1280,
-    "h": 854
-   },
    {
     "src": "/img/alb/monika-przemek-1.webp",
     "w": 1280,
@@ -673,6 +851,11 @@
     "h": 854
    },
    {
+    "src": "/img/alb/monika-przemek-14.webp",
+    "w": 1280,
+    "h": 854
+   },
+   {
     "src": "/img/alb/monika-przemek-15.webp",
     "w": 1280,
     "h": 854
@@ -708,12 +891,8 @@
   "slug": "alicja-krzysztof",
   "name": "Alicja & Krzysztof",
   "cover": "/img/alb/alicja-krzysztof-16.webp",
+  "banner": "/img/alb/alicja-krzysztof-1.webp",
   "pics": [
-   {
-    "src": "/img/alb/alicja-krzysztof-16.webp",
-    "w": 854,
-    "h": 1280
-   },
    {
     "src": "/img/alb/alicja-krzysztof-1.webp",
     "w": 1280,
@@ -790,6 +969,11 @@
     "h": 854
    },
    {
+    "src": "/img/alb/alicja-krzysztof-16.webp",
+    "w": 854,
+    "h": 1280
+   },
+   {
     "src": "/img/alb/alicja-krzysztof-17.webp",
     "w": 1280,
     "h": 854
@@ -815,12 +999,8 @@
   "slug": "agata-jakub",
   "name": "Agata & Jakub",
   "cover": "/img/alb/agata-jakub-13.webp",
+  "banner": "/img/alb/agata-jakub-1.webp",
   "pics": [
-   {
-    "src": "/img/alb/agata-jakub-13.webp",
-    "w": 1500,
-    "h": 1000
-   },
    {
     "src": "/img/alb/agata-jakub-1.webp",
     "w": 1500,
@@ -880,6 +1060,11 @@
     "src": "/img/alb/agata-jakub-12.webp",
     "w": 1000,
     "h": 1500
+   },
+   {
+    "src": "/img/alb/agata-jakub-13.webp",
+    "w": 1500,
+    "h": 1000
    },
    {
     "src": "/img/alb/agata-jakub-14.webp",

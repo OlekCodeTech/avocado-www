@@ -61,7 +61,7 @@ export default function Wesela() {
           <Reveal className="split__img"><img src={asset("/img/ceremonia-goscie.webp")} alt="Ceremonia ślubna w ogrodzie Avocado" loading="lazy" /></Reveal>
           <Reveal delay={0.1} className="split__txt">
             <p className="eyebrow">Niezapomniany dzień</p>
-            <h2>Jedz, pij i tańcz</h2>
+            <h2>Wasze wesele, nasza wspólna historia</h2>
             <p>Każda para ma swój pomysł na wesele. Chętnie poznamy Wasz i pomożemy go zrealizować — wspólnie ustalimy menu, przygotowanie sali i przebieg przyjęcia. Chcemy, żebyście czuli się u nas swobodnie i mogli cieszyć się tym dniem z bliskimi.</p>
             <ul className="ticks">
               <li>Zieleń za oknem, swoboda przy stole</li>

@@ -61,8 +61,8 @@ export default function ONas() {
           <div className="team">
             {[
               ["Natalia Jarominek", "/img/koord-natalia.webp"],
-              ["Oskar Sibiński", "/img/koord-oskar.webp"],
               ["Mateusz Jarzembski", "/img/koord-mateusz.webp"],
+              ["Oskar Sibiński", "/img/koord-oskar.webp"],
             ].map(([n, src], k) => (
               <Reveal key={n} delay={k * 0.08}>
                 <figure className="team__item">

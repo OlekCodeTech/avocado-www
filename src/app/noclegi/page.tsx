@@ -61,7 +61,6 @@ export default function Noclegi() {
         lead="Odpocznij w miejscu, gdzie nowoczesny komfort spotyka się z bliskością natury. Nasze stylowe, całoroczne domki położone są w malowniczym otoczeniu brzozowego lasu, tworząc idealną przestrzeń do relaksu i odpoczynku od codziennego zgiełku."
       >
         <a href="#rezerwacja" className="btn btn--light">Sprawdź dostępność</a>
-        <a href={CONTACT.booking} className="btn btn--ghost" target="_blank" rel="noopener">Booking.com</a>
       </PageHero>
 
       <section className="facts">
@@ -139,7 +138,8 @@ export default function Noclegi() {
 
       <Faq items={FAQ_N} title="Pytania i odpowiedzi" sand />
       <CtaBand
-        title={<>Macie pytania<br />o nocleg?</>}
+        title={<>Macie pytania<br />
+      <p className="booking-note">Domki znajdziecie również w serwisie <a href={CONTACT.booking} target="_blank" rel="noopener">Booking.com</a>.</p>o nocleg?</>}
         text="Napiszcie lub zadzwońcie do osoby zajmującej się domkami: 511 647 111, avocado.domki@gmail.com. Przyjęcie z noclegiem omówicie z Patrykiem."
         extra={{ nocleg: "1" }}
         button="Zapytaj o nocleg"
