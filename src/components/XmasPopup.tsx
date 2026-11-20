@@ -44,7 +44,7 @@ export default function XmasPopup() {
       <div className="xmas__box">
         <button type="button" className="xmas__x" aria-label="Zamknij" onClick={() => setOpen(false)}>×</button>
         <Link href="/kontakt/" onClick={() => setOpen(false)}>
-          <img src={asset("/img/popup-swieta-2026.webp")} alt="To jest już moment na rezerwację świątecznego spotkania w Avocado – zarezerwuj termin" width={720} height={900} />
+          <img src={asset("/img/popup-swieta-2026-b.webp")} alt="Spotkania świąteczne w Avocado 11–12.12.2026 – rezerwacje grupowe od 15 do 60 osób, liczba miejsc ograniczona. Tel. 511 647 111" width={1080} height={1350} />
         </Link>
       </div>
     </div>
