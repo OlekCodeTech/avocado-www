@@ -1,0 +1,54 @@
+# Avocado — www.restauracjaavocado.pl (OVH)
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# --- HTTPS i jedna wersja adresu (z www, jak na dawnej stronie) ---
+# Przekierowanie na https włączyć (odkomentować) dopiero, gdy certyfikat działa dla obu nazw.
+#HTTPS#RewriteCond %{SERVER_PORT} ^80$
+#HTTPS#RewriteCond %{HTTPS} !=on
+#HTTPS#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#HTTPS#RewriteRule ^ https://www.restauracjaavocado.pl%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^restauracjaavocado\.pl$ [NC]
+RewriteRule ^ %{REQUEST_SCHEME}://www.restauracjaavocado.pl%{REQUEST_URI} [R=301,L,NE]
+
+# --- stare adresy z Webflow ---
+RewriteRule ^imprezy-firmowe/?$ /przyjecia/#firmowe [R=301,L,NE]
+RewriteRule ^sala-bankietowa/?$ /sale/#bankietowa [R=301,L,NE]
+RewriteRule ^sala-plenerowa/?$ /sale/#plenerowa [R=301,L,NE]
+RewriteRule ^kuchnia/?$ /o-nas/#kuchnia [R=301,L,NE]
+RewriteRule ^dziekujemy/?$ /kontakt/ [R=301,L,NE]
+RewriteRule ^testimoniale/.*/?$ /#opinie [R=301,L,NE]
+RewriteRule ^domki/?$ /noclegi/ [R=301,L,NE]
+RewriteRule ^polityka-prywatnosci.html/?$ /polityka-prywatnosci/ [R=301,L,NE]
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+<FilesMatch "\.(js|css|woff2)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+<FilesMatch "\.(webp|jpg|png|svg|mp4|ico)$">
+Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+<FilesMatch "\.(html|txt|php|xml)$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+AddType font/woff2 .woff2
+AddType image/webp .webp
+AddType image/svg+xml .svg
+AddType video/mp4 .mp4
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/json text/plain application/xml
+</IfModule>
