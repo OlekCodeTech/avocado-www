@@ -639,3 +639,39 @@ h3{font-size:clamp(1.6rem,2.4vw,2.1rem)}
 @media (max-width:960px){.lm__map{height:440px}}
 @media (max-width:640px){.lm__map{height:380px}.lm-lbl{font-size:11px;padding:3px 8px 3px 6px}.lm-avo-lbl b{font-size:15px}}
 @media (prefers-reduced-motion:reduce){.lm-pin{animation:none}}
+
+/* baner zgody na cookies */
+.cb{position:fixed;left:16px;right:16px;bottom:16px;z-index:150;max-width:760px;margin:0 auto;display:flex;gap:22px;align-items:center;padding:20px 22px;background:#FAF7F2;color:var(--ink);border:1px solid var(--line);box-shadow:0 12px 40px rgba(20,20,16,.18)}
+.cb b{font:500 1.15rem/1.2 var(--serif)}
+.cb p{margin-top:6px;font-size:.84rem;line-height:1.55;color:var(--muted)}
+.cb a{color:var(--ink)}
+.cb__btns{display:flex;flex-direction:column;gap:8px;flex:0 0 auto}
+.btn--sm{padding:11px 16px;font-size:.66rem}
+@media (max-width:640px){.cb{flex-direction:column;align-items:stretch;bottom:72px;padding:16px}.cb__btns{flex-direction:row}.cb__btns .btn{flex:1}}
+/* popup świąteczny */
+.xmas{position:fixed;inset:0;z-index:160;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.65);animation:xmasIn .3s ease}
+.xmas__box{position:relative;max-width:min(480px,90vw)}
+.xmas__box img{display:block;width:100%;height:auto;max-height:85vh;object-fit:contain;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.xmas__x{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border:0;border-radius:50%;background:#fff;color:var(--ink);font-size:22px;line-height:36px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+@keyframes xmasIn{from{opacity:0}to{opacity:1}}
+/* polityka prywatności, 404 */
+.legal{padding:150px 0 90px}
+.legal__in{max-width:760px}
+.legal h1{font-size:clamp(2.2rem,4.4vw,3.2rem)}
+.legal__date{margin-top:10px;color:var(--muted);font-size:.86rem}
+.legal h2{font-size:1.5rem;margin:40px 0 12px}
+.legal p,.legal li{color:var(--muted);line-height:1.75}
+.legal ul{padding-left:20px;display:grid;gap:12px}
+.legal b{color:var(--ink);font-weight:500}
+.legal a{color:var(--ink)}
+.nf{text-align:left;min-height:40vh}
+/* formularze: pułapka na boty, informacje */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.planner__rodo{font-size:.78rem;opacity:.75;margin-top:14px}
+.planner__rodo a{color:inherit}
+.planner__err{margin-top:10px;font-size:.86rem;color:#F2B8A8}
+.planner__err a{color:inherit}
+.newsletter__info{flex-basis:100%;margin-top:8px;font-size:.78rem;color:var(--muted)}
+.newsletter__info a{color:var(--ink)}
+.newsletter__form{flex-wrap:wrap}
+.newsletter__ok{font:italic 400 1.25rem/1.4 var(--serif)}

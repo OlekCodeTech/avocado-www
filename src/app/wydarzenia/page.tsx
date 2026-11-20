@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import MoreGallery from "@/components/MoreGallery";
+import Newsletter from "@/components/Newsletter";
 import EV from "@/lib/events.json";
 import CtaBand from "@/components/CtaBand";
 import Clip from "@/components/Clip";
@@ -103,10 +104,7 @@ export default function Wydarzenia() {
             <h2>Dajcie znać, że chcecie wiedzieć pierwsi</h2>
             <p>Zostawcie adres e-mail – napiszemy, gdy ogłosimy nowy termin.</p>
           </div>
-          <form className="newsletter__form">
-            <input type="email" placeholder="Twój adres e-mail" aria-label="Adres e-mail" className="inp inp--light" />
-            <button type="button" className="btn">Zapisz się</button>
-          </form>
+          <Newsletter />
         </Reveal>
       </section>
 

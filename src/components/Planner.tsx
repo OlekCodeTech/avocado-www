@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import { CONTACT, EVENT_TYPES, PLAN_EVENT } from "@/lib/asset";
+import { sendForm } from "@/lib/send";
 
 const YEARS = [2026, 2027, 2028, 2029, 2030, 2031];
 const MONTHS = ["Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"];
@@ -28,7 +30,10 @@ const EMPTY: Data = {
 /** Trzykrokowy formularz zapytania (odpowiednik formularza z obecnej strony). */
 export default function Planner({ compact = false }: { compact?: boolean }) {
   const [step, setStep] = useState(0);
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState<false | "ok" | "demo">(false);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState(false);
+  const [hp, setHp] = useState("");
   const [d, setD] = useState<Data>(EMPTY);
   const set = (p: Partial<Data>) => setD((v) => ({ ...v, ...p }));
 
@@ -61,6 +66,19 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
   const guestsOk = !d.guests || Number(d.guests) >= min;
   const ok = [!!d.type, !!d.year && guestsOk, !!(d.name && d.phone)][step];
   const now = new Date();
+
+  const submit = async () => {
+    setBusy(true);
+    setErr(false);
+    const r = await sendForm({
+      form: "planer", type: d.type, variant: d.variant, where: d.where, year: d.year ?? "", months: monthsTxt, dateNote: d.dateNote,
+      guests: d.guests, stay: d.stay, name: d.name, phone: d.phone, email: d.email, company: d.company, role: d.role, msg: d.msg,
+      company_website: hp,
+    });
+    setBusy(false);
+    if (r === "error") setErr(true);
+    else setSent(r);
+  };
   const firma = d.type === "Impreza firmowa";
 
   return (
@@ -82,7 +100,7 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
               <span className="planner__check">✓</span>
               <h3>Dziękujemy, {d.name.split(" ")[0]}!</h3>
               <p>Patryk odezwie się z dostępnymi terminami{d.year ? ` na ${monthsTxt ? monthsTxt + " " : ""}${d.year}` : ""}.</p>
-              <p className="planner__note">To makieta – wysyłka zostanie podpięta w wersji docelowej.</p>
+              {sent === "demo" && <p className="planner__note">Podgląd strony – zapytanie nie zostało wysłane.</p>}
             </motion.div>
           ) : (
             <>
@@ -170,6 +188,9 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
                         </div>
                       )}
                       <label>Wasza wizja wydarzenia <i>(opcjonalnie)</i><textarea className="inp" rows={2} value={d.msg} onChange={(e) => set({ msg: e.target.value })} /></label>
+                      <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp" value={hp} onChange={(e) => setHp(e.target.value)} />
+                      <p className="planner__rodo">Dane z formularza wykorzystamy tylko do odpowiedzi na zapytanie. <Link href="/polityka-prywatnosci/">Polityka prywatności</Link></p>
+                      {err && <p className="planner__err">Nie udało się wysłać zapytania. Spróbujcie jeszcze raz albo zadzwońcie: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>.</p>}
                       <p className="summary">
                         {d.type}{d.variant ? ` (${d.variant.toLowerCase()})` : ""}{d.where ? ` · ${d.where}` : ""} · {monthsTxt ? monthsTxt + " " : ""}{d.year}{d.dateNote ? ` · ${d.dateNote}` : ""}
                         {d.guests ? ` · ${d.guests} os.` : ""}{d.stay ? " · z noclegiem" : ""}
@@ -181,8 +202,8 @@ export default function Planner({ compact = false }: { compact?: boolean }) {
 
               <div className="planner__nav">
                 {step > 0 && <button type="button" className="btn btn--ghost" onClick={() => setStep(step - 1)}>Wstecz</button>}
-                <button type="button" className="btn btn--light" disabled={!ok} onClick={() => (step < 2 ? setStep(step + 1) : setSent(true))}>
-                  {step < 2 ? "Dalej" : "Wyślij zapytanie"}
+                <button type="button" className="btn btn--light" disabled={!ok || busy} onClick={() => (step < 2 ? setStep(step + 1) : submit())}>
+                  {step < 2 ? "Dalej" : busy ? "Wysyłamy…" : "Wyślij zapytanie"}
                 </button>
               </div>
             </>

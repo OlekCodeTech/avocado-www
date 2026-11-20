@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
         <div className="wrap foot__copy">
           <span>© 2026 Avocado · Wszystkie prawa zastrzeżone</span>
-          <span><a href="#">Polityka prywatności</a> · projekt i wykonanie OlekCodeTech</span>
+          <span><Link href="/polityka-prywatnosci/">Polityka prywatności</Link> · <a href="#" data-consent-open>Ustawienia cookies</a> · projekt i wykonanie OlekCodeTech</span>
         </div>
       </footer>
 
