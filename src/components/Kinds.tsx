@@ -10,7 +10,7 @@ const img = (names: string[], alt: string) => names.map((n) => ({ src: `/img/${n
 
 const KINDS = [
   { t: "Chrzciny i roczki", p: "Kameralnie, w jasnej sali albo w plenerze. Plac zabaw i ogród dla dzieci tuż obok.", img: "/img/of-przyjecia.webp", okazja: "Chrzciny",
-    pics: img(["gchr-1", "gchr-2", "gchr-3", "gchr-4", "gchr-5", "gchr-6", "chrzciny", "slodki-stol", "chr-1"], "Chrzciny i roczki w Avocado"), cols: 3 as const, wide: [0, 4, 8] },
+    pics: img(["gchr-1", "gchr-2", "gchr-3", "gchr-4", "gchr-5", "gchr-6", "chrzciny", "slodki-stol"], "Chrzciny i roczki w Avocado"), cols: 3 as const, wide: [0, 3, 4, 7] },
   { t: "Komunie", p: "Rodzinny obiad w spokojnym miejscu, słodki stół i przestrzeń do zabawy dla najmłodszych.", img: "/img/gkom-0.webp", okazja: "Komunia",
     pics: img(["gkom-0", "gkom-1", "gkom-2", "gkom-3", "gkom-4", "komunia-desery", "dzieci-brzozy", "komunia-dzieci", "kom-7", "kom-5", "roc-3", "gkom-7", "plac-zabaw"], "Komunia w Avocado"), cols: 3 as const, wide: [0, 3, 6, 9, 12] },
   { t: "18-stki i urodziny", p: "Parkiet, bar, dekoracje w Waszym stylu – i zabawa do rana z dala od sąsiadów.", img: "/img/g18-2.webp", okazja: "Urodziny / 18-stka",
