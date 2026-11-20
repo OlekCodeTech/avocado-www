@@ -89,7 +89,8 @@ export default function Wydarzenia() {
         <div className="wrap">
           <Reveal className="head">
             <p className="eyebrow eyebrow--lg">Kolacja degustacyjna</p>
-            <h2>Avocado – Patryk Dziamski, Rafał Niewiarowski i Witold Szeszycki</h2>
+            <h2>Kolacja degustacyjna Avocado</h2>
+            <p className="head__sub">Patryk Dziamski, Rafał Niewiarowski i Witold Szeszycki</p>
           </Reveal>
           <MoreGallery pics={EV.degustacja} title="Kolacja degustacyjna w Avocado" />
         </div>
