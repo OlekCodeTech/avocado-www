@@ -9,12 +9,15 @@ export default function CtaBand({
   okazja,
   extra,
   button = "Zapytaj o termin",
+  noTel = false,
 }: {
   title: React.ReactNode;
   text?: string;
   okazja?: string;
   extra?: Record<string, string>;
   button?: string;
+  /** bez „lub zadzwoń” po prawej (gdy numer jest już w tekście) */
+  noTel?: boolean;
 }) {
   return (
     <section className="band">
@@ -25,7 +28,7 @@ export default function CtaBand({
         </div>
         <div className="band__act">
           <Link href={planHref(okazja, extra)} className="btn btn--light">{button}</Link>
-          <a href={CONTACT.phoneHref} className="band__tel">lub zadzwoń: {CONTACT.phone}</a>
+          {!noTel && <a href={CONTACT.phoneHref} className="band__tel">lub zadzwoń: {CONTACT.phone}</a>}
         </div>
       </Reveal>
     </section>
