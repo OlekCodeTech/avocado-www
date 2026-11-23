@@ -7,12 +7,15 @@ BASE = os.path.join(os.path.dirname(__file__), "..")
 OUT = os.path.join(BASE, "public", "img", "alb")
 ORDER = ["Aleksandra, Maciej", "Kamila, Oskar", "Gabi, Kuba", "Aleksandra, Mikołaj", "Klaudia, Daniel", "Monika, Przemek", "Alicja, Krzysztof", "Agata,Jakub"]
 COVER = {"Agata,Jakub": 12, "Aleksandra, Maciej": 6, "Alicja, Krzysztof": 15, "Gabi, Kuba": 11, "Kamila, Oskar": 28, "Klaudia, Daniel": 10, "Monika, Przemek": 13, "Aleksandra, Mikołaj": 8}
+# poprawki imion względem nazw folderów (23.11.2026 Ewelina: „Daniel” to nazwisko, pan młody ma na imię Michał)
+NAMES = {"Klaudia, Daniel": ("Klaudia", "Michał")}
 SLUG = str.maketrans("ąćęłńóśźżĄĆĘŁŃÓŚŹŻ", "acelnoszzACELNOSZZ")
 if os.path.isdir(OUT): shutil.rmtree(OUT)
 os.makedirs(OUT)
 man = []
 for folder in ORDER:
     a, b = [x.strip() for x in folder.split(",")]
+    a, b = NAMES.get(folder, (a, b))
     slug = re.sub(r"[^a-z]+", "-", f"{a}-{b}".translate(SLUG).lower()).strip("-")
     fs = sorted(f for f in os.listdir(os.path.join(SRC, folder)) if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp")))
     pics = []

@@ -11,7 +11,7 @@ import os, shutil, subprocess, sys, zipfile, datetime, pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT, DIST, EXPORT = ROOT / "out", ROOT / "dist", ROOT / "export"
 SITE = "https://www.restauracjaavocado.pl"
-GOOGLE_VERIFICATION = ""   # np. "google1234abcd.html" – plik z Search Console (zostawić na stałe)
+GOOGLE_VERIFICATION = "google96e0791bcf3ff8f5.html"   # plik z Search Console konta OlekCodeTech (ten sam co Bifor) – zostawić na stałe
 DROP = ["zdjecia"]          # robocze podstrony, których nie publikujemy
 
 # stare adresy z Webflow -> nowe (301)
@@ -24,6 +24,7 @@ REDIRECTS = {
     "testimoniale/.*": "/#opinie",
     "domki": "/noclegi/",
     "polityka-prywatnosci.html": "/polityka-prywatnosci/",
+    "galeria/klaudia-daniel": "/galeria/klaudia-michal/",  # 23.11.2026 poprawka imienia pana młodego
 }
 
 HTACCESS = r"""# Avocado — www.restauracjaavocado.pl (OVH)
@@ -35,6 +36,9 @@ ErrorDocument 404 /404.html
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
+# lista sum kontrolnych skryptu wgrywania (tools/deploy-prod.py) – nie do pobrania z sieci
+RewriteRule ^\.avocado-manifest\.json$ - [F,L]
+
 # --- HTTPS i jedna wersja adresu (z www, jak na dawnej stronie) ---
 # Przekierowanie na https włączyć (odkomentować) dopiero, gdy certyfikat działa dla obu nazw.
 #HTTPS#RewriteCond %{SERVER_PORT} ^80$
@@ -43,6 +47,10 @@ RewriteEngine On
 #HTTPS#RewriteRule ^ https://www.restauracjaavocado.pl%{REQUEST_URI} [R=301,L,NE]
 RewriteCond %{HTTP_HOST} ^restauracjaavocado\.pl$ [NC]
 RewriteRule ^ %{REQUEST_SCHEME}://www.restauracjaavocado.pl%{REQUEST_URI} [R=301,L,NE]
+
+# --- brakujący ukośnik na końcu (zamiast mod_dir, który za proxy OVH dopisuje „:443” do adresu) ---
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ %{REQUEST_SCHEME}://www.restauracjaavocado.pl/$1/ [R=301,L,NE]
 
 # --- stare adresy z Webflow ---
 {redirects}
@@ -82,15 +90,18 @@ def run(cmd, env=None):
 def main(https=False):
     env = dict(os.environ, NEXT_PUBLIC_PROD="1", NEXT_PUBLIC_BASE_PATH="")
     run(["npm", "run", "build"], env)
-    if DIST.exists(): shutil.rmtree(DIST)
-    shutil.copytree(OUT, DIST)
+    # czyścimy zawartość, nie sam katalog – Windows nie usunie katalogu, w którym stoi czyjś terminal
+    if DIST.exists():
+        for child in DIST.iterdir():
+            shutil.rmtree(child) if child.is_dir() else child.unlink()
+    shutil.copytree(OUT, DIST, dirs_exist_ok=True)
     for d in DROP:
         p = DIST / d
         if p.exists(): shutil.rmtree(p)
     # 404 jako zwykły plik (Next generuje 404.html i katalog _not-found)
     if not (DIST / "404.html").exists() and (DIST / "404" / "index.html").exists():
         shutil.copy(DIST / "404" / "index.html", DIST / "404.html")
-    red = "\n".join(f"RewriteRule ^{src}/?$ {dst} [R=301,L,NE]" for src, dst in REDIRECTS.items())
+    red = "\n".join(f"RewriteRule ^{src}/?$ %{{REQUEST_SCHEME}}://www.restauracjaavocado.pl{dst} [R=301,L,NE]" for src, dst in REDIRECTS.items())
     ht = HTACCESS.replace("{redirects}", red)
     if https: ht = ht.replace("#HTTPS#", "").replace("%{REQUEST_SCHEME}", "https")
     (DIST / ".htaccess").write_text(ht, encoding="utf-8", newline="\n")
