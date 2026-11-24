@@ -68,7 +68,7 @@ if (!empty($d['company_website']) || (int) ($d['fill_seconds'] ?? 0) < MIN_FILL_
     out(200, ['ok' => true]);
 }
 
-$form = ($d['form'] ?? '') === 'newsletter' ? 'newsletter' : 'planer';
+$form = match ($d['form'] ?? '') { 'newsletter' => 'newsletter', 'swieta' => 'swieta', default => 'planer' };
 
 $name  = clean($d['name'] ?? '', 100);
 $phone = clean($d['phone'] ?? '', 30);
@@ -77,6 +77,15 @@ $email = clean($d['email'] ?? '', 120);
 $errors = [];
 if ($form === 'newsletter') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { $errors[] = 'email'; }
+} elseif ($form === 'swieta') {
+    // rezerwacja grupowa na spotkania świąteczne 11–12.12.2026: od 10 do 60 osób
+    $xGuests = (int) clean($d['guests'] ?? '', 4);
+    $xDate   = clean($d['date'] ?? '', 40);
+    if (mb_strlen($name) < 2) { $errors[] = 'name'; }
+    if (strlen(preg_replace('/\D/', '', $phone) ?? '') < 9) { $errors[] = 'phone'; }
+    if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) { $errors[] = 'email'; }
+    if ($xGuests < 10 || $xGuests > 60) { $errors[] = 'guests'; }
+    if (!preg_match('/^1[12]\.12\.2026/', $xDate)) { $errors[] = 'date'; }
 } else {
     if (mb_strlen($name) < 2) { $errors[] = 'name'; }
     if (strlen(preg_replace('/\D/', '', $phone) ?? '') < 9) { $errors[] = 'phone'; }
@@ -104,7 +113,34 @@ $hits[] = $now;
 $line = fn(string $label, string $value): string => $value === '' ? '' : $label . ': ' . $value . "\n";
 $page = clean($d['page'] ?? '', 300);
 
-if ($form === 'newsletter') {
+if ($form === 'swieta') {
+    $company = clean($d['company'] ?? '', 120);
+    $pkg     = clean($d['pkg'] ?? '', 40);
+    $msg     = clean($d['msg'] ?? '', 2000, true);
+    $subject = 'Rezerwacja grupowa – spotkanie świąteczne ' . substr($xDate, 0, 5) . ' – ' . $xGuests . ' os. – ' . ($company !== '' ? $company : $name);
+    $body  = "Nowa rezerwacja grupowa na spotkanie świąteczne (strona Wydarzenia na restauracjaavocado.pl).
+";
+    $body .= "Klient wie, że rezerwację potwierdzi manager telefonicznie lub e-mailowo.
+
+";
+    $body .= $line('Termin', $xDate);
+    $body .= $line('Liczba osób', (string) $xGuests);
+    $body .= $line('Propozycja menu', $pkg !== '' ? $pkg : 'nie wybrano');
+    $body .= "
+";
+    $body .= $line('Imię i nazwisko', $name);
+    $body .= $line('Firma', $company);
+    $body .= $line('Telefon', $phone);
+    $body .= $line('E-mail', $email);
+    if ($msg !== '') {
+        $body .= "
+Uwagi:
+" . $msg . "
+";
+    }
+    $reply = $email;
+    $replyName = $name;
+} elseif ($form === 'newsletter') {
     $subject = 'Zapis na powiadomienia o wydarzeniach: ' . $email;
     $body  = "Nowy zapis na powiadomienia o wydarzeniach Avocado (formularz na stronie Wydarzenia).\n\n";
     $body .= $line('E-mail', $email);

@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 import { asset } from "@/lib/asset";
 import { consentDecided } from "./Consent";
 
-/* Popup świąteczny przeniesiony z Webflow: raz na sesję, nie na stronie Kontakt, znika sam po 24.12.2026. */
+/* Popup świąteczny przeniesiony z Webflow: raz na sesję, nie na stronie Kontakt, znika sam po 24.12.2026.
+   Kliknięcie prowadzi do rezerwacji grupowej w Wydarzeniach (formularz otwiera się sam – prośba Eweliny 23.11.2026). */
 const KONIEC = new Date("2026-12-24T23:59:59");
 const KEY = "avoPopup";
 
@@ -43,7 +44,7 @@ export default function XmasPopup() {
     <div className="xmas" role="dialog" aria-modal="true" aria-label="Rezerwacja spotkania świątecznego" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
       <div className="xmas__box">
         <button type="button" className="xmas__x" aria-label="Zamknij" onClick={() => setOpen(false)}>×</button>
-        <Link href="/kontakt/" onClick={() => setOpen(false)}>
+        <Link href="/wydarzenia/#rezerwacja-grupowa" onClick={() => { setOpen(false); window.dispatchEvent(new Event("avo:group")); }}>
           <img src={asset("/img/popup-swieta-2026-b.webp")} alt="Spotkania świąteczne w Avocado 11–12.12.2026 – rezerwacje grupowe od 15 do 60 osób, liczba miejsc ograniczona. Tel. 511 647 111" width={1080} height={1350} />
         </Link>
       </div>
