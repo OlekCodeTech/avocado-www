@@ -8,6 +8,13 @@ import { asset, CONTACT } from "@/lib/asset";
 export const metadata: Metadata = {
   title: "Catering świąteczny 2026 – zamów online",
   description: "Catering świąteczny z Avocado koło Sieradza: barszcz, karp, pierogi, uszka, dania główne i ciasta. Zamówienia do 18 grudnia, odbiór 24 grudnia, dostawa gratis w Sieradzu od 400 zł.",
+  // podgląd linku (WhatsApp, Facebook) z grafiką cateringu zamiast domyślnego zdjęcia sali – prośba Eweliny 26.11.2026
+  openGraph: {
+    type: "website", locale: "pl_PL", siteName: "Restauracja Avocado",
+    title: "Catering świąteczny 2026 – zamów online | Avocado Sieradz",
+    description: "Barszcz, karp, pierogi, uszka, dania główne i ciasta. Zamówienia do 18 grudnia, odbiór 24 grudnia, dostawa gratis w Sieradzu od 400 zł.",
+    images: [{ url: "/img/og-catering-2026.jpg", width: 1200, height: 630, alt: "Catering świąteczny od Avocado" }],
+  },
 };
 
 const ULOTKA = "/oferty/avocado-catering-swiateczny-2026.pdf";
