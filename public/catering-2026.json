@@ -1,0 +1,202 @@
+{
+ "_opis": "Catering świąteczny 2026 – katalog z ulotki i wtyczki Eweliny (v1.2, 24.11.2026). Czyta go formularz (src/components/CateringOrder.tsx) i send.php (ponowne przeliczenie cen).",
+ "deadline": "2026-12-18T23:59:59+01:00",
+ "pickup": "24 grudnia 2026",
+ "freeDeliveryFrom": 400,
+ "deposit": 100,
+ "account": "68 1020 4564 0000 5602 0131 9136",
+ "transferTitle": "zadatek za catering świąteczny 2026",
+ "categories": [
+  {
+   "title": "Zupy i świąteczne napoje",
+   "items": [
+    {
+     "id": "barszcz",
+     "name": "Barszcz czerwony",
+     "unit": "0,9 l",
+     "price": 30
+    },
+    {
+     "id": "krem_borowikowy",
+     "name": "Krem borowikowy",
+     "unit": "0,9 l",
+     "price": 60
+    },
+    {
+     "id": "kompot",
+     "name": "Kompot z suszonych owoców",
+     "unit": "0,9 l",
+     "price": 17
+    }
+   ]
+  },
+  {
+   "title": "Dania wigilijne",
+   "items": [
+    {
+     "id": "karp",
+     "name": "Filet z karpia w złocistej panierce",
+     "unit": "100 g",
+     "price": 22
+    },
+    {
+     "id": "dorsz",
+     "name": "Polędwica z dorsza w ziołowej panierce",
+     "unit": "300 g",
+     "price": 49
+    },
+    {
+     "id": "ravioli",
+     "name": "Ravioli z borowikami w sosie grzybowym z chrustem z pietruszki",
+     "unit": "15 szt.",
+     "price": 39
+    }
+   ]
+  },
+  {
+   "title": "Pierogi, uszka i paszteciki",
+   "items": [
+    {
+     "id": "pierogi_kapusta",
+     "name": "Pierogi z kapustą i grzybami",
+     "unit": "10 szt.",
+     "price": 35
+    },
+    {
+     "id": "pierogi_jablka",
+     "name": "Pierogi z prażonymi jabłkami",
+     "unit": "10 szt.",
+     "price": 32
+    },
+    {
+     "id": "pierogi_soczewica",
+     "name": "Pierogi z soczewicą i suszonymi pomidorami",
+     "unit": "10 szt.",
+     "price": 32
+    },
+    {
+     "id": "uszka",
+     "name": "Uszka z kapustą i grzybami",
+     "unit": "20 szt.",
+     "price": 36
+    },
+    {
+     "id": "paszteciki",
+     "name": "Paszteciki z kapustą i grzybami",
+     "unit": "5 szt.",
+     "price": 39
+    }
+   ]
+  },
+  {
+   "title": "Dania główne",
+   "items": [
+    {
+     "id": "poledwiczka",
+     "name": "Polędwiczka wieprzowa z pasternakiem, w sosie z nutą kawy i masła orzechowego",
+     "unit": "350 g",
+     "price": 49
+    },
+    {
+     "id": "gulasz",
+     "name": "Gulasz wołowy w sosie karmelowo-piernikowym z pieczonymi warzywami korzennymi",
+     "unit": "500 g",
+     "price": 88
+    },
+    {
+     "id": "kartacze",
+     "name": "Kartacze z szarpanym mięsem wołowo-wieprzowym i suszonymi pomidorami, na sosie chrzanowym z okrasą",
+     "unit": "3 szt.",
+     "price": 38
+    }
+   ]
+  },
+  {
+   "title": "Dodatki do świątecznych dań",
+   "items": [
+    {
+     "id": "kapusta",
+     "name": "Kapusta z grochem",
+     "unit": "500 g",
+     "price": 26
+    },
+    {
+     "id": "kluski",
+     "name": "Kluski śląskie z zielonym akcentem szpinaku",
+     "unit": "500 g",
+     "price": 25
+    },
+    {
+     "id": "puree",
+     "name": "Purée ziemniaczane maślano-serowe",
+     "unit": "500 g",
+     "price": 29
+    },
+    {
+     "id": "sos",
+     "name": "Sos grzybowy",
+     "unit": "0,4 l",
+     "price": 35
+    }
+   ]
+  },
+  {
+   "title": "Przystawki na świąteczny stół",
+   "items": [
+    {
+     "id": "tartaletki",
+     "name": "Tartaletki z krewetkami i cytryną",
+     "unit": "5 szt.",
+     "price": 39
+    },
+    {
+     "id": "ryba_grecku",
+     "name": "Ryba po grecku przygotowana na parze z warzywami",
+     "unit": "500 g",
+     "price": 36
+    },
+    {
+     "id": "krokiety",
+     "name": "Krokiety buraczane w panko z boczniakami, kapustą pekińską i serem cheddar",
+     "unit": "3 szt.",
+     "price": 25
+    },
+    {
+     "id": "salatka_sledziowa",
+     "name": "Sałatka śledziowa z marynowanym burakiem",
+     "unit": "500 g",
+     "price": 30
+    },
+    {
+     "id": "jarzynowa",
+     "name": "Tradycyjna sałatka jarzynowa",
+     "unit": "500 g",
+     "price": 32
+    },
+    {
+     "id": "pasztet",
+     "name": "Pasztet z żurawiną",
+     "unit": "500 g",
+     "price": 40
+    }
+   ]
+  },
+  {
+   "title": "Na słodkie święta",
+   "items": [
+    {
+     "id": "sernik",
+     "name": "Sernik z kajmakiem i orzechami",
+     "unit": "średnica 22 cm",
+     "price": 160
+    },
+    {
+     "id": "makowiec",
+     "name": "Makowiec zawijany",
+     "unit": "1 kg",
+     "price": 85
+    }
+   ]
+  }
+ ]
+}

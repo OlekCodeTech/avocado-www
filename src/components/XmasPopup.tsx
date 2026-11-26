@@ -6,26 +6,44 @@ import { usePathname } from "next/navigation";
 import { asset } from "@/lib/asset";
 import { consentDecided } from "./Consent";
 
-/* Popup świąteczny przeniesiony z Webflow: raz na sesję, nie na stronie Kontakt, znika sam po 24.12.2026.
-   Kliknięcie prowadzi do rezerwacji grupowej w Wydarzeniach (formularz otwiera się sam – prośba Eweliny 23.11.2026). */
-const KONIEC = new Date("2026-12-24T23:59:59");
-const KEY = "avoPopup";
+/* Popupy świąteczne (grafiki od Eweliny). Każdy raz na sesję, najwyżej jeden na odsłonę strony –
+   najpierw spotkania świąteczne, przy kolejnym przejściu catering. Znikają same po terminie akcji.
+   Pokazywane dopiero po decyzji o cookies, żeby okna nie zasłaniały się nawzajem. */
+type Popup = { key: string; img: string; w: number; h: number; alt: string; href: string; until: string; skip: string[]; event?: string };
+const POPUPS: Popup[] = [
+  {
+    key: "avoPopup",
+    img: "/img/popup-swieta-2026-b.webp", w: 1080, h: 1350,
+    alt: "Spotkania świąteczne w Avocado 11–12.12.2026 – rezerwacje grupowe, liczba miejsc ograniczona. Tel. 511 647 111",
+    href: "/wydarzenia/#rezerwacja-grupowa", event: "avo:group",
+    until: "2026-12-12T23:59:59", skip: ["/kontakt", "/wydarzenia", "/catering"],
+  },
+  {
+    key: "avoPopupCatering",
+    img: "/img/popup-catering-2026.webp", w: 1080, h: 1534,
+    alt: "Catering świąteczny od Avocado – zamówienia do 18 grudnia, odbiór 24 grudnia, dostawa gratis w Sieradzu. Tel. 511 647 111",
+    href: "/catering/#zamowienie",
+    until: "2026-12-18T23:59:59", skip: ["/kontakt", "/catering"],
+  },
+];
+
+const seen = (k: string) => { try { return !!sessionStorage.getItem(k); } catch { return false; } };
+const mark = (k: string) => { try { sessionStorage.setItem(k, "1"); } catch { /* brak pamięci */ } };
+let shownThisLoad = false;
 
 export default function XmasPopup() {
   const path = usePathname();
-  const [open, setOpen] = useState(false);
+  const [cur, setCur] = useState<Popup | null>(null);
 
   useEffect(() => {
-    if (new Date() > KONIEC || path.startsWith("/kontakt")) return;
-    try { if (sessionStorage.getItem(KEY)) return; } catch { /* brak pamięci = pokaż */ }
+    if (shownThisLoad) { shownThisLoad = false; return; } // po pokazaniu jednego – następny dopiero przy kolejnym przejściu
+    const now = new Date();
+    const p = POPUPS.find((x) => now <= new Date(x.until) && !x.skip.some((s) => path.startsWith(s)) && !seen(x.key));
+    if (!p) return;
     let t: ReturnType<typeof setTimeout> | undefined;
     const show = (delay: number) => {
-      t = setTimeout(() => {
-        try { sessionStorage.setItem(KEY, "1"); } catch { /* jw. */ }
-        setOpen(true);
-      }, delay);
+      t = setTimeout(() => { mark(p.key); shownThisLoad = true; setCur(p); }, delay);
     };
-    // najpierw decyzja o cookies, potem popup – żeby dwa okna nie zasłaniały się nawzajem
     const onConsent = () => show(700);
     if (consentDecided()) show(1500);
     else window.addEventListener("avo:consent", onConsent, { once: true });
@@ -33,19 +51,20 @@ export default function XmasPopup() {
   }, [path]);
 
   useEffect(() => {
-    if (!open) return;
-    const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    if (!cur) return;
+    const esc = (e: KeyboardEvent) => e.key === "Escape" && setCur(null);
     window.addEventListener("keydown", esc);
     return () => window.removeEventListener("keydown", esc);
-  }, [open]);
+  }, [cur]);
 
-  if (!open) return null;
+  if (!cur) return null;
+  const close = () => setCur(null);
   return (
-    <div className="xmas" role="dialog" aria-modal="true" aria-label="Rezerwacja spotkania świątecznego" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>
+    <div className="xmas" role="dialog" aria-modal="true" aria-label={cur.alt} onClick={(e) => e.target === e.currentTarget && close()}>
       <div className="xmas__box">
-        <button type="button" className="xmas__x" aria-label="Zamknij" onClick={() => setOpen(false)}>×</button>
-        <Link href="/wydarzenia/#rezerwacja-grupowa" onClick={() => { setOpen(false); window.dispatchEvent(new Event("avo:group")); }}>
-          <img src={asset("/img/popup-swieta-2026-b.webp")} alt="Spotkania świąteczne w Avocado 11–12.12.2026 – rezerwacje grupowe od 15 do 60 osób, liczba miejsc ograniczona. Tel. 511 647 111" width={1080} height={1350} />
+        <button type="button" className="xmas__x" aria-label="Zamknij" onClick={close}>×</button>
+        <Link href={cur.href} onClick={() => { close(); if (cur.event) window.dispatchEvent(new Event(cur.event)); }}>
+          <img src={asset(cur.img)} alt={cur.alt} width={cur.w} height={cur.h} />
         </Link>
       </div>
     </div>

@@ -46,6 +46,7 @@ export const NAV = [
   { label: "Sale", href: "/sale/" },
   { label: "Avocado Domki", href: "/noclegi/" },
   { label: "Wydarzenia", href: "/wydarzenia/" },
+  { label: "Catering", href: "/catering/" },
   { label: "O nas", href: "/o-nas/" },
   { label: "Kontakt", href: "/kontakt/" },
 ] as const;

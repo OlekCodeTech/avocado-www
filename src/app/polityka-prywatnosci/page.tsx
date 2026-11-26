@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   description: "Jak Restauracja Avocado przetwarza dane osobowe osób, które kontaktują się z nami przez stronę, oraz jakich plików cookies używamy.",
 };
 
-/** Dane administratora – DO POTWIERDZENIA przez Avocado (pełna nazwa firmy, NIP, REGON / KRS). */
+/** Dane administratora – z regulaminu i klauzuli RODO cateringu przysłanych przez Avocado (24.11.2026). */
 const ADMIN = {
   nazwa: "Restauracja Avocado",
-  dopisek: "", // np. „TASTEGO sp. z o.o., KRS …, NIP …” – po potwierdzeniu przez Avocado
+  dopisek: "prowadzona przez M-invest Marek Molski, NIP 827-217-81-76",
   adres: "Kuśnie 32A, 98-200 Sieradz",
 };
 const AKTUALIZACJA = "20 listopada 2026";

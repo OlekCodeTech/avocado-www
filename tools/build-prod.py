@@ -13,6 +13,7 @@ OUT, DIST, EXPORT = ROOT / "out", ROOT / "dist", ROOT / "export"
 SITE = "https://www.restauracjaavocado.pl"
 GOOGLE_VERIFICATION = "google96e0791bcf3ff8f5.html"   # plik z Search Console konta OlekCodeTech (ten sam co Bifor) – zostawić na stałe
 DROP = ["zdjecia"]          # robocze podstrony, których nie publikujemy
+NOINDEX = ("catering/dziekujemy",)  # strony celowo poza Google (podziękowanie po zamówieniu – konwersja Meta)
 
 # stare adresy z Webflow -> nowe (301)
 REDIRECTS = {
@@ -111,7 +112,7 @@ def main(https=False):
     urls = []
     for f in sorted(DIST.rglob("index.html")):
         rel = f.parent.relative_to(DIST).as_posix()
-        if rel.startswith(("_", "404")) or rel.split("/")[0] in DROP: continue
+        if rel.startswith(("_", "404") + NOINDEX) or rel.split("/")[0] in DROP: continue
         urls.append("/" if rel == "." else f"/{rel}/")
     xml = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     xml += [f"  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod></url>" for u in urls]
@@ -120,7 +121,7 @@ def main(https=False):
     if GOOGLE_VERIFICATION:
         (DIST / GOOGLE_VERIFICATION).write_text(f"google-site-verification: {GOOGLE_VERIFICATION}", encoding="utf-8")
     # kontrola: produkcja nie może mieć noindex ani adresów podglądu
-    bad = [str(f.relative_to(DIST)) for f in DIST.rglob("*.html") if not f.relative_to(DIST).as_posix().startswith(("404", "_not-found")) and (b"noindex" in f.read_bytes() or b"/avocado-www/" in f.read_bytes())]
+    bad = [str(f.relative_to(DIST)) for f in DIST.rglob("*.html") if not f.relative_to(DIST).as_posix().startswith(("404", "_not-found") + NOINDEX) and (b"noindex" in f.read_bytes() or b"/avocado-www/" in f.read_bytes())]
     if bad: sys.exit(f"BLAD: noindex/basePath podglądu w: {bad[:5]}")
     EXPORT.mkdir(exist_ok=True)
     z = EXPORT / "avocado-produkcja.zip"

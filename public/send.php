@@ -68,7 +68,7 @@ if (!empty($d['company_website']) || (int) ($d['fill_seconds'] ?? 0) < MIN_FILL_
     out(200, ['ok' => true]);
 }
 
-$form = match ($d['form'] ?? '') { 'newsletter' => 'newsletter', 'swieta' => 'swieta', default => 'planer' };
+$form = match ($d['form'] ?? '') { 'newsletter' => 'newsletter', 'swieta' => 'swieta', 'catering' => 'catering', default => 'planer' };
 
 $name  = clean($d['name'] ?? '', 100);
 $phone = clean($d['phone'] ?? '', 30);
@@ -77,6 +77,42 @@ $email = clean($d['email'] ?? '', 120);
 $errors = [];
 if ($form === 'newsletter') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { $errors[] = 'email'; }
+} elseif ($form === 'catering') {
+    // zamówienie cateringu świątecznego 2026 – ceny liczymy od nowa z katalogu, nie z przeglądarki
+    $cat = json_decode((string) @file_get_contents(__DIR__ . '/catering-2026.json'), true);
+    if (!is_array($cat)) { error_log('Avocado: brak catering-2026.json'); out(500, ['ok' => false, 'error' => 'catalog']); }
+    if (time() > strtotime($cat['deadline'])) { out(410, ['ok' => false, 'error' => 'closed']); }
+    $name  = clean($d['first'] ?? '', 80) . ' ' . clean($d['last'] ?? '', 100);
+    $cAddr = function (mixed $a): array {
+        $a = is_array($a) ? $a : [];
+        return ['street' => clean($a['street'] ?? '', 120), 'building' => clean($a['building'] ?? '', 30), 'postcode' => clean($a['postcode'] ?? '', 6), 'city' => clean($a['city'] ?? '', 120)];
+    };
+    $cAddrOk = fn(array $a): bool => mb_strlen($a['street']) >= 2 && $a['building'] !== '' && preg_match('/^\d{2}-\d{3}$/', $a['postcode']) === 1 && mb_strlen($a['city']) >= 2;
+    $home  = $cAddr($d['home'] ?? null);
+    $deliv = ($d['delivery'] ?? '') === 'delivery';
+    $other = $deliv && ($d['other'] ?? false) === true;
+    $ship  = $other ? $cAddr($d['ship'] ?? null) : null;
+    $want  = is_array($d['items'] ?? null) ? $d['items'] : [];
+    $lines = [];
+    $total = 0;
+    foreach ($cat['categories'] as $c) {
+        foreach ($c['items'] as $it) {
+            $q = (int) ($want[$it['id']] ?? 0);
+            if ($q < 1) { continue; }
+            if ($q > 99) { $errors[] = 'qty'; continue; }
+            $sum = $q * (int) $it['price'];
+            $total += $sum;
+            $lines[] = sprintf('- %s: %d × %s po %d zł = %d zł', $it['name'], $q, $it['unit'], $it['price'], $sum);
+        }
+    }
+    if (!$lines) { $errors[] = 'items'; }
+    if (mb_strlen(clean($d['first'] ?? '', 80)) < 2 || mb_strlen(clean($d['last'] ?? '', 100)) < 2) { $errors[] = 'name'; }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { $errors[] = 'email'; }
+    if (strlen(preg_replace('/\D/', '', $phone) ?? '') < 9) { $errors[] = 'phone'; }
+    if (!$cAddrOk($home)) { $errors[] = 'home'; }
+    if ($other && !$cAddrOk($ship)) { $errors[] = 'ship'; }
+    if (($d['terms'] ?? false) !== true || ($d['rodo'] ?? false) !== true) { $errors[] = 'legal'; }
+    $ref = preg_match('/^AV\d{4}-[A-Z0-9]{4}$/', (string) ($d['ref'] ?? '')) ? (string) $d['ref'] : 'AV' . date('md') . '-' . strtoupper(substr(bin2hex(random_bytes(3)), 0, 4));
 } elseif ($form === 'swieta') {
     // rezerwacja grupowa na spotkania świąteczne 11–12.12.2026: od 10 do 60 osób
     $xGuests = (int) clean($d['guests'] ?? '', 4);
@@ -113,7 +149,29 @@ $hits[] = $now;
 $line = fn(string $label, string $value): string => $value === '' ? '' : $label . ': ' . $value . "\n";
 $page = clean($d['page'] ?? '', 300);
 
-if ($form === 'swieta') {
+if ($form === 'catering') {
+    $fmtAddr = fn(array $a): string => $a['street'] . ' ' . $a['building'] . ', ' . $a['postcode'] . ' ' . $a['city'];
+    $notes   = clean($d['notes'] ?? '', 1000, true);
+    $free    = $total >= (int) $cat['freeDeliveryFrom'];
+    $subject = 'Catering świąteczny – zamówienie ' . $ref . ' – ' . $total . ' zł – ' . $name;
+    $body  = "Nowe zamówienie cateringu świątecznego 2026 (formularz na restauracjaavocado.pl/catering/).\n";
+    $body .= "Numer zgłoszenia: " . $ref . "\n\n";
+    $body .= "ZAMÓWIONE PRODUKTY\n" . implode("\n", $lines) . "\n\n";
+    $body .= "Wartość produktów: " . $total . " zł\n";
+    $body .= 'Sposób otrzymania: ' . ($deliv ? 'DOSTAWA' . ($free ? ' (gratis w Sieradzu – wartość od ' . $cat['freeDeliveryFrom'] . ' zł)' : ' (koszt do uzgodnienia – wartość poniżej ' . $cat['freeDeliveryFrom'] . ' zł albo poza Sieradzem)') : 'odbiór osobisty ' . $cat['pickup']) . "\n";
+    if ($ship) { $body .= 'Adres dostawy: ' . $fmtAddr($ship) . "\n"; }
+    elseif ($deliv) { $body .= "Adres dostawy: jak adres zamieszkania\n"; }
+    $body .= "\nZAMAWIAJĄCY\n";
+    $body .= $line('Imię i nazwisko', $name);
+    $body .= $line('Telefon', $phone);
+    $body .= $line('E-mail', $email);
+    $body .= 'Adres zamieszkania: ' . $fmtAddr($home) . "\n";
+    if ($notes !== '') { $body .= "\nUwagi:\n" . $notes . "\n"; }
+    $body .= "\nOŚWIADCZENIA (" . date('Y-m-d H:i') . ")\n- zaakceptował regulamin cateringu 2026, w tym zasady zadatku " . $cat['deposit'] . " zł\n- potwierdził zapoznanie się z klauzulą informacyjną RODO\n";
+    $body .= "\nZadatek " . $cat['deposit'] . ' zł – klient dostał dane do przelewu (tytuł: ' . $cat['transferTitle'] . ' – ' . $ref . ").\n";
+    $reply = $email;
+    $replyName = $name;
+} elseif ($form === 'swieta') {
     $company = clean($d['company'] ?? '', 120);
     $pkg     = clean($d['pkg'] ?? '', 40);
     $msg     = clean($d['msg'] ?? '', 2000, true);
@@ -211,5 +269,29 @@ if (is_string($dry) && $dry !== '') {
 if (!$sent) {
     error_log('Avocado formularz: mail() nie wysłał zgłoszenia (' . $form . ')');
     out(500, ['ok' => false, 'error' => 'mail']);
+}
+
+// catering: kopia zgłoszenia dla klienta (z danymi do przelewu i linkami do dokumentów)
+if ($form === 'catering') {
+    $cBody  = "Dzień dobry,\n\ndziękujemy za zamówienie cateringu świątecznego w Restauracji Avocado. Poniżej kopia zgłoszenia.\n";
+    $cBody .= "To potwierdzenie OTRZYMANIA zgłoszenia – zamówienie potwierdzimy po jego sprawdzeniu i zaksięgowaniu zadatku.\n\n";
+    $cBody .= "Numer zgłoszenia: " . $ref . "\n\n" . implode("\n", $lines) . "\n\nWartość produktów: " . $total . " zł\n";
+    $cBody .= 'Sposób otrzymania: ' . ($deliv ? 'dostawa' . ($free ? ' (gratis na terenie Sieradza)' : ' – koszt ustalimy przed potwierdzeniem zamówienia') : 'odbiór osobisty ' . $cat['pickup'] . ', Restauracja Avocado, Kuśnie 32A, 98-200 Sieradz') . "\n\n";
+    $cBody .= "ZADATEK " . $cat['deposit'] . " zł\nRachunek: " . $cat['account'] . "\nTytuł przelewu: " . $cat['transferTitle'] . ' – ' . $ref . "\n";
+    if ($total < (int) $cat['deposit']) { $cBody .= "Wartość zamówienia jest niższa niż zadatek – przed przelewem prosimy o kontakt, ustalimy płatność.\n"; }
+    $cBody .= "\nRegulamin: https://www.restauracjaavocado.pl/catering/regulamin/\nKlauzula RODO: https://www.restauracjaavocado.pl/catering/rodo/\n";
+    $cBody .= "\nW razie pytań: 511 647 111, " . MAIL_TO . "\n\nRestauracja Avocado\nM-invest Marek Molski, Kuśnie 32A, 98-200 Sieradz\n";
+    $cHeaders = implode("\r\n", [
+        'From: ' . header_text('Restauracja Avocado') . ' <' . MAIL_FROM . '>',
+        'Reply-To: ' . header_text('Restauracja Avocado') . ' <' . MAIL_TO . '>',
+        'MIME-Version: 1.0', 'Content-Type: text/plain; charset=UTF-8', 'Content-Transfer-Encoding: base64', 'X-Mailer: restauracjaavocado.pl',
+    ]);
+    $cSubject = 'Avocado – catering świąteczny: kopia zgłoszenia ' . $ref;
+    if (is_string($dry) && $dry !== '') {
+        @file_put_contents($dry, "\n\n===== KOPIA DLA KLIENTA\nTo: " . $email . "\nSubject: " . $cSubject . "\n" . $cHeaders . "\n\n" . $cBody, FILE_APPEND);
+    } elseif (!@mail($email, header_text($cSubject), rtrim(chunk_split(base64_encode($cBody))), $cHeaders, '-f' . MAIL_FROM)) {
+        error_log('Avocado formularz: nie wysłano kopii zamówienia cateringu do klienta');
+    }
+    out(200, ['ok' => true, 'ref' => $ref, 'total' => $total]);
 }
 out(200, ['ok' => true]);
